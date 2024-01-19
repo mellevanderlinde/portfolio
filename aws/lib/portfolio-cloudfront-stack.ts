@@ -4,7 +4,6 @@ import {
   RemovalPolicy,
   aws_s3 as s3,
   aws_s3_deployment as s3_deployment,
-  aws_iam as iam,
   aws_cloudfront as cloudfront,
   aws_cloudfront_origins as cloudfront_origins,
 } from "aws-cdk-lib";
@@ -14,43 +13,28 @@ export class PortfolioCloudfrontStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const identity = new cloudfront.OriginAccessIdentity(this, "Identity");
-    const bucket = this.createBucket(identity);
-    const distribution = this.createDistribution(bucket, identity);
+    const bucket = this.createBucket();
+    const distribution = this.createDistribution(bucket);
     this.copyPortfolio(bucket, distribution);
   }
 
-  createBucket(identity: cloudfront.OriginAccessIdentity): s3.Bucket {
-    const bucket = new s3.Bucket(this, "Bucket", {
+  createBucket(): s3.Bucket {
+    return new s3.Bucket(this, "Bucket", {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       removalPolicy: RemovalPolicy.DESTROY, // not recommended in production
       autoDeleteObjects: true, // not recommended in production
     });
-
-    bucket.addToResourcePolicy(
-      new iam.PolicyStatement({
-        actions: ["s3:GetObject"],
-        resources: [bucket.arnForObjects("*")],
-        principals: [
-          new iam.CanonicalUserPrincipal(
-            identity.cloudFrontOriginAccessIdentityS3CanonicalUserId,
-          ),
-        ],
-      }),
-    );
-
-    return bucket;
   }
 
-  createDistribution(
-    bucket: s3.Bucket,
-    identity: cloudfront.OriginAccessIdentity,
-  ): cloudfront.Distribution {
+  createDistribution(bucket: s3.Bucket): cloudfront.Distribution {
     return new cloudfront.Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
         origin: new cloudfront_origins.S3Origin(bucket, {
-          originAccessIdentity: identity,
+          originAccessIdentity: new cloudfront.OriginAccessIdentity(
+            this,
+            "Identity",
+          ),
         }),
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
