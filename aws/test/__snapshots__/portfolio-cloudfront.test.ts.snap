@@ -86,7 +86,7 @@ exports[`Match with snapshot 1`] = `
           },
         ],
         "SourceObjectKeys": [
-          "36f6b7b5ce7db77f10493f7092b9130dcf2512ffc661e36c6f39c8121081be69.zip",
+          "99b1e42d8292b5df5c0e6186182085ab1856af9ad7715d828ff20653134c9726.zip",
         ],
       },
       "Type": "Custom::CDKBucketDeployment",
