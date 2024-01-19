@@ -17,6 +17,7 @@ jobs:
           
   build-aws:
     runs-on: ubuntu-latest
+    needs: build-portfolio
     defaults:
       run:
         working-directory: ./aws
