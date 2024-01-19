@@ -2,6 +2,16 @@
 
 exports[`Match with snapshot 1`] = `
 {
+  "Mappings": {
+    "AWSCloudFrontPartitionHostedZoneIdMap": {
+      "aws": {
+        "zoneId": "Z2FDTNDATAQYW2",
+      },
+      "aws-cn": {
+        "zoneId": "Z3RFFRIM2A3IF5",
+      },
+    },
+  },
   "Parameters": {
     "BootstrapVersion": {
       "Default": "/cdk-bootstrap/hnb659fds/version",
@@ -55,9 +65,7 @@ exports[`Match with snapshot 1`] = `
     "BucketDeploymentAwsCliLayerB018DCE1": {
       "Properties": {
         "Content": {
-          "S3Bucket": {
-            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
-          },
+          "S3Bucket": "cdk-hnb659fds-assets-012345678912-us-east-1",
           "S3Key": "3322b7049fb0ed2b7cbb644a2ada8d1116ff80c32dca89e6ada846b5de26f961.zip",
         },
         "Description": "/opt/awscli/aws",
@@ -81,9 +89,7 @@ exports[`Match with snapshot 1`] = `
           ],
         },
         "SourceBucketNames": [
-          {
-            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
-          },
+          "cdk-hnb659fds-assets-012345678912-us-east-1",
         ],
         "SourceObjectKeys": [
           "99b1e42d8292b5df5c0e6186182085ab1856af9ad7715d828ff20653134c9726.zip",
@@ -170,6 +176,25 @@ exports[`Match with snapshot 1`] = `
       },
       "Type": "AWS::S3::BucketPolicy",
     },
+    "Certificate4E7ABB08": {
+      "Properties": {
+        "DomainName": "mellevanderlinde.com",
+        "DomainValidationOptions": [
+          {
+            "DomainName": "mellevanderlinde.com",
+            "ValidationDomain": "mellevanderlinde.com",
+          },
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "TestPortfolioCloudfrontStack/Certificate",
+          },
+        ],
+        "ValidationMethod": "EMAIL",
+      },
+      "Type": "AWS::CertificateManager::Certificate",
+    },
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": {
       "DependsOn": [
         "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
@@ -177,9 +202,7 @@ exports[`Match with snapshot 1`] = `
       ],
       "Properties": {
         "Code": {
-          "S3Bucket": {
-            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
-          },
+          "S3Bucket": "cdk-hnb659fds-assets-012345678912-us-east-1",
           "S3Key": "e976a796f036a5efbf44b99e44cfb5a961df08d8dbf7cd37e60bf216fb982a00.zip",
         },
         "Environment": {
@@ -255,10 +278,7 @@ exports[`Match with snapshot 1`] = `
                       {
                         "Ref": "AWS::Partition",
                       },
-                      ":s3:::",
-                      {
-                        "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
-                      },
+                      ":s3:::cdk-hnb659fds-assets-012345678912-us-east-1",
                     ],
                   ],
                 },
@@ -270,11 +290,7 @@ exports[`Match with snapshot 1`] = `
                       {
                         "Ref": "AWS::Partition",
                       },
-                      ":s3:::",
-                      {
-                        "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
-                      },
-                      "/*",
+                      ":s3:::cdk-hnb659fds-assets-012345678912-us-east-1/*",
                     ],
                   ],
                 },
@@ -343,9 +359,7 @@ exports[`Match with snapshot 1`] = `
       ],
       "Properties": {
         "Code": {
-          "S3Bucket": {
-            "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
-          },
+          "S3Bucket": "cdk-hnb659fds-assets-012345678912-us-east-1",
           "S3Key": "b7f33614a69548d6bafe224d751a7ef238cde19097415e553fe8b63a4c8fd8a6.zip",
         },
         "Description": {
@@ -398,6 +412,9 @@ exports[`Match with snapshot 1`] = `
     "Distribution830FAC52": {
       "Properties": {
         "DistributionConfig": {
+          "Aliases": [
+            "mellevanderlinde.com",
+          ],
           "DefaultCacheBehavior": {
             "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
             "Compress": true,
@@ -433,6 +450,13 @@ exports[`Match with snapshot 1`] = `
             },
           ],
           "PriceClass": "PriceClass_100",
+          "ViewerCertificate": {
+            "AcmCertificateArn": {
+              "Ref": "Certificate4E7ABB08",
+            },
+            "MinimumProtocolVersion": "TLSv1.2_2021",
+            "SslSupportMethod": "sni-only",
+          },
         },
       },
       "Type": "AWS::CloudFront::Distribution",
@@ -444,6 +468,31 @@ exports[`Match with snapshot 1`] = `
         },
       },
       "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+    },
+    "Record83264F3E": {
+      "Properties": {
+        "AliasTarget": {
+          "DNSName": {
+            "Fn::GetAtt": [
+              "Distribution830FAC52",
+              "DomainName",
+            ],
+          },
+          "HostedZoneId": {
+            "Fn::FindInMap": [
+              "AWSCloudFrontPartitionHostedZoneIdMap",
+              {
+                "Ref": "AWS::Partition",
+              },
+              "zoneId",
+            ],
+          },
+        },
+        "HostedZoneId": "DUMMY",
+        "Name": "mellevanderlinde.com.",
+        "Type": "A",
+      },
+      "Type": "AWS::Route53::RecordSet",
     },
   },
   "Rules": {

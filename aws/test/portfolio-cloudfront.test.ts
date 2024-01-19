@@ -6,6 +6,9 @@ test("Match with snapshot", () => {
   const stack = new PortfolioCloudfrontStack(
     app,
     "TestPortfolioCloudfrontStack",
+    {
+      env: { region: "us-east-1", account: "012345678912" },
+    },
   );
   const template = assertions.Template.fromStack(stack);
   expect(template.toJSON()).toMatchSnapshot();

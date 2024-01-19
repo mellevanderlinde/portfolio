@@ -15,5 +15,5 @@ yarn build
 # Deploy to AWS
 cd ../aws
 npm install
-npm run cdk deploy
+npx cdk deploy -c accountId=012345678912
 ```

@@ -6,6 +6,9 @@ import {
   aws_s3_deployment as s3_deployment,
   aws_cloudfront as cloudfront,
   aws_cloudfront_origins as cloudfront_origins,
+  aws_certificatemanager as certificatemanager,
+  aws_route53 as route53,
+  aws_route53_targets as route53_targets,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
@@ -13,8 +16,15 @@ export class PortfolioCloudfrontStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
+    const domainName = "mellevanderlinde.com";
     const bucket = this.createBucket();
-    const distribution = this.createDistribution(bucket);
+    const certificate = this.createCertificate(domainName);
+    const distribution = this.createDistribution(
+      bucket,
+      certificate,
+      domainName,
+    );
+    this.createRecord(distribution, domainName);
     this.copyPortfolio(bucket, distribution);
   }
 
@@ -26,7 +36,17 @@ export class PortfolioCloudfrontStack extends Stack {
     });
   }
 
-  createDistribution(bucket: s3.Bucket): cloudfront.Distribution {
+  createCertificate(domainName: string): certificatemanager.Certificate {
+    return new certificatemanager.Certificate(this, "Certificate", {
+      domainName,
+    });
+  }
+
+  createDistribution(
+    bucket: s3.Bucket,
+    certificate: certificatemanager.Certificate,
+    domainName: string,
+  ): cloudfront.Distribution {
     return new cloudfront.Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
@@ -40,6 +60,22 @@ export class PortfolioCloudfrontStack extends Stack {
       },
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
       httpVersion: cloudfront.HttpVersion.HTTP3,
+      domainNames: [domainName],
+      certificate,
+    });
+  }
+
+  createRecord(
+    distribution: cloudfront.Distribution,
+    domainName: string,
+  ): route53.ARecord {
+    return new route53.ARecord(this, "Record", {
+      target: route53.RecordTarget.fromAlias(
+        new route53_targets.CloudFrontTarget(distribution),
+      ),
+      zone: route53.HostedZone.fromLookup(this, "HostedZone", {
+        domainName,
+      }),
     });
   }
 
