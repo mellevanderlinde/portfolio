@@ -1,7 +1,21 @@
 on: push
 
 jobs:
-  build:
+  build-portfolio:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./portfolio
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build
+        run: |
+          yarn install
+          yarn build
+          
+  build-aws:
     runs-on: ubuntu-latest
     defaults:
       run:
