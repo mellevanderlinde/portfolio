@@ -406,7 +406,7 @@ exports[`Match with snapshot 1`] = `
           },
           "DefaultRootObject": "index.html",
           "Enabled": true,
-          "HttpVersion": "http2",
+          "HttpVersion": "http3",
           "IPV6Enabled": true,
           "Origins": [
             {
