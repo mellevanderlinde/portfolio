@@ -1,4 +1,4 @@
-# Personal portfolio with Amazon CloudFront
+# Portfolio with Amazon CloudFront
 
 This project is my personal portfolio, served with Amazon CloudFront and S3. The portfolio design is a React template made by Eldora Boo.
 
