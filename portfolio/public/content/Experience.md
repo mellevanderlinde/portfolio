@@ -10,7 +10,7 @@
 - List Items:
   - Maintaining and improving the AWS landing zone for PostNL, used by 50+ engineering teams within the company.
   - Cloud Center of Excellence, supporting application teams.
-  - Working with AWS Organizations, API Gateway, StackSets, Security Hub, and other services.
+  - AWS services include Organizations, Lambda, API Gateway, Security Hub and more.
 
 ## PostNL
 - *MLOps Engineer* | 2021 - 2023
@@ -35,7 +35,7 @@
   - R [gray]
   - Shiny [pink]
 - List Items:
-  - During my studies I contributed to COVID related research, including creating a pipeline for social distancing data and modeling of the 'Coronadashboard' data.
+  - Contributed to COVID related research, including creating a pipeline for social distancing data and modeling of the 'Coronadashboard' data.
 
 ## JASP
 - *Student Assistant* | 2019 - 2021
