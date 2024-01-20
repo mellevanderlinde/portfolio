@@ -1,6 +1,7 @@
 import {
   Stack,
   StackProps,
+  Duration,
   RemovalPolicy,
   aws_s3 as s3,
   aws_s3_deployment as s3_deployment,
@@ -62,6 +63,14 @@ export class PortfolioCloudfrontStack extends Stack {
       httpVersion: cloudfront.HttpVersion.HTTP3,
       domainNames: [domainName],
       certificate,
+      errorResponses: [
+        {
+          httpStatus: 403,
+          responseHttpStatus: 403,
+          responsePagePath: "/error.html",
+          ttl: Duration.minutes(30),
+        },
+      ],
     });
   }
 
@@ -87,6 +96,7 @@ export class PortfolioCloudfrontStack extends Stack {
       destinationBucket: bucket,
       sources: [s3_deployment.Source.asset("../portfolio/build")],
       distribution,
+      distributionPaths: ["/*"],
     });
   }
 }
