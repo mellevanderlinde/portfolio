@@ -7,8 +7,8 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "jest",
-    "test:update": "jest -u",
+    "test": "rm -f ../portfolio/build/.DS_Store && jest",
+    "test:update": "rm -f ../portfolio/build/.DS_Store && jest -u",
     "cdk": "cdk",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix"
