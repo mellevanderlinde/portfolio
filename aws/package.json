@@ -7,11 +7,12 @@
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
-    "test": "rm -f ../portfolio/build/.DS_Store && jest",
-    "test:update": "rm -f ../portfolio/build/.DS_Store && jest -u",
     "cdk": "cdk",
+    "test": "npm run cleanup && jest",
+    "test:update": "npm run cleanup && jest -u",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix"
+    "lint:fix": "eslint . --ext .ts --fix",
+    "cleanup": "rm -f ../portfolio/build/.DS_Store"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",
