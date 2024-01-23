@@ -4,6 +4,7 @@ import {
   Duration,
   RemovalPolicy,
   aws_s3 as s3,
+  aws_logs as logs,
   aws_s3_deployment as s3_deployment,
   aws_cloudfront as cloudfront,
   aws_cloudfront_origins as cloudfront_origins,
@@ -97,6 +98,7 @@ export class PortfolioCloudfrontStack extends Stack {
       sources: [s3_deployment.Source.asset("../portfolio/build")],
       distribution,
       distributionPaths: ["/*"],
+      logRetention: logs.RetentionDays.ONE_DAY,
     });
   }
 }
