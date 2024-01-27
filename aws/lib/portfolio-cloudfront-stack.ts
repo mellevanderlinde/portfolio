@@ -33,8 +33,8 @@ export class PortfolioCloudfrontStack extends Stack {
   createBucket(): s3.Bucket {
     return new s3.Bucket(this, "Bucket", {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-      removalPolicy: RemovalPolicy.DESTROY, // not recommended in production
-      autoDeleteObjects: true, // not recommended in production
+      removalPolicy: RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
     });
   }
 
@@ -93,12 +93,17 @@ export class PortfolioCloudfrontStack extends Stack {
     bucket: s3.Bucket,
     distribution: cloudfront.Distribution,
   ): s3_deployment.BucketDeployment {
+    const logGroup = new logs.LogGroup(this, "LogGroup", {
+      retention: logs.RetentionDays.ONE_DAY,
+      removalPolicy: RemovalPolicy.DESTROY,
+    });
+
     return new s3_deployment.BucketDeployment(this, "BucketDeployment", {
       destinationBucket: bucket,
       sources: [s3_deployment.Source.asset("../portfolio/build")],
       distribution,
       distributionPaths: ["/*"],
-      logRetention: logs.RetentionDays.ONE_DAY,
+      logGroup,
     });
   }
 }
