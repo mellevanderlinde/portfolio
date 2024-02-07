@@ -185,7 +185,7 @@ exports[`Match with snapshot 1`] = `
         "DomainValidationOptions": [
           {
             "DomainName": "mellevanderlinde.com",
-            "ValidationDomain": "mellevanderlinde.com",
+            "HostedZoneId": "DUMMY",
           },
         ],
         "Tags": [
@@ -194,7 +194,7 @@ exports[`Match with snapshot 1`] = `
             "Value": "TestPortfolioCloudfrontStack/Certificate",
           },
         ],
-        "ValidationMethod": "EMAIL",
+        "ValidationMethod": "DNS",
       },
       "Type": "AWS::CertificateManager::Certificate",
     },

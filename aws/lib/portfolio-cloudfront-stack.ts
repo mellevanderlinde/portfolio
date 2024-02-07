@@ -19,14 +19,17 @@ export class PortfolioCloudfrontStack extends Stack {
     super(scope, id, props);
 
     const domainName = "mellevanderlinde.com";
+    const hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
+      domainName,
+    });
     const bucket = this.createBucket();
-    const certificate = this.createCertificate(domainName);
+    const certificate = this.createCertificate(domainName, hostedZone);
     const distribution = this.createDistribution(
       bucket,
       certificate,
       domainName,
     );
-    this.createRecord(distribution, domainName);
+    this.createRecord(distribution, hostedZone);
     this.copyPortfolio(bucket, distribution);
   }
 
@@ -38,9 +41,13 @@ export class PortfolioCloudfrontStack extends Stack {
     });
   }
 
-  createCertificate(domainName: string): certificatemanager.Certificate {
+  createCertificate(
+    domainName: string,
+    hostedZone: route53.IHostedZone,
+  ): certificatemanager.Certificate {
     return new certificatemanager.Certificate(this, "Certificate", {
       domainName,
+      validation: certificatemanager.CertificateValidation.fromDns(hostedZone),
     });
   }
 
@@ -77,15 +84,13 @@ export class PortfolioCloudfrontStack extends Stack {
 
   createRecord(
     distribution: cloudfront.Distribution,
-    domainName: string,
+    hostedZone: route53.IHostedZone,
   ): route53.ARecord {
     return new route53.ARecord(this, "Record", {
       target: route53.RecordTarget.fromAlias(
         new route53_targets.CloudFrontTarget(distribution),
       ),
-      zone: route53.HostedZone.fromLookup(this, "HostedZone", {
-        domainName,
-      }),
+      zone: hostedZone,
     });
   }
 
