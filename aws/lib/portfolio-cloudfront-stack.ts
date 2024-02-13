@@ -79,6 +79,7 @@ export class PortfolioCloudfrontStack extends Stack {
           ttl: Duration.minutes(30),
         },
       ],
+      geoRestriction: cloudfront.GeoRestriction.allowlist("NL", "BE", "GB"),
     });
   }
 

@@ -466,6 +466,16 @@ exports[`Match with snapshot 1`] = `
             },
           ],
           "PriceClass": "PriceClass_100",
+          "Restrictions": {
+            "GeoRestriction": {
+              "Locations": [
+                "NL",
+                "BE",
+                "GB",
+              ],
+              "RestrictionType": "whitelist",
+            },
+          },
           "ViewerCertificate": {
             "AcmCertificateArn": {
               "Ref": "Certificate4E7ABB08",
