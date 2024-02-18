@@ -8,16 +8,15 @@
     "build": "tsc",
     "watch": "tsc -w",
     "cdk": "cdk",
-    "test": "npm run cleanup && jest",
-    "test:update": "npm run cleanup && jest -u",
+    "test": "jest",
+    "test:update": "jest -u",
     "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "cleanup": "rm -f ../portfolio/build/.DS_Store"
+    "lint:fix": "eslint . --ext .ts --fix"
   },
   "devDependencies": {
     "@types/jest": "^29.5.11",
     "@types/node": "^20.11.5",
-    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.1",
     "aws-cdk": "^2.122.0",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1",

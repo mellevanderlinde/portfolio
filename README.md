@@ -1,6 +1,6 @@
 # Portfolio with Amazon CloudFront
 
-This repository contains my portfolio, served with Amazon CloudFront and S3 on [mellevanderlinde.com](https://mellevanderlinde.com/). The portfolio design is a React template made by Eldora Boo.
+This repository contains my portfolio, served with Amazon CloudFront and S3 on [mellevanderlinde.com](https://mellevanderlinde.com/). The portfolio design is a React template made by [Raj Shekhar](https://github.com/rajshekhar26/cleanfolio).
 
 ## Deploy
 
