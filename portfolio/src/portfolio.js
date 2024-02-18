@@ -48,7 +48,6 @@ const skills = [
   'Airflow',
   'GitHub Actions',
   'ML',
-  
 ]
 
 const contact = {
