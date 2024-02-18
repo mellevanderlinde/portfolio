@@ -1,3 +1,0 @@
-PostNL
-Student Assistant
-Education
