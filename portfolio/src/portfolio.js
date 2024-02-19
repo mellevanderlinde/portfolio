@@ -7,7 +7,8 @@ const about = {
   name: 'Melle',
   role: 'Cloud Engineer @ PostNL',
   description:
-    'I have an interest in cloud engineering, machine learning, technology and sustainability. Since 2021 I have been working at PostNL.',
+    "I have an interest in cloud engineering, machine learning, technology and sustainability. " +
+    "After completing my Master's in Behavioural Data Science, I joined PostNL as MLOps Engineer, where I now work as Cloud Engineer.",
   // resume: 'https://example.com',
   social: {
     linkedin: 'https://linkedin.com/in/mellevdlinde',
