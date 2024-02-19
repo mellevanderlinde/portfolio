@@ -37,4 +37,4 @@ jobs:
       - name: Deploy
         working-directory: ./aws
         if: ${{ github.ref == 'refs/heads/main' }}
-        run: npx cdk deploy -c accountId=${{ secrets.ACCOUNT_ID }}
+        run: npx cdk deploy -c accountId=${{ secrets.ACCOUNT_ID }} --require-approval never
