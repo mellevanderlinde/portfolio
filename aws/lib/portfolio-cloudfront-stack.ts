@@ -36,6 +36,7 @@ export class PortfolioCloudfrontStack extends Stack {
   createBucket(): s3.Bucket {
     return new s3.Bucket(this, "Bucket", {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      enforceSSL: true,
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
     });
