@@ -22,42 +22,25 @@ export class PortfolioCloudfrontStack extends Stack {
     const hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
       domainName,
     });
-    const bucket = this.createBucket();
-    const certificate = this.createCertificate(domainName, hostedZone);
-    const distribution = this.createDistribution(
-      bucket,
-      certificate,
-      domainName,
-    );
-    this.createRecord(distribution, hostedZone);
-    this.copyPortfolio(bucket, distribution);
-  }
 
-  createBucket(): s3.Bucket {
-    return new s3.Bucket(this, "Bucket", {
+    const bucket = new s3.Bucket(this, "Bucket", {
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       enforceSSL: true,
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
     });
-  }
 
-  createCertificate(
-    domainName: string,
-    hostedZone: route53.IHostedZone,
-  ): certificatemanager.Certificate {
-    return new certificatemanager.Certificate(this, "Certificate", {
-      domainName,
-      validation: certificatemanager.CertificateValidation.fromDns(hostedZone),
-    });
-  }
+    const certificate = new certificatemanager.Certificate(
+      this,
+      "Certificate",
+      {
+        domainName,
+        validation:
+          certificatemanager.CertificateValidation.fromDns(hostedZone),
+      },
+    );
 
-  createDistribution(
-    bucket: s3.Bucket,
-    certificate: certificatemanager.Certificate,
-    domainName: string,
-  ): cloudfront.Distribution {
-    return new cloudfront.Distribution(this, "Distribution", {
+    const distribution = new cloudfront.Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
         origin: new cloudfront_origins.S3Origin(bucket, {
@@ -82,30 +65,20 @@ export class PortfolioCloudfrontStack extends Stack {
       ],
       geoRestriction: cloudfront.GeoRestriction.allowlist("NL", "BE", "GB"),
     });
-  }
 
-  createRecord(
-    distribution: cloudfront.Distribution,
-    hostedZone: route53.IHostedZone,
-  ): route53.ARecord {
-    return new route53.ARecord(this, "Record", {
+    new route53.ARecord(this, "Record", {
       target: route53.RecordTarget.fromAlias(
         new route53_targets.CloudFrontTarget(distribution),
       ),
       zone: hostedZone,
     });
-  }
 
-  copyPortfolio(
-    bucket: s3.Bucket,
-    distribution: cloudfront.Distribution,
-  ): s3_deployment.BucketDeployment {
     const logGroup = new logs.LogGroup(this, "LogGroup", {
       retention: logs.RetentionDays.ONE_DAY,
       removalPolicy: RemovalPolicy.DESTROY,
     });
 
-    return new s3_deployment.BucketDeployment(this, "BucketDeployment", {
+    new s3_deployment.BucketDeployment(this, "BucketDeployment", {
       destinationBucket: bucket,
       sources: [s3_deployment.Source.asset("../portfolio/build")],
       distribution,
