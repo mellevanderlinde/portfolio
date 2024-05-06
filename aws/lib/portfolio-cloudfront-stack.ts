@@ -40,15 +40,17 @@ export class PortfolioCloudfrontStack extends Stack {
       },
     );
 
+    const origin = new cloudfront_origins.S3Origin(bucket, {
+      originAccessIdentity: new cloudfront.OriginAccessIdentity(
+        this,
+        "Identity",
+      ),
+    });
+
     const distribution = new cloudfront.Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
-        origin: new cloudfront_origins.S3Origin(bucket, {
-          originAccessIdentity: new cloudfront.OriginAccessIdentity(
-            this,
-            "Identity",
-          ),
-        }),
+        origin,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
