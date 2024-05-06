@@ -95,7 +95,7 @@ exports[`Match with snapshot 1`] = `
           "cdk-hnb659fds-assets-012345678912-us-east-1",
         ],
         "SourceObjectKeys": [
-          "87179e71444c43eae8f12cd3f1c271fcf90455d657e23ed0fbf47a74d57353e6.zip",
+          "b7e8f940158f3fded85b937764265c059ce8054c5d1af1a3f7c5a2d33230ba0f.zip",
         ],
       },
       "Type": "Custom::CDKBucketDeployment",
@@ -402,7 +402,7 @@ exports[`Match with snapshot 1`] = `
       "Properties": {
         "Code": {
           "S3Bucket": "cdk-hnb659fds-assets-012345678912-us-east-1",
-          "S3Key": "6c1e9b465fa4b2d651dbc9ce3e732d8702a7b19137327684a71d89f1d355f1a2.zip",
+          "S3Key": "2eb6a831b107939f63cfebf68e6316e1a40f79fc99cae0fee9b333bac8d29bc4.zip",
         },
         "Description": {
           "Fn::Join": [
