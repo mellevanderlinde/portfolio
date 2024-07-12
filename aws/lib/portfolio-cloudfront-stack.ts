@@ -82,7 +82,7 @@ export class PortfolioCloudfrontStack extends Stack {
 
     new s3_deployment.BucketDeployment(this, "BucketDeployment", {
       destinationBucket: bucket,
-      sources: [s3_deployment.Source.asset("../portfolio/build")],
+      sources: [s3_deployment.Source.asset("../portfolio/dist")],
       distribution,
       distributionPaths: ["/*"],
       logGroup,
