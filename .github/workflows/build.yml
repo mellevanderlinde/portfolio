@@ -11,6 +11,7 @@ jobs:
         working-directory: ./portfolio
         run: |
           yarn install
+          yarn lint
           yarn build
           
       - name: Build AWS
