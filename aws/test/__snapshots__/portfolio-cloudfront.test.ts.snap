@@ -95,7 +95,7 @@ exports[`Match with snapshot 1`] = `
           "cdk-hnb659fds-assets-012345678912-us-east-1",
         ],
         "SourceObjectKeys": [
-          "3e4ed2014896e8abcd881ba0adad3bad46c1a7417cce7845b6e220cb7af9be4b.zip",
+          "removed-hash",
         ],
       },
       "Type": "Custom::CDKBucketDeployment",
