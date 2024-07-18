@@ -1,20 +1,20 @@
 {
   "root": true,
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "node": true
-  },
+  "parser": "@typescript-eslint/parser",
   "plugins": [
+    "import",
+    "@typescript-eslint",
     "prettier"
   ],
   "extends": [
-    "eslint:recommended"
+    "next/core-web-vitals",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
-    "prettier/prettier": "error"
-  },
-  "parserOptions": {
-    "sourceType": "module"
+    "prettier/prettier": [
+      "error"
+    ]
   }
 }

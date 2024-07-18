@@ -11,5 +11,11 @@ test("Match with snapshot", () => {
     },
   );
   const template = assertions.Template.fromStack(stack);
-  expect(template.toJSON()).toMatchSnapshot();
+
+  // Remove hashes from snapshot
+  const resource = template.findResources("Custom::CDKBucketDeployment");
+  Object.keys(resource).forEach((key) => {
+    resource[key].Properties.SourceObjectKeys = ["removed-hash"];
+  });
+  expect(template).toMatchSnapshot();
 });

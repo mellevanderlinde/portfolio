@@ -61,7 +61,7 @@ export class PortfolioCloudfrontStack extends Stack {
         {
           httpStatus: 403,
           responseHttpStatus: 403,
-          responsePagePath: "/error.html",
+          responsePagePath: "/404.html",
           ttl: Duration.minutes(30),
         },
       ],
@@ -82,7 +82,7 @@ export class PortfolioCloudfrontStack extends Stack {
 
     new s3_deployment.BucketDeployment(this, "BucketDeployment", {
       destinationBucket: bucket,
-      sources: [s3_deployment.Source.asset("../portfolio/dist")],
+      sources: [s3_deployment.Source.asset("../portfolio/out")],
       distribution,
       distributionPaths: ["/*"],
       logGroup,

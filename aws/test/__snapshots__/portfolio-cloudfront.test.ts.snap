@@ -95,7 +95,7 @@ exports[`Match with snapshot 1`] = `
           "cdk-hnb659fds-assets-012345678912-us-east-1",
         ],
         "SourceObjectKeys": [
-          "3251e5cac27f0065c637ee41ebf700ff28404aeb58c36f8f5811207e280b2a61.zip",
+          "removed-hash",
         ],
       },
       "Type": "Custom::CDKBucketDeployment",
@@ -462,7 +462,7 @@ exports[`Match with snapshot 1`] = `
               "ErrorCachingMinTTL": 1800,
               "ErrorCode": 403,
               "ResponseCode": 403,
-              "ResponsePagePath": "/error.html",
+              "ResponsePagePath": "/404.html",
             },
           ],
           "DefaultCacheBehavior": {
