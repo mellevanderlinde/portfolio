@@ -1,4 +1,4 @@
-import { H1 } from "app/components/header";
+import { H1, H2 } from "app/components/header";
 import { ArrowIcon } from "app/components/footer";
 import { ReactElement } from "react";
 
@@ -13,7 +13,7 @@ function createProject(
 ): ReactElement {
   return (
     <section>
-      <h2 className="font-semibold text-xl mb-4 tracking-tighter">{title}</h2>
+      <H2 title={title} />
       <p className="mb-4">
         {description}
         <a
