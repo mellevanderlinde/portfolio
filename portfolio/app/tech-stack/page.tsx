@@ -1,3 +1,4 @@
+import { H1 } from "app/components/header";
 import { ReactElement } from "react";
 
 export const metadata = {
@@ -17,9 +18,7 @@ function createItemList(items: string[]): ReactElement {
 export default function Page(): ReactElement {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">
-        Tech Stack
-      </h1>
+      <H1 title="Tech Stack" />
       {createItemList([
         "AWS",
         "TypeScript",

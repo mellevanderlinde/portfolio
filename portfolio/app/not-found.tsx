@@ -1,11 +1,10 @@
+import { H1 } from "./components/header";
 import { ReactElement } from "react";
 
 export default function NotFound(): ReactElement {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        404 - Page Not Found
-      </h1>
+      <H1 title="404 - Page Not Found" />
       <p className="mb-4">The page you are looking for does not exist.</p>
     </section>
   );

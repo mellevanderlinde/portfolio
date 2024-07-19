@@ -1,11 +1,10 @@
+import { H1 } from "./components/header";
 import { ReactElement } from "react";
 
 export default function Page(): ReactElement {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        Melle van der Linde
-      </h1>
+      <H1 title="Melle van der Linde" />
       <p className="mb-4">
         {`I have an interest in cloud engineering, machine learning, technology 
         and sustainability. After completing my Master's in Behavioural Data 

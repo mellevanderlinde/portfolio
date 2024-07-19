@@ -1,3 +1,4 @@
+import { H1 } from "app/components/header";
 import { ArrowIcon } from "app/components/footer";
 import { ReactElement } from "react";
 
@@ -32,7 +33,7 @@ function createProject(
 export default function Page(): ReactElement {
   return (
     <section>
-      <h1 className="font-semibold text-2xl mb-8 tracking-tighter">Projects</h1>
+      <H1 title="Projects" />
 
       {createProject(
         "Bedrock API",
