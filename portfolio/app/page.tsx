@@ -1,4 +1,6 @@
-export default function Page() {
+import { ReactElement } from "react";
+
+export default function Page(): ReactElement {
   return (
     <section>
       <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
