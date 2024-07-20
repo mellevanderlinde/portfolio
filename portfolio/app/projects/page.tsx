@@ -1,4 +1,4 @@
-import { H1, H2 } from "app/components/header";
+import { Header1, Header2 } from "app/components/headers";
 import { ArrowIcon } from "app/components/footer";
 import { ReactElement } from "react";
 
@@ -13,7 +13,7 @@ function createProject(
 ): ReactElement {
   return (
     <section>
-      <H2 title={title} />
+      <Header2 title={title} />
       <p className="mb-4">
         {description}
         <a
@@ -33,7 +33,7 @@ function createProject(
 export default function Page(): ReactElement {
   return (
     <section>
-      <H1 title="Projects" />
+      <Header1 title="Projects" />
 
       {createProject(
         "Bedrock API",

@@ -1,4 +1,4 @@
-import { H1 } from "app/components/header";
+import { Header1 } from "app/components/headers";
 import { ReactElement } from "react";
 
 export const metadata = {
@@ -18,7 +18,7 @@ function createItemList(items: string[]): ReactElement {
 export default function Page(): ReactElement {
   return (
     <section>
-      <H1 title="Tech Stack" />
+      <Header1 title="Tech Stack" />
       {createItemList([
         "AWS",
         "TypeScript",
