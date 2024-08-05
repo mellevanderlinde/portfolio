@@ -5,11 +5,11 @@ const navItems = {
   "/": {
     name: "home",
   },
-  "/projects": {
-    name: "projects",
+  "/work": {
+    name: "work",
   },
-  "/tech-stack": {
-    name: "tech stack",
+  projects: {
+    name: "projects",
   },
 };
 
