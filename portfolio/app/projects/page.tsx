@@ -1,5 +1,4 @@
 import { Header1, Header2 } from "app/components/headers";
-import { ArrowIcon } from "app/components/footer";
 import { ReactElement } from "react";
 
 export const metadata = {
@@ -14,7 +13,7 @@ function createProject(
   return (
     <section>
       <Header2 title={title} />
-      <p className="mb-4">
+      <p className="prose prose-neutral dark:prose-invert">
         {description}
         <a
           className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
@@ -22,8 +21,7 @@ function createProject(
           target="_blank"
           href={repositoryUrl}
         >
-          <ArrowIcon />
-          <p className="ml-2 h-7">Repository</p>
+          <p className="prose prose-neutral dark:prose-invert">Repository</p>
         </a>
       </p>
     </section>

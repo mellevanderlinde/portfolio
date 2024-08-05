@@ -7,7 +7,7 @@ export const metadata = {
 
 function createItemList(items: string[]): ReactElement {
   return (
-    <ul className="list-disc ml-6">
+    <ul className="list-disc ml-6 prose prose-neutral dark:prose-invert">
       {items.map((item) => (
         <li key={item}>{item}</li>
       ))}
