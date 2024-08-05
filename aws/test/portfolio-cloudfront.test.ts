@@ -13,9 +13,16 @@ test("Match with snapshot", () => {
   const template = assertions.Template.fromStack(stack);
 
   // Remove hashes from snapshot
-  const resource = template.findResources("Custom::CDKBucketDeployment");
-  Object.keys(resource).forEach((key) => {
-    resource[key].Properties.SourceObjectKeys = ["removed-hash"];
+  const bucketDeployment = template.findResources(
+    "Custom::CDKBucketDeployment",
+  );
+  Object.keys(bucketDeployment).forEach((key) => {
+    bucketDeployment[key].Properties.SourceObjectKeys = ["removed-hash"];
   });
+  const lambdaFunction = template.findResources("AWS::Lambda::Function");
+  Object.keys(lambdaFunction).forEach((key) => {
+    lambdaFunction[key].Properties.Code.S3Key = "removed-hash";
+  });
+
   expect(template).toMatchSnapshot();
 });
