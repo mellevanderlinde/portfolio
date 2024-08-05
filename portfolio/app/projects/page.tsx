@@ -33,7 +33,7 @@ function createProject(
 export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 title="Projects" />
+      <Header1 title="projects" />
 
       {createProject(
         "Bedrock API",

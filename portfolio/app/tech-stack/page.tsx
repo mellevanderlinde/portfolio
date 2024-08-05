@@ -18,7 +18,7 @@ function createItemList(items: string[]): ReactElement {
 export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 title="Tech Stack" />
+      <Header1 title="tech stack" />
       {createItemList([
         "AWS",
         "TypeScript",

@@ -5,7 +5,7 @@ import { ReactElement } from "react";
 export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 title="Melle van der Linde" />
+      <Header1 title="hey, I'm melle 👋" />
       <Paragraph
         text="I have an interest in cloud engineering, machine learning, technology 
         and sustainability. After completing my Master's in Behavioural Data 
