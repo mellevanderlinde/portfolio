@@ -9,7 +9,7 @@ import { ReactElement } from "react";
 export const metadata: Metadata = {
   title: {
     default: "Melle van der Linde",
-    template: "%s - Melle van der Linde",
+    template: "%s | Melle van der Linde",
   },
 };
 
