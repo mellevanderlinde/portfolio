@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Projects",
 };
 
-export default function WorkPage(): ReactElement {
+export default function ProjectsPage(): ReactElement {
   return (
     <section>
       <Header1 text="my projects" />
