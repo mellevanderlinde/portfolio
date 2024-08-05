@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { PreloadResources } from "app/preload";
 import { Header1 } from "./components/header";
-import { Paragraph } from "./components/paragraph";
 import { ReactElement } from "react";
 
 function Badge(props): ReactElement {
@@ -34,17 +33,17 @@ function ArrowIcon(): ReactElement {
 function FooterItem(name: string, url: string): ReactElement {
   return (
     <li>
-          <a
-            className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
-            rel="noopener noreferrer"
-            target="_blank"
-            href={url}
-          >
-            <ArrowIcon />
-            <p className="ml-2 h-7">{name}</p>
-          </a>
-        </li>
-  )
+      <a
+        className="flex items-center transition-all hover:text-neutral-800 dark:hover:text-neutral-100"
+        rel="noopener noreferrer"
+        target="_blank"
+        href={url}
+      >
+        <ArrowIcon />
+        <p className="ml-2 h-7">{name}</p>
+      </a>
+    </li>
+  );
 }
 
 export default function Page(): ReactElement {
@@ -71,7 +70,10 @@ export default function Page(): ReactElement {
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">
         {FooterItem("github", "https://github.com/mellevanderlinde")}
         {FooterItem("linkedin", "https://linkedin.com/in/mellevdlinde")}
-        {FooterItem("source", "https://github.com/mellevanderlinde/portfolio-cloudfront")}
+        {FooterItem(
+          "source",
+          "https://github.com/mellevanderlinde/portfolio-cloudfront",
+        )}
       </ul>
     </section>
   );
