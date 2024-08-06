@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Header1 } from "app/components/header";
-import { Paragraph } from "app/components/paragraph";
+import { Header1, Header2 } from "app/components/header";
 import { HorizontalLine } from "app/components/line";
 import { ReactElement } from "react";
 import { Badge } from "app/components/bagde";
@@ -9,14 +8,14 @@ export const metadata: Metadata = {
   title: "Work",
 };
 
-function WorkSection(
+function WorkItem(
   company: string,
   title: string,
   content: ReactElement,
 ): ReactElement {
   return (
     <div>
-      <h2 className="font-medium text-xl mb-1 tracking-tighter">{company}</h2>
+      <Header2 text={company} />
       <p className="text-neutral-600 dark:text-neutral-400 text-sm">{title}</p>
       {content}
     </div>
@@ -28,11 +27,7 @@ export default function WorkPage(): ReactElement {
     <section>
       <Header1 text="my work" />
       <div className="prose prose-neutral dark:prose-invert">
-        <Paragraph text="Here's a brief summary of my work so far." />
-
-        <HorizontalLine />
-
-        {WorkSection(
+        {WorkItem(
           "PostNL",
           "Cloud Engineer",
           <section>
@@ -75,10 +70,8 @@ export default function WorkPage(): ReactElement {
             </p>
           </section>,
         )}
-
         <HorizontalLine />
-
-        {WorkSection(
+        {WorkItem(
           "PostNL",
           "MLOps Engineer, 2021 — 2023",
           <p>
