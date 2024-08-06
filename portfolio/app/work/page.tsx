@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Header1 } from "app/components/header";
 import { Paragraph } from "app/components/paragraph";
 import { HorizontalLine } from "app/components/line";
@@ -30,6 +29,7 @@ export default function WorkPage(): ReactElement {
       <Header1 text="my work" />
       <div className="prose prose-neutral dark:prose-invert">
         <Paragraph text="Here's a brief summary of my work so far." />
+
         <HorizontalLine />
 
         {WorkSection(
@@ -82,12 +82,11 @@ export default function WorkPage(): ReactElement {
           "PostNL",
           "MLOps Engineer, 2021 — 2023",
           <p>
-            Hy-Vee, an almost 100-year-old grocery chain in the United States,
-            wanted to build a new version of their digital storefront. I joined
-            a team of{" "}
-            <Link href="/blog/product-engineers">product engineers</Link>{" "}
-            working across web and mobile to rebuild their legacy .NET
-            application (~500k MAU) with React and React Native.
+            {`In this role, my team was responsible for the deployment and 
+            monitoring of data science models on AWS. The stack included
+            containerization (Docker), infrastructure as code (AWS CDK), CI/CD 
+            (GitHub Actions and AWS CodePipeline), orchestration (Airflow), 
+            parallelization (PySpark).`}
           </p>,
         )}
       </div>
