@@ -37,8 +37,12 @@ export default function ProjectsPage(): ReactElement {
         "https://github.com/mellevanderlinde/bedrock-apigateway",
         <section>
           <p className="prose prose-neutral dark:prose-invert">
-            {`AWS CDK project that deploys an API endpoint to interact with a 
-            large language model from Amazon's generative AI service.`}
+            {`AWS CDK project that deploys an API endpoint using API Gateway. 
+            The endpoint interacts with a large language model from `}
+            <a href="https://aws.amazon.com/bedrock/">
+              {`Amazon's generative AI service`}
+            </a>
+            {`.`}
           </p>
         </section>,
       )}
@@ -63,8 +67,9 @@ export default function ProjectsPage(): ReactElement {
         "https://github.com/mellevanderlinde/mwaa-airflow",
         <section>
           <p className="prose prose-neutral dark:prose-invert">
-            {`AWS CDK project that deploys an MWAA environment for Airflow. 
-            The repository contains a minimal DAG that invokes a Lambda function.`}
+            {`AWS CDK project that deploys an MWAA environment for `}
+            <a href="https://airflow.apache.org">Apache Airflow</a>
+            {`. The repository contains a minimal DAG that invokes a Lambda function.`}
           </p>
         </section>,
       )}
