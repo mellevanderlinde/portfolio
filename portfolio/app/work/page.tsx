@@ -68,7 +68,7 @@ export default function WorkPage(): ReactElement {
                 >
                   <use href="/sprite.svg#jfrog" />
                 </svg>
-                JFog
+                JFrog
               </Badge>
               {` integrations. This project used an internal tool I developed to 
               make OIDC integration easier for engineers.`}
