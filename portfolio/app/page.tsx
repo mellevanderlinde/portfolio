@@ -1,17 +1,8 @@
 import Link from "next/link";
 import { PreloadResources } from "app/preload";
 import { Header1 } from "./components/header";
+import { Badge } from "./components/bagde";
 import { ReactElement } from "react";
-
-function Badge(props): ReactElement {
-  return (
-    <a
-      {...props}
-      target="_blank"
-      className="inline-flex items-center rounded border border-neutral-200 bg-neutral-50 p-1 text-sm leading-4 text-neutral-900 no-underline dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
-    />
-  );
-}
 
 function ArrowIcon(): ReactElement {
   return (
@@ -55,14 +46,12 @@ export default function Page(): ReactElement {
         {`I have an interest in cloud engineering, machine learning, technology 
         and sustainability. After completing my Master's in Behavioural Data 
         Science, I joined `}
-        <span className="not-prose">
-          <Badge href="https://postnl.nl">
-            <svg width="13" height="11" role="img" className="mr-1 inline-flex">
-              <use href="/sprite.svg#postnl" />
-            </svg>
-            PostNL
-          </Badge>
-        </span>
+        <Badge href="https://postnl.nl">
+          <svg width="13" height="11" role="img" className="mr-1 inline-flex">
+            <use href="/sprite.svg#postnl" />
+          </svg>
+          PostNL
+        </Badge>
         {` as MLOps Engineer, where I now `}
         <Link href="/work">work</Link>
         {` as Cloud Engineer.`}

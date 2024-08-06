@@ -4,6 +4,7 @@ import { Header1 } from "app/components/header";
 import { Paragraph } from "app/components/paragraph";
 import { HorizontalLine } from "app/components/line";
 import { ReactElement } from "react";
+import { Badge } from "app/components/bagde";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -36,47 +37,41 @@ export default function WorkPage(): ReactElement {
           "Cloud Engineer",
           <section>
             <p>
-              I joined <a href="https://vercel.com/home">Vercel</a> early to
-              grow <a href="https://nextjs.org">Next.js</a> and our developer
-              community. I built our Developer Relations team to teach our
-              community about our products.
+              {`In 2023 I joined the Cloud Center of Excellence (CCoE) team. 
+              My (platform) team works on the serverless cloud platform on AWS, 
+              used by all engineers. The stack includes a wide variety of services 
+              from AWS (e.g., IAM, CloudFormation, API Gateway, Organizations, 
+              Lambda, DynamoDB).`}
             </p>
-            <ul>
-              <li>
-                In 2021, I was promoted to Director of DevRel. We{" "}
-                <a href="https://twitter.com/kelseyhightower/status/1105985400110112768">
-                  translated customer pain
-                </a>{" "}
-                back into the product roadmap. We spoke at{" "}
-                <Link href="/blog/nextjs-conf-2022-recap">conferences</Link>,
-                wrote blog posts, and created videos. We built open-source
-                examples and contributed back to the product.
-              </li>
-              <li>
-                In 2022, I was promoted to VP of Developer Experience, now also
-                leading our product documentation team. My team created a{" "}
-                <a href="https://nextjs.org/learn">new free course</a> to teach
-                Next.js, which had 17 million page views that year.{" "}
-                <a href="https://twitter.com/leeerob/status/1608900031859527682">
-                  I shipped.
-                </a>{" "}
-                I partnered with our open-source community, collaborating with
-                frameworks like{" "}
-                <a href="https://vercel.com/docs/frameworks/nuxt">Nuxt</a> and{" "}
-                <a href="https://astro.build/blog/vercel-official-hosting-partner/">
-                  Astro
-                </a>{" "}
-                and sponsoring individuals and projects.
-              </li>
-              <li>
-                In 2023, I was promoted to VP of Product, now also leading
-                Product Management.
-              </li>
-            </ul>
             <p>
-              Since I joined Vercel in 2020, Next.js active developers have
-              grown 1000%, now at ~900k. Next.js is now a top 10 software
-              project on GitHub with.
+              {`
+              As an example project, I guided engineering teams to migrate their 
+              GitHub Actions to use OpenID Connect (OIDC) for `}
+              <Badge href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
+                <svg
+                  width="13"
+                  height="11"
+                  role="img"
+                  className="mr-1 inline-flex"
+                >
+                  <use href="/sprite.svg#aws" />
+                </svg>
+                AWS
+              </Badge>
+              {` and `}
+              <Badge href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
+                <svg
+                  width="13"
+                  height="11"
+                  role="img"
+                  className="mr-1 inline-flex"
+                >
+                  <use href="/sprite.svg#jfrog" />
+                </svg>
+                JFog
+              </Badge>
+              {` integrations. This project used an internal tool I developed to 
+              make OIDC integration easier for engineers.`}
             </p>
           </section>,
         )}
