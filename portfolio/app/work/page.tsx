@@ -48,7 +48,7 @@ export default function WorkPage(): ReactElement {
               <a href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
                 JFrog
               </a>
-              {` integrations. This project used an internal tool I developed to 
+              {` integrations. This project uses an internal tool I developed to 
               make OIDC integration easier for engineers.`}
             </p>
           </section>,
