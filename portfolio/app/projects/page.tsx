@@ -17,7 +17,7 @@ function ProjectItem(
     <div>
       <Header2 text={title} />
       {content}
-      <p className="mb-1" />
+      <p className="mb-2" />
       <Badge href={url}>
         <svg width="13" height="11" role="img" className="mr-1 inline-flex">
           <use href="/sprite.svg#github" />
@@ -36,7 +36,10 @@ export default function ProjectsPage(): ReactElement {
         "Bedrock API",
         "https://github.com/mellevanderlinde/bedrock-apigateway",
         <section>
-          <p className="prose prose-neutral dark:prose-invert">{`AWS CDK project that deploys an API endpoint to interact with a large language model from Amazon's generative AI service.`}</p>
+          <p className="prose prose-neutral dark:prose-invert">
+            {`AWS CDK project that deploys an API endpoint to interact with a 
+            large language model from Amazon's generative AI service.`}
+          </p>
         </section>,
       )}
       <HorizontalLine />
@@ -44,7 +47,14 @@ export default function ProjectsPage(): ReactElement {
         "CloudFront Portfolio",
         "https://github.com/mellevanderlinde/portfolio-cloudfront",
         <section>
-          <p className="prose prose-neutral dark:prose-invert">{`AWS CDK project that serves this portfolio with CloudFront. The portfolio design is a template from Vercel.`}</p>
+          <p className="prose prose-neutral dark:prose-invert">
+            {`AWS CDK project that serves this portfolio with Amazon CloudFront. 
+            This portfolio design is a `}
+            <a href="https://github.com/leerob/leerob.io">
+              template by Lee Robinson
+            </a>
+            {`.`}
+          </p>
         </section>,
       )}
       <HorizontalLine />
@@ -52,7 +62,10 @@ export default function ProjectsPage(): ReactElement {
         "Airflow on AWS",
         "https://github.com/mellevanderlinde/mwaa-airflow",
         <section>
-          <p className="prose prose-neutral dark:prose-invert">{`AWS CDK project that deploys an MWAA environment for Airflow and an example DAG.`}</p>
+          <p className="prose prose-neutral dark:prose-invert">
+            {`AWS CDK project that deploys an MWAA environment for Airflow. 
+            The repository contains a minimal DAG that invokes a Lambda function.`}
+          </p>
         </section>,
       )}
     </section>

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Header1, Header2 } from "app/components/header";
 import { HorizontalLine } from "app/components/line";
 import { ReactElement } from "react";
-import { Badge } from "app/components/bagde";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -42,29 +41,13 @@ export default function WorkPage(): ReactElement {
               {`
               As an example project, I guided engineering teams to migrate their 
               GitHub Actions to use OpenID Connect (OIDC) for `}
-              <Badge href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
-                <svg
-                  width="13"
-                  height="11"
-                  role="img"
-                  className="mr-1 inline-flex"
-                >
-                  <use href="/sprite.svg#aws" />
-                </svg>
+              <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
                 AWS
-              </Badge>
+              </a>
               {` and `}
-              <Badge href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
-                <svg
-                  width="13"
-                  height="11"
-                  role="img"
-                  className="mr-1 inline-flex"
-                >
-                  <use href="/sprite.svg#jfrog" />
-                </svg>
+              <a href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
                 JFrog
-              </Badge>
+              </a>
               {` integrations. This project used an internal tool I developed to 
               make OIDC integration easier for engineers.`}
             </p>
