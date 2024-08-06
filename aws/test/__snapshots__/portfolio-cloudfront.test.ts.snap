@@ -461,8 +461,8 @@ exports[`Match with snapshot 1`] = `
             {
               "ErrorCachingMinTTL": 1800,
               "ErrorCode": 403,
-              "ResponseCode": 403,
-              "ResponsePagePath": "/404.html",
+              "ResponseCode": 200,
+              "ResponsePagePath": "/index.html",
             },
           ],
           "DefaultCacheBehavior": {

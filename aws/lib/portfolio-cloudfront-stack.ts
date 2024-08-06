@@ -60,8 +60,8 @@ export class PortfolioCloudfrontStack extends Stack {
       errorResponses: [
         {
           httpStatus: 403,
-          responseHttpStatus: 403,
-          responsePagePath: "/404.html",
+          responseHttpStatus: 200,
+          responsePagePath: "/index.html",
           ttl: Duration.minutes(30),
         },
       ],
