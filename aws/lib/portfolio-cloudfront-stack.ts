@@ -47,11 +47,23 @@ export class PortfolioCloudfrontStack extends Stack {
       ),
     });
 
+    const function_ = new cloudfront.Function(this, "Function", {
+      code: cloudfront.FunctionCode.fromFile({ filePath: "src/index.js" }),
+      runtime: cloudfront.FunctionRuntime.JS_2_0,
+      comment: "Add index.html to URI (required for Next.js)",
+    });
+
     const distribution = new cloudfront.Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
         origin,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        functionAssociations: [
+          {
+            function: function_,
+            eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+          },
+        ],
       },
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
       httpVersion: cloudfront.HttpVersion.HTTP3,
@@ -60,8 +72,8 @@ export class PortfolioCloudfrontStack extends Stack {
       errorResponses: [
         {
           httpStatus: 403,
-          responseHttpStatus: 200,
-          responsePagePath: "/index.html",
+          responseHttpStatus: 403,
+          responsePagePath: "/404.html",
           ttl: Duration.minutes(30),
         },
       ],

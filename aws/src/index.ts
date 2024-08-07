@@ -1,0 +1,18 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+async function handler(event: any) {
+  const request = event.request;
+  const uri = request.uri;
+
+  // Check whether the URI is missing a file name.
+  if (uri.endsWith("/")) {
+    request.uri += "index.html";
+  }
+  // Check whether the URI is missing a file extension.
+  else if (!uri.includes(".")) {
+    request.uri += "/index.html";
+  }
+
+  return request;
+}
+
+// See https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/example-function-add-index.html
