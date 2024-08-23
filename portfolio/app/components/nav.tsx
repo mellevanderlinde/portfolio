@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ReactElement } from "react";
 
-const navItems = {
+export const navItems = {
   "/": {
     name: "home",
   },
