@@ -15,5 +15,54 @@ The following steps are followed:
 
 1. Create IAM OIDC identity provider
 2. Create IAM role
-3. Assume IAM role from GitHub Actions workflow
-4. Invoke AWS actions from GitHub Actions workflow
+3. Attach permissions to IAM role
+4. Assume IAM role from GitHub Actions workflow
+5. Invoke AWS actions from GitHub Actions workflow
+
+## 1. Create IAM OIDC identity provider
+
+To establish a trust relationship between GitHub and AWS, create an [IAM OIDC Identity Provider](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html) for GitHub.
+For this, the [`CfnOIDCProvider`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.CfnOIDCProvider.html) construct is used.
+
+```TypeScript
+const oidcProvider = new iam.CfnOIDCProvider(this, "GithubOidcProvider", {
+  url: "https://token.actions.githubusercontent.com",
+  clientIdList: ["sts.amazonaws.com"],
+});
+```
+
+## 2. Create IAM role
+
+Next, the created identity provider is used to create an IAM role. 
+The trust policy of the role defines which specific GitHub repository branch is allowed to assume the role (using the pattern `repo:OWNER/REPOSITORY:ref:refs/heads/BRANCH`).
+
+```TypeScript
+const conditions: iam.Conditions = {
+  StringEquals: {
+    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+    "token.actions.githubusercontent.com:sub":
+      "repo:mellevanderlinde/oidc-aws-github:ref:refs/heads/main",
+  },
+};
+
+const oidcRole = new iam.Role(this, "GithubOidcRole", {
+  roleName: "github-oidc-role",
+  assumedBy: new iam.WebIdentityPrincipal(oidcProvider.ref, conditions),
+});
+```
+
+Alternatively, an entire GitHub repository can be allowed using a wildcard `*` in the `conditions`. For this, `StringLike` is required instead of `StringEquals`.
+
+```TypeScript
+const conditions: iam.Conditions = {
+  StringEquals: {
+    "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
+  },
+  StringLike: {
+    "token.actions.githubusercontent.com:sub":
+      "repo:mellevanderlinde/oidc-aws-github:*",
+  },
+};
+```
+
+For other patterns, (e.g. allowing specific GitHub environments), see [Example subject claims](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect#example-subject-claims).
