@@ -63,13 +63,28 @@ export default function ProjectsPage(): ReactElement {
       )}
       <HorizontalLine />
       {ProjectItem(
-        "Airflow on AWS",
+        "Apache Airflow on AWS",
         "https://github.com/mellevanderlinde/mwaa-airflow",
         <section>
           <p className="prose prose-neutral dark:prose-invert">
             {`AWS CDK project that deploys an MWAA environment for `}
             <a href="https://airflow.apache.org">Apache Airflow</a>
             {`. The repository contains a minimal DAG that invokes a Lambda function.`}
+          </p>
+        </section>,
+      )}
+      <HorizontalLine />
+      {ProjectItem(
+        "OpenID Connect for AWS and GitHub Actions",
+        "https://github.com/mellevanderlinde/oidc-aws-github",
+        <section>
+          <p className="prose prose-neutral dark:prose-invert">
+            {`This repository demonstrates how to allow a specific GitHub repository 
+            to invoke actions on AWS from GitHub Actions using `}
+            <a href="https://openid.net/developers/how-connect-works">
+              OpenID Connect
+            </a>
+            {` (OIDC).`}
           </p>
         </section>,
       )}
