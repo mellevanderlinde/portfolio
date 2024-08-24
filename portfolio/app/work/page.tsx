@@ -58,11 +58,10 @@ export default function WorkPage(): ReactElement {
           "PostNL",
           "MLOps Engineer, 2021 — 2023",
           <p>
-            {`In this role, my team was responsible for the deployment and 
-            monitoring of data science models on AWS. The stack included
-            containerization (Docker), infrastructure as code (AWS CDK), CI/CD 
-            (GitHub Actions and AWS CodePipeline), orchestration (Airflow), 
-            parallelization (PySpark).`}
+            {`Responsible for the deployment and monitoring of data science 
+            models on AWS. The stack included containerization (Docker), 
+            infrastructure as code (AWS CDK), CI/CD (GitHub Actions and AWS 
+            CodePipeline), orchestration (Airflow), parallelization (PySpark).`}
           </p>,
         )}
       </div>
