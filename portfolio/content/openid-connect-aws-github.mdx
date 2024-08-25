@@ -9,7 +9,7 @@ For example, a workflow can be used for [AWS CDK](https://docs.aws.amazon.com/cd
 Using [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) such AWS actions can be invoked by an [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) that trusts a specific GitHub repository.
 This solution does not require permanently stored credentials, making it more simple and secure.
 
-This post demonstrates how to allow a specific GitHub repository branch to access AWS (with AWS CDK in TypeScript) and invoke actions on the AWS account (with GitHub Actions).
+This post demonstrates how to allow a specific GitHub repository branch to access AWS (with AWS CDK in TypeScript) and invoke actions on an AWS account (with GitHub Actions).
 
 The following steps are followed:
 
@@ -85,8 +85,8 @@ lookupRole.grantAssumeRole(oidcRole);
 
 ## 4. Assume IAM role from GitHub Actions workflow
 
-Next, the IAM role can be assumed from a GitHub Actions workflow. 
-This can be done with the action [`configure-aws-credentials`](https://github.com/aws-actions/configure-aws-credentials), making `.github/workflows/oidc.yml` look as follows.
+Next, the IAM role is assumed from a GitHub Actions workflow. 
+This is done with the action [`configure-aws-credentials`](https://github.com/aws-actions/configure-aws-credentials), making `.github/workflows/oidc.yml` look as follows.
 
 ```yaml
 on: push
@@ -110,7 +110,7 @@ jobs:
 
 ## 5. Invoke AWS actions from GitHub Actions workflow
 
-The last step is to invoke AWS actions from the workflow. The `cdk diff` command can be run by adding the following step.
+The last step is to invoke AWS actions from the workflow. In this case, the `cdk diff` command is run by adding the following step.
 
 ```yaml
 - name: Invoke AWS action
@@ -119,7 +119,7 @@ The last step is to invoke AWS actions from the workflow. The `cdk diff` command
     npx cdk diff
 ```
 
-This results in the following `.yml` file.
+This results in the following `.github/workflows/oidc.yml` file.
 
 ```yaml
 on: push
