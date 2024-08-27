@@ -84,7 +84,7 @@ export default function ProjectsPage(): ReactElement {
             <a href="https://openid.net/developers/how-connect-works">
               OpenID Connect
             </a>
-            {` (OIDC).`}
+            {`.`}
           </p>
         </section>,
       )}

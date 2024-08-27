@@ -87,6 +87,7 @@ lookupRole.grantAssumeRole(oidcRole);
 
 Next, the IAM role is assumed from a GitHub Actions workflow. 
 This is done with the action [`configure-aws-credentials`](https://github.com/aws-actions/configure-aws-credentials), making `.github/workflows/oidc.yml` look as follows.
+Note that a dummy AWS account ID is used (`012345678912`).
 
 ```yaml
 on: push
