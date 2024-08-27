@@ -64,6 +64,8 @@ export class PortfolioCloudfrontStack extends Stack {
             eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
           },
         ],
+        responseHeadersPolicy:
+          cloudfront.ResponseHeadersPolicy.SECURITY_HEADERS,
       },
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
       httpVersion: cloudfront.HttpVersion.HTTP3,
