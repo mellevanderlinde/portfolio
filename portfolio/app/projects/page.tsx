@@ -33,21 +33,6 @@ export default function ProjectsPage(): ReactElement {
     <section>
       <Header1 text="my projects" />
       {ProjectItem(
-        "Bedrock API",
-        "https://github.com/mellevanderlinde/bedrock-apigateway",
-        <section>
-          <p className="prose prose-neutral dark:prose-invert">
-            {`AWS CDK project that deploys an API endpoint using API Gateway. 
-            The endpoint interacts with a large language model from `}
-            <a href="https://aws.amazon.com/bedrock/">
-              {`Amazon's generative AI service`}
-            </a>
-            {`.`}
-          </p>
-        </section>,
-      )}
-      <HorizontalLine />
-      {ProjectItem(
         "CloudFront Portfolio",
         "https://github.com/mellevanderlinde/portfolio-cloudfront",
         <section>
@@ -63,18 +48,6 @@ export default function ProjectsPage(): ReactElement {
       )}
       <HorizontalLine />
       {ProjectItem(
-        "Apache Airflow on AWS",
-        "https://github.com/mellevanderlinde/mwaa-airflow",
-        <section>
-          <p className="prose prose-neutral dark:prose-invert">
-            {`AWS CDK project that deploys an MWAA environment for `}
-            <a href="https://airflow.apache.org">Apache Airflow</a>
-            {`. The repository contains a minimal DAG that invokes a Lambda function.`}
-          </p>
-        </section>,
-      )}
-      <HorizontalLine />
-      {ProjectItem(
         "OpenID Connect for AWS and GitHub Actions",
         "https://github.com/mellevanderlinde/oidc-aws-github",
         <section>
@@ -85,6 +58,47 @@ export default function ProjectsPage(): ReactElement {
               OpenID Connect
             </a>
             {`.`}
+          </p>
+        </section>,
+      )}
+      <HorizontalLine />
+      {ProjectItem(
+        "Contributions to AWS CDK",
+        "https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde",
+        <section>
+          <p className="prose prose-neutral dark:prose-invert">
+            {`This link shows some contributions (tiny, mostly bug fixes) to the `}
+            <a href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">
+              AWS CDK
+            </a>
+            {` repository.`}
+          </p>
+        </section>,
+      )}
+      <HorizontalLine />
+      {ProjectItem(
+        "Bedrock API",
+        "https://github.com/mellevanderlinde/bedrock-apigateway",
+        <section>
+          <p className="prose prose-neutral dark:prose-invert">
+            {`AWS CDK project that deploys an API endpoint using API Gateway. 
+            The endpoint interacts with a large language model from `}
+            <a href="https://aws.amazon.com/bedrock/">
+              {`Amazon's generative AI service`}
+            </a>
+            {`.`}
+          </p>
+        </section>,
+      )}
+      <HorizontalLine />
+      {ProjectItem(
+        "Apache Airflow on AWS",
+        "https://github.com/mellevanderlinde/mwaa-airflow",
+        <section>
+          <p className="prose prose-neutral dark:prose-invert">
+            {`AWS CDK project that deploys an MWAA environment for `}
+            <a href="https://airflow.apache.org">Apache Airflow</a>
+            {`. The repository contains a minimal DAG that invokes a Lambda function.`}
           </p>
         </section>,
       )}
