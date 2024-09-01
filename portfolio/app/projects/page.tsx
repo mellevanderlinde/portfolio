@@ -17,7 +17,7 @@ function ProjectItem(
     <div>
       <Header2 text={title} />
       {content}
-      <p className="mb-2" />
+      <Paragraph text=""/>
       <Badge href={url}>
         <svg width="13" height="11" role="img" className="mr-1 inline-flex">
           <use href="/sprite.svg#github" />
@@ -28,10 +28,10 @@ function ProjectItem(
   );
 }
 
-export default function ProjectsPage(): ReactElement {
+export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 text="my projects" />
+      <Header1 text="Projects" />
       {ProjectItem(
         "CloudFront Portfolio",
         "https://github.com/mellevanderlinde/portfolio-cloudfront",

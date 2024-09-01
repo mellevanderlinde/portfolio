@@ -21,10 +21,10 @@ function WorkItem(
   );
 }
 
-export default function WorkPage(): ReactElement {
+export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 text="my work" />
+      <Header1 text="Work" />
       <div className="prose prose-neutral dark:prose-invert">
         {WorkItem(
           "PostNL",
