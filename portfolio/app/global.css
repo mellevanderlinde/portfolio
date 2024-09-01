@@ -142,14 +142,6 @@ input[type='email'] {
   text-wrap: balance;
 }
 
-@media (prefers-color-scheme: dark) {
-  .shiki,
-  .shiki span {
-    color: var(--shiki-dark) !important;
-    background-color: var(--shiki-dark-bg) !important;
-  }
-}
-
-p, li {
+p, li, span {
   line-height: 1.75;
 }

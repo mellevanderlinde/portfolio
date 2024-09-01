@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React, { ReactElement } from "react";
-import { codeToHtml } from "shiki";
+import { highlight } from "sugar-high";
 
 function CustomLink(props): ReactElement {
   const href = props.href;
@@ -18,12 +18,13 @@ function CustomLink(props): ReactElement {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-async function Code({ children, ...props }) {
-  const codeHTML = await codeToHtml(children, {
-    lang: "ts",
-    themes: { light: "github-light-default", dark: "github-dark-default" },
-  });
-  return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+function Code({ children, ...props }): ReactElement {
+  return (
+    <code
+      dangerouslySetInnerHTML={{ __html: highlight(children) }}
+      {...props}
+    />
+  );
 }
 
 function slugify(str: string): string {
