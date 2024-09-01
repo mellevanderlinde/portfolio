@@ -33,23 +33,6 @@ export default function Page(): ReactElement {
     <section>
       <Header1 title="Projects" />
       {ProjectItem(
-        "Portfolio with CloudFront and Next.js",
-        "https://github.com/mellevanderlinde/portfolio-cloudfront",
-        <Paragraph
-          content={
-            <>
-              {`AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. 
-                This portfolio design is a `}
-              <a href="https://vercel.com/templates/next.js/portfolio-starter-kit">
-                template by Vercel
-              </a>
-              {`.`}
-            </>
-          }
-        />,
-      )}
-      <HorizontalLine />
-      {ProjectItem(
         "OpenID Connect for AWS and GitHub Actions",
         "https://github.com/mellevanderlinde/oidc-aws-github",
         <Paragraph
@@ -77,6 +60,23 @@ export default function Page(): ReactElement {
                 AWS CDK
               </a>
               {` repository.`}
+            </>
+          }
+        />,
+      )}
+      <HorizontalLine />
+      {ProjectItem(
+        "Portfolio with CloudFront and Next.js",
+        "https://github.com/mellevanderlinde/portfolio-cloudfront",
+        <Paragraph
+          content={
+            <>
+              {`AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. 
+                This portfolio design is a `}
+              <a href="https://vercel.com/templates/next.js/portfolio-starter-kit">
+                template by Vercel
+              </a>
+              {`.`}
             </>
           }
         />,

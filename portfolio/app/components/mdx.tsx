@@ -5,7 +5,6 @@ import React, { ReactElement } from "react";
 
 function CustomLink(props): ReactElement {
   const href = props.href;
-
   if (href.startsWith("/")) {
     return (
       <Link href={href} {...props}>
@@ -13,11 +12,9 @@ function CustomLink(props): ReactElement {
       </Link>
     );
   }
-
   if (href.startsWith("#")) {
     return <a {...props} />;
   }
-
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 

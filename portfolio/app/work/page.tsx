@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Header1, Header2 } from "app/components/header";
+import { Header1 } from "app/components/header";
 import { HorizontalLine } from "app/components/line";
 import { ReactElement } from "react";
 import { Paragraph } from "app/components/paragraph";
@@ -15,7 +15,12 @@ function WorkItem(
 ): ReactElement {
   return (
     <div>
-      <Header2 title={title} />
+      <h2 className="text-xl font-medium tracking-tighter">{company}</h2>
+      <div className="flex justify-between items-center mt-1 mb-4 text-sm">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {title}
+        </p>
+      </div>
       {content}
     </div>
   );
@@ -60,7 +65,7 @@ export default function Page(): ReactElement {
         <HorizontalLine />
         {WorkItem(
           "PostNL",
-          "MLOps Engineer, PostNL (2021 — 2023)",
+          "MLOps Engineer, 2021 — 2023",
           <Paragraph
             content={`Responsible for the deployment and monitoring of data science
               models on AWS. The stack included containerization (Docker), 
