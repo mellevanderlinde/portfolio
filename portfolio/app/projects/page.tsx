@@ -16,7 +16,7 @@ function ProjectItem(
 ): ReactElement {
   return (
     <div>
-      <Header2 text={title} />
+      <Header2 title={title} />
       {content}
       <Badge href={url}>
         <svg width="13" height="11" role="img" className="mr-1 inline-flex">
@@ -31,7 +31,7 @@ function ProjectItem(
 export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 text="Projects" />
+      <Header1 title="Projects" />
       {ProjectItem(
         "Portfolio with CloudFront and Next.js",
         "https://github.com/mellevanderlinde/portfolio-cloudfront",

@@ -8,9 +8,9 @@ export default function Page(): ReactElement {
   return (
     <section>
       <PreloadResources />
-      <Header1 text="My Portfolio" />
+      <Header1 title="My Portfolio" />
       <Paragraph
-        text={`I have an interest in cloud engineering, machine learning, technology 
+        content={`I have an interest in cloud engineering, machine learning, technology 
           and sustainability. After completing my Master's in Behavioural Data Science, 
           I joined PostNL as MLOps Engineer, where I now work as Cloud Engineer.`}
       />

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 text="Blog" />
+      <Header1 title="Blog" />
       <BlogPosts />
     </section>
   );
