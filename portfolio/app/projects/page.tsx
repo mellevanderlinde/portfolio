@@ -4,6 +4,7 @@ import { ReactElement } from "react";
 import { HorizontalLine } from "app/components/line";
 import { Badge } from "app/components/bagde";
 import { Paragraph } from "app/components/paragraph";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -40,9 +41,9 @@ export default function Page(): ReactElement {
             <>
               {`This repository demonstrates how to allow a specific GitHub repository 
               to invoke actions on AWS from GitHub Actions using `}
-              <a href="https://openid.net/developers/how-connect-works">
+              <Link href="https://openid.net/developers/how-connect-works">
                 OpenID Connect
-              </a>
+              </Link>
               {`.`}
             </>
           }
@@ -56,9 +57,9 @@ export default function Page(): ReactElement {
           content={
             <>
               {`This link shows some contributions (tiny, mostly bug fixes) to the `}
-              <a href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">
+              <Link href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">
                 AWS CDK
-              </a>
+              </Link>
               {` repository.`}
             </>
           }
@@ -73,9 +74,9 @@ export default function Page(): ReactElement {
             <>
               {`AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. 
                 This portfolio design is a `}
-              <a href="https://vercel.com/templates/next.js/portfolio-starter-kit">
+              <Link href="https://vercel.com/templates/next.js/portfolio-starter-kit">
                 template by Vercel
-              </a>
+              </Link>
               {`.`}
             </>
           }
@@ -90,9 +91,9 @@ export default function Page(): ReactElement {
             <>
               {`AWS CDK project that deploys an API endpoint using API Gateway. 
               The endpoint interacts with a large language model from `}
-              <a href="https://aws.amazon.com/bedrock/">
+              <Link href="https://aws.amazon.com/bedrock/">
                 {`Amazon's generative AI service`}
-              </a>
+              </Link>
               {`.`}
             </>
           }
@@ -106,7 +107,7 @@ export default function Page(): ReactElement {
           content={
             <>
               {`AWS CDK project that deploys an MWAA environment for `}
-              <a href="https://airflow.apache.org">Apache Airflow</a>
+              <Link href="https://airflow.apache.org">Apache Airflow</Link>
               {`. The repository contains a minimal DAG that invokes a Lambda function.`}
             </>
           }

@@ -149,3 +149,7 @@ input[type='email'] {
     background-color: var(--shiki-dark-bg) !important;
   }
 }
+
+p, li {
+  line-height: 1.75;
+}

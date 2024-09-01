@@ -3,6 +3,7 @@ import { Header1 } from "app/components/header";
 import { HorizontalLine } from "app/components/line";
 import { ReactElement } from "react";
 import { Paragraph } from "app/components/paragraph";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -48,13 +49,13 @@ export default function Page(): ReactElement {
                   {`
                   As an example project, I guided engineering teams to migrate their 
                   GitHub Actions to use OpenID Connect (OIDC) for `}
-                  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
+                  <Link href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
                     AWS
-                  </a>
+                  </Link>
                   {` and `}
-                  <a href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
+                  <Link href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
                     JFrog
-                  </a>
+                  </Link>
                   {` integrations. This project uses an internal tool I developed to 
                   make OIDC integration easier for engineers.`}
                 </>
