@@ -11,18 +11,9 @@ This solution does not require permanently stored credentials, making it more si
 
 This post demonstrates how to allow a specific GitHub repository branch to access AWS (with AWS CDK in TypeScript) and invoke actions on an AWS account (with GitHub Actions).
 
-The following steps are followed:
-
-1. Create IAM OIDC identity provider
-2. Create IAM role
-3. Attach permissions to IAM role
-4. Assume IAM role from GitHub Actions workflow
-5. Invoke AWS actions from GitHub Actions workflow
-
-## 1. Create IAM OIDC identity provider
+## Create IAM OIDC identity provider
 
 To establish a trust relationship between GitHub and AWS, create an [IAM OIDC Identity Provider](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html) for GitHub.
-For this, the [`CfnOIDCProvider`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.aws_iam.CfnOIDCProvider.html) construct is used.
 
 ```TypeScript
 const oidcProvider = new iam.CfnOIDCProvider(this, "GithubOidcProvider", {
@@ -31,7 +22,7 @@ const oidcProvider = new iam.CfnOIDCProvider(this, "GithubOidcProvider", {
 });
 ```
 
-## 2. Create IAM role
+## Create IAM role
 
 Next, the created identity provider is used to create an IAM role. 
 The trust policy of the role defines which specific GitHub repository branch is allowed to assume the role (using the pattern `repo:OWNER/REPOSITORY:ref:refs/heads/BRANCH`).
@@ -67,7 +58,7 @@ const conditions: iam.Conditions = {
 
 For other patterns, (e.g. allowing specific GitHub environments), see [Example subject claims](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect#example-subject-claims).
 
-## 3. Attach permissions to IAM role
+## Attach permissions to IAM role
 
 To invoke AWS actions, the OIDC role needs to have the correct permissions. 
 In this case the `cdk diff` command will be run, requiring read only permissions.
@@ -83,11 +74,11 @@ const lookupRole = iam.Role.fromRoleName(
 lookupRole.grantAssumeRole(oidcRole);
 ```
 
-## 4. Assume IAM role from GitHub Actions workflow
+## Assume IAM role from GitHub Actions workflow
 
 Next, the IAM role is assumed from a GitHub Actions workflow. 
-This is done with the action [`configure-aws-credentials`](https://github.com/aws-actions/configure-aws-credentials), making `.github/workflows/oidc.yml` look as follows.
-Note that a dummy AWS account ID is used (`012345678912`).
+This is done with the action [configure-aws-credentials](https://github.com/aws-actions/configure-aws-credentials), making `.github/workflows/oidc.yml` look as follows.
+Note that a dummy AWS account ID is used.
 
 ```yaml
 on: push
@@ -109,7 +100,7 @@ jobs:
           role-to-assume: arn:aws:iam::012345678912:role/github-oidc-role
 ```
 
-## 5. Invoke AWS actions from GitHub Actions workflow
+## Invoke AWS actions from GitHub Actions workflow
 
 The last step is to invoke AWS actions from the workflow. In this case, the `cdk diff` command is run by adding the following step.
 
