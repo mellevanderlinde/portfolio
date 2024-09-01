@@ -76,6 +76,7 @@ html {
 
 .prose code span {
   @apply font-medium;
+  font-size: 0.875rem;
 }
 
 .prose img {
