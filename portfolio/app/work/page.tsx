@@ -25,7 +25,7 @@ export default function Page(): ReactElement {
   return (
     <section>
       <Header1 text="Work" />
-      <div className="prose prose-neutral dark:prose-invert">
+      <div>
         {WorkItem(
           "PostNL",
           "Cloud Engineer",
@@ -37,6 +37,7 @@ export default function Page(): ReactElement {
               from AWS (e.g., IAM, CloudFormation, API Gateway, Organizations, 
               Lambda, DynamoDB).`}
             </p>
+            <br />
             <p>
               {`
               As an example project, I guided engineering teams to migrate their 
