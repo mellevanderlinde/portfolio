@@ -19,6 +19,7 @@ export class PortfolioCloudfrontStack extends Stack {
     super(scope, id, props);
 
     const domainName = "mellevanderlinde.com";
+    const wwwDomainName = `www.${domainName}`;
     const hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
       domainName,
     });
@@ -37,6 +38,7 @@ export class PortfolioCloudfrontStack extends Stack {
         domainName,
         validation:
           certificatemanager.CertificateValidation.fromDns(hostedZone),
+        subjectAlternativeNames: [wwwDomainName],
       },
     );
 
@@ -69,7 +71,7 @@ export class PortfolioCloudfrontStack extends Stack {
       },
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
       httpVersion: cloudfront.HttpVersion.HTTP3,
-      domainNames: [domainName],
+      domainNames: [domainName, wwwDomainName],
       certificate,
       errorResponses: [
         {
@@ -83,6 +85,15 @@ export class PortfolioCloudfrontStack extends Stack {
     });
 
     new route53.ARecord(this, "Record", {
+      recordName: domainName,
+      target: route53.RecordTarget.fromAlias(
+        new route53_targets.CloudFrontTarget(distribution),
+      ),
+      zone: hostedZone,
+    });
+
+    new route53.ARecord(this, "WwwRecord", {
+      recordName: wwwDomainName,
       target: route53.RecordTarget.fromAlias(
         new route53_targets.CloudFrontTarget(distribution),
       ),
