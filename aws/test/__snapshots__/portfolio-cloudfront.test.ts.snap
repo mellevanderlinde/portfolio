@@ -221,6 +221,13 @@ exports[`Match with snapshot 1`] = `
             "DomainName": "mellevanderlinde.com",
             "HostedZoneId": "DUMMY",
           },
+          {
+            "DomainName": "www.mellevanderlinde.com",
+            "HostedZoneId": "DUMMY",
+          },
+        ],
+        "SubjectAlternativeNames": [
+          "www.mellevanderlinde.com",
         ],
         "Tags": [
           {
@@ -456,6 +463,7 @@ exports[`Match with snapshot 1`] = `
         "DistributionConfig": {
           "Aliases": [
             "mellevanderlinde.com",
+            "www.mellevanderlinde.com",
           ],
           "CustomErrorResponses": [
             {
@@ -598,6 +606,31 @@ async function handler(event) {
         },
         "HostedZoneId": "DUMMY",
         "Name": "mellevanderlinde.com.",
+        "Type": "A",
+      },
+      "Type": "AWS::Route53::RecordSet",
+    },
+    "WwwRecordB30C9252": {
+      "Properties": {
+        "AliasTarget": {
+          "DNSName": {
+            "Fn::GetAtt": [
+              "Distribution830FAC52",
+              "DomainName",
+            ],
+          },
+          "HostedZoneId": {
+            "Fn::FindInMap": [
+              "AWSCloudFrontPartitionHostedZoneIdMap",
+              {
+                "Ref": "AWS::Partition",
+              },
+              "zoneId",
+            ],
+          },
+        },
+        "HostedZoneId": "DUMMY",
+        "Name": "www.mellevanderlinde.com.",
         "Type": "A",
       },
       "Type": "AWS::Route53::RecordSet",
