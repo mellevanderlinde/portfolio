@@ -7,5 +7,5 @@ export function Header1({ title }): ReactElement {
 }
 
 export function Header2({ title }): ReactElement {
-  return <h2 className="mb-4 text-xl font-medium tracking-tighter">{title}</h2>;
+  return <h2 className="mb-1 text-xl font-medium tracking-tighter">{title}</h2>;
 }
