@@ -578,12 +578,12 @@ async function handler(event) {
       "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
     },
     "LogGroupF5B46931": {
-      "DeletionPolicy": "Delete",
+      "DeletionPolicy": "Retain",
       "Properties": {
         "RetentionInDays": 1,
       },
       "Type": "AWS::Logs::LogGroup",
-      "UpdateReplacePolicy": "Delete",
+      "UpdateReplacePolicy": "Retain",
     },
     "Record83264F3E": {
       "Properties": {
