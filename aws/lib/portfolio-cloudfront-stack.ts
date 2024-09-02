@@ -102,7 +102,6 @@ export class PortfolioCloudfrontStack extends Stack {
 
     const logGroup = new logs.LogGroup(this, "LogGroup", {
       retention: logs.RetentionDays.ONE_DAY,
-      removalPolicy: RemovalPolicy.DESTROY,
     });
 
     new s3_deployment.BucketDeployment(this, "BucketDeployment", {
