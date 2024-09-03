@@ -11,7 +11,6 @@
     "@types/node": "^22.5.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "geist": "^1.2.2",
     "next": "^14.2.7",
     "next-mdx-remote": "^5.0.0",
     "postcss": "^8.4.35",
