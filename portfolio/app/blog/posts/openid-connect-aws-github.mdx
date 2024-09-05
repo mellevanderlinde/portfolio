@@ -3,10 +3,10 @@ title: 'Connect GitHub Actions with AWS using OpenID Connect'
 publishedAt: '2024-09-02'
 ---
 
-A common pattern is to invoke AWS actions from a [GitHub Actions workflow](https://docs.github.com/en/actions/writing-workflows/about-workflows). 
+A common pattern is to invoke AWS actions from a GitHub Actions workflow. 
 For example, a workflow can be used for [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html) deployments, invoking a Lambda function (e.g., for integration tests) or reading data from DynamoDB. 
 
-Using [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) such AWS actions can be invoked by an [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) that trusts a specific GitHub repository.
+Using [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) such AWS actions can be invoked by an IAM role that trusts a specific GitHub repository.
 This solution does not require permanently stored credentials, making it more simple and secure.
 
 This post demonstrates how to allow a specific GitHub repository branch to access AWS (with AWS CDK in TypeScript) and invoke actions on an AWS account (with GitHub Actions).
