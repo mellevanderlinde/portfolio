@@ -5,8 +5,8 @@ import { ReactElement } from "react";
 export default function NotFound(): ReactElement {
   return (
     <section>
-      <Header1 text="404 - page not found" />
-      <Paragraph text="The page you are looking for does not exist." />
+      <Header1 title="404 - page not found" />
+      <Paragraph content="The page you are looking for does not exist." />
     </section>
   );
 }

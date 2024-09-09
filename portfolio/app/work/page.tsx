@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Header1, Header2 } from "app/components/header";
+import { Header1 } from "app/components/header";
 import { HorizontalLine } from "app/components/line";
 import { ReactElement } from "react";
+import { Paragraph } from "app/components/paragraph";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -14,56 +16,63 @@ function WorkItem(
 ): ReactElement {
   return (
     <div>
-      <Header2 text={company} />
-      <p className="text-neutral-600 dark:text-neutral-400 text-sm">{title}</p>
+      <h2 className="text-xl font-medium tracking-tighter">{company}</h2>
+      <div className="flex justify-between items-center mt-1 mb-4 text-sm">
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {title}
+        </p>
+      </div>
       {content}
     </div>
   );
 }
 
-export default function WorkPage(): ReactElement {
+export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 text="my work" />
-      <div className="prose prose-neutral dark:prose-invert">
+      <Header1 title="Work" />
+      <div>
         {WorkItem(
           "PostNL",
           "Cloud Engineer",
           <section>
-            <p>
-              {`In 2023 I joined the Cloud Center of Excellence (CCoE) team. 
-              My (platform) team works on the serverless cloud platform on AWS, 
-              used by all engineers. The stack includes a wide variety of services 
-              from AWS (e.g., IAM, CloudFormation, API Gateway, Organizations, 
-              Lambda, DynamoDB).`}
-            </p>
-            <p>
-              {`
-              As an example project, I guided engineering teams to migrate their 
-              GitHub Actions to use OpenID Connect (OIDC) for `}
-              <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
-                AWS
-              </a>
-              {` and `}
-              <a href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
-                JFrog
-              </a>
-              {` integrations. This project uses an internal tool I developed to 
-              make OIDC integration easier for engineers.`}
-            </p>
+            <Paragraph
+              content={`In 2023 I joined the Cloud Center of Excellence (CCoE) team. 
+                My (platform) team works on the serverless cloud platform on AWS, 
+                used by all engineers. The stack includes a wide variety of services 
+                from AWS (e.g., IAM, CloudFormation, API Gateway, Organizations, 
+                Lambda, DynamoDB).`}
+            />
+            <Paragraph
+              content={
+                <>
+                  {`
+                  As an example project, I guided engineering teams to migrate their 
+                  GitHub Actions to use OpenID Connect (OIDC) for `}
+                  <Link href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
+                    AWS
+                  </Link>
+                  {` and `}
+                  <Link href="https://jfrog.com/help/r/jfrog-platform-administration-documentation/openid-connect-integration">
+                    JFrog
+                  </Link>
+                  {` integrations. This project uses an internal tool I developed to 
+                  make OIDC integration easier for engineers.`}
+                </>
+              }
+            />
           </section>,
         )}
         <HorizontalLine />
         {WorkItem(
           "PostNL",
           "MLOps Engineer, 2021 — 2023",
-          <p>
-            {`In this role, my team was responsible for the deployment and 
-            monitoring of data science models on AWS. The stack included
-            containerization (Docker), infrastructure as code (AWS CDK), CI/CD 
-            (GitHub Actions and AWS CodePipeline), orchestration (Airflow), 
-            parallelization (PySpark).`}
-          </p>,
+          <Paragraph
+            content={`Responsible for the deployment and monitoring of data science
+              models on AWS. The stack included containerization (Docker), 
+              infrastructure as code (AWS CDK), CI/CD (GitHub Actions and AWS 
+              CodePipeline), orchestration (Airflow), parallelization (PySpark).`}
+          />,
         )}
       </div>
     </section>

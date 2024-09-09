@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
+import { baseUrl } from "./sitemap";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*" }],
-    sitemap: "https://mellevanderlinde.com/sitemap.xml",
-    host: "https://mellevanderlinde.com",
+    sitemap: `${baseUrl}/sitemap.xml`,
   };
 }

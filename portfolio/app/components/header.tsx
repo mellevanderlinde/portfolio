@@ -1,9 +1,11 @@
 import { ReactElement } from "react";
 
-export function Header1({ text }): ReactElement {
-  return <h1 className="font-medium text-2xl mb-8 tracking-tighter">{text}</h1>;
+export function Header1({ title }): ReactElement {
+  return (
+    <h1 className="mb-8 text-2xl font-semibold tracking-tighter">{title}</h1>
+  );
 }
 
-export function Header2({ text }): ReactElement {
-  return <h2 className="font-medium text-xl mb-1 tracking-tighter">{text}</h2>;
+export function Header2({ title }): ReactElement {
+  return <h2 className="mb-1 text-xl font-medium tracking-tighter">{title}</h2>;
 }

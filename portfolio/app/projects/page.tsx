@@ -3,6 +3,8 @@ import { Header1, Header2 } from "app/components/header";
 import { ReactElement } from "react";
 import { HorizontalLine } from "app/components/line";
 import { Badge } from "app/components/bagde";
+import { Paragraph } from "app/components/paragraph";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Projects",
@@ -15,9 +17,8 @@ function ProjectItem(
 ): ReactElement {
   return (
     <div>
-      <Header2 text={title} />
+      <Header2 title={title} />
       {content}
-      <p className="mb-2" />
       <Badge href={url}>
         <svg width="13" height="11" role="img" className="mr-1 inline-flex">
           <use href="/sprite.svg#github" />
@@ -28,50 +29,89 @@ function ProjectItem(
   );
 }
 
-export default function ProjectsPage(): ReactElement {
+export default function Page(): ReactElement {
   return (
     <section>
-      <Header1 text="my projects" />
+      <Header1 title="Projects" />
+      {ProjectItem(
+        "OpenID Connect for AWS and GitHub Actions",
+        "https://github.com/mellevanderlinde/oidc-aws-github",
+        <Paragraph
+          content={
+            <>
+              {`This repository demonstrates how to allow a specific GitHub repository 
+              to invoke actions on AWS from GitHub Actions using `}
+              <Link href="https://openid.net/developers/how-connect-works">
+                OpenID Connect
+              </Link>
+              {`.`}
+            </>
+          }
+        />,
+      )}
+      <HorizontalLine />
+      {ProjectItem(
+        "Contributions to AWS CDK",
+        "https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde",
+        <Paragraph
+          content={
+            <>
+              {`This link shows some contributions (tiny, mostly bug fixes) to the `}
+              <Link href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">
+                AWS CDK
+              </Link>
+              {` repository.`}
+            </>
+          }
+        />,
+      )}
+      <HorizontalLine />
+      {ProjectItem(
+        "Portfolio with CloudFront and Next.js",
+        "https://github.com/mellevanderlinde/portfolio-cloudfront",
+        <Paragraph
+          content={
+            <>
+              {`AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. 
+                This portfolio design is a `}
+              <Link href="https://vercel.com/templates/next.js/portfolio-starter-kit">
+                template by Vercel
+              </Link>
+              {`.`}
+            </>
+          }
+        />,
+      )}
+      <HorizontalLine />
       {ProjectItem(
         "Bedrock API",
         "https://github.com/mellevanderlinde/bedrock-apigateway",
-        <section>
-          <p className="prose prose-neutral dark:prose-invert">
-            {`AWS CDK project that deploys an API endpoint using API Gateway. 
-            The endpoint interacts with a large language model from `}
-            <a href="https://aws.amazon.com/bedrock/">
-              {`Amazon's generative AI service`}
-            </a>
-            {`.`}
-          </p>
-        </section>,
+        <Paragraph
+          content={
+            <>
+              {`AWS CDK project that deploys an API endpoint using API Gateway. 
+              The endpoint interacts with a large language model from `}
+              <Link href="https://aws.amazon.com/bedrock/">
+                {`Amazon's generative AI service`}
+              </Link>
+              {`.`}
+            </>
+          }
+        />,
       )}
       <HorizontalLine />
       {ProjectItem(
-        "CloudFront Portfolio",
-        "https://github.com/mellevanderlinde/portfolio-cloudfront",
-        <section>
-          <p className="prose prose-neutral dark:prose-invert">
-            {`AWS CDK project that serves this portfolio with Amazon CloudFront. 
-            This portfolio design is a `}
-            <a href="https://github.com/leerob/leerob.io">
-              template by Lee Robinson
-            </a>
-            {`.`}
-          </p>
-        </section>,
-      )}
-      <HorizontalLine />
-      {ProjectItem(
-        "Airflow on AWS",
+        "Apache Airflow on AWS",
         "https://github.com/mellevanderlinde/mwaa-airflow",
-        <section>
-          <p className="prose prose-neutral dark:prose-invert">
-            {`AWS CDK project that deploys an MWAA environment for `}
-            <a href="https://airflow.apache.org">Apache Airflow</a>
-            {`. The repository contains a minimal DAG that invokes a Lambda function.`}
-          </p>
-        </section>,
+        <Paragraph
+          content={
+            <>
+              {`AWS CDK project that deploys an MWAA environment for `}
+              <Link href="https://airflow.apache.org">Apache Airflow</Link>
+              {`. The repository contains a minimal DAG that invokes a Lambda function.`}
+            </>
+          }
+        />,
       )}
     </section>
   );
