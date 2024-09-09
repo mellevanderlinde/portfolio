@@ -142,7 +142,3 @@ input[type='email'] {
 .title {
   text-wrap: balance;
 }
-
-p, li, span {
-  line-height: 1.75;
-}
