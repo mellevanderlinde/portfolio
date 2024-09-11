@@ -42,6 +42,13 @@ export class PortfolioCloudfrontStack extends Stack {
       },
     );
 
+    const origin = new cloudfront_origins.S3Origin(bucket, {
+      originAccessIdentity: new cloudfront.OriginAccessIdentity(
+        this,
+        "Identity",
+      ),
+    });
+
     const function_ = new cloudfront.Function(this, "Function", {
       code: cloudfront.FunctionCode.fromFile({ filePath: "src/index.js" }),
       runtime: cloudfront.FunctionRuntime.JS_2_0,
@@ -51,9 +58,7 @@ export class PortfolioCloudfrontStack extends Stack {
     const distribution = new cloudfront.Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
-        origin: new cloudfront_origins.S3StaticWebsiteOrigin(bucket, {
-          protocolPolicy: cloudfront.OriginProtocolPolicy.HTTPS_ONLY,
-        }),
+        origin,
         viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         functionAssociations: [
           {
