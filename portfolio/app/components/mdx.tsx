@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React, { ReactElement } from "react";
-import { highlight } from "sugar-high";
+import hljs from "highlight.js/lib/core";
+import typescript from "highlight.js/lib/languages/typescript";
+import yaml from "highlight.js/lib/languages/yaml";
+
+hljs.registerLanguage("typescript", typescript);
+hljs.registerLanguage("yaml", yaml);
 
 function CustomLink(props): ReactElement {
   const href = props.href;
@@ -19,12 +24,9 @@ function CustomLink(props): ReactElement {
 }
 
 function Code({ children, ...props }): ReactElement {
-  return (
-    <code
-      dangerouslySetInnerHTML={{ __html: highlight(children) }}
-      {...props}
-    />
-  );
+  const language = props.className?.replace("language-", "") || "yaml";
+  const __html = hljs.highlight(children, { language }).value;
+  return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
 }
 
 function slugify(str: string): string {

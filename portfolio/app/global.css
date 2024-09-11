@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import url('highlight.js/styles/github.css') screen and (prefers-color-scheme: light);
+@import url('highlight.js/styles/github-dark.css') screen and (prefers-color-scheme: dark);
 
 ::selection {
   background-color: #47a3f3;
