@@ -144,8 +144,3 @@ input[type='email'] {
 .title {
   text-wrap: balance;
 }
-
-.footer {
-  view-transition-name: footer-title;
-  width: fit-content;
-}
