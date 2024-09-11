@@ -181,32 +181,6 @@ exports[`Match with snapshot 1`] = `
                 },
               ],
             },
-            {
-              "Action": "s3:GetObject",
-              "Effect": "Allow",
-              "Principal": {
-                "CanonicalUser": {
-                  "Fn::GetAtt": [
-                    "Identity2D60E2CC",
-                    "S3CanonicalUserId",
-                  ],
-                },
-              },
-              "Resource": {
-                "Fn::Join": [
-                  "",
-                  [
-                    {
-                      "Fn::GetAtt": [
-                        "Bucket83908E77",
-                        "Arn",
-                      ],
-                    },
-                    "/*",
-                  ],
-                ],
-              },
-            },
           ],
           "Version": "2012-10-17",
         },
@@ -271,7 +245,7 @@ exports[`Match with snapshot 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "python3.9",
+        "Runtime": "python3.11",
         "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",
@@ -497,26 +471,29 @@ exports[`Match with snapshot 1`] = `
           "IPV6Enabled": true,
           "Origins": [
             {
+              "CustomOriginConfig": {
+                "OriginProtocolPolicy": "https-only",
+                "OriginSSLProtocols": [
+                  "TLSv1.2",
+                ],
+              },
               "DomainName": {
-                "Fn::GetAtt": [
-                  "Bucket83908E77",
-                  "RegionalDomainName",
+                "Fn::Select": [
+                  2,
+                  {
+                    "Fn::Split": [
+                      "/",
+                      {
+                        "Fn::GetAtt": [
+                          "Bucket83908E77",
+                          "WebsiteURL",
+                        ],
+                      },
+                    ],
+                  },
                 ],
               },
               "Id": "TestPortfolioCloudfrontStackDistributionOrigin1C9F5158E",
-              "S3OriginConfig": {
-                "OriginAccessIdentity": {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "origin-access-identity/cloudfront/",
-                      {
-                        "Ref": "Identity2D60E2CC",
-                      },
-                    ],
-                  ],
-                },
-              },
             },
           ],
           "PriceClass": "PriceClass_100",
@@ -568,14 +545,6 @@ async function handler(event) {
         "Name": "us-east-1TestPortfolioCloontStackFunction78CD7CDC",
       },
       "Type": "AWS::CloudFront::Function",
-    },
-    "Identity2D60E2CC": {
-      "Properties": {
-        "CloudFrontOriginAccessIdentityConfig": {
-          "Comment": "Allows CloudFront to reach the bucket",
-        },
-      },
-      "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
     },
     "LogGroupF5B46931": {
       "DeletionPolicy": "Retain",
