@@ -3,7 +3,7 @@ import { Header1 } from "app/components/header";
 import { HorizontalLine } from "app/components/line";
 import { ReactElement } from "react";
 import { Paragraph } from "app/components/paragraph";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export const metadata: Metadata = {
   title: "Work",
