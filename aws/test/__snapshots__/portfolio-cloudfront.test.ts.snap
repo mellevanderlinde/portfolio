@@ -23,6 +23,7 @@ exports[`Match with snapshot 1`] = `
     "Bucket83908E77": {
       "DeletionPolicy": "Delete",
       "Properties": {
+        "BucketName": "mellevanderlinde.com",
         "PublicAccessBlockConfiguration": {
           "BlockPublicAcls": true,
           "BlockPublicPolicy": true,
@@ -250,7 +251,7 @@ exports[`Match with snapshot 1`] = `
         "Tags": [
           {
             "Key": "Name",
-            "Value": "TestPortfolioCloudfrontStack/Certificate",
+            "Value": "mellevanderlinde.com",
           },
         ],
         "ValidationMethod": "DNS",
@@ -590,13 +591,14 @@ async function handler(event) {
           "Comment": "Add index.html to URI (required for Next.js)",
           "Runtime": "cloudfront-js-2.0",
         },
-        "Name": "us-east-1TestPortfolioCloontStackFunction78CD7CDC",
+        "Name": "mellevanderlinde-com",
       },
       "Type": "AWS::CloudFront::Function",
     },
     "LogGroupF5B46931": {
       "DeletionPolicy": "Retain",
       "Properties": {
+        "LogGroupName": "mellevanderlinde.com",
         "RetentionInDays": 1,
       },
       "Type": "AWS::Logs::LogGroup",

@@ -25,6 +25,7 @@ export class PortfolioCloudfrontStack extends Stack {
     });
 
     const bucket = new s3.Bucket(this, "Bucket", {
+      bucketName: domainName,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       enforceSSL: true,
       removalPolicy: RemovalPolicy.DESTROY,
@@ -35,6 +36,7 @@ export class PortfolioCloudfrontStack extends Stack {
       this,
       "Certificate",
       {
+        certificateName: domainName,
         domainName,
         validation:
           certificatemanager.CertificateValidation.fromDns(hostedZone),
@@ -43,6 +45,7 @@ export class PortfolioCloudfrontStack extends Stack {
     );
 
     const function_ = new cloudfront.Function(this, "Function", {
+      functionName: domainName.replace(".", "-"),
       code: cloudfront.FunctionCode.fromFile({ filePath: "src/index.js" }),
       runtime: cloudfront.FunctionRuntime.JS_2_0,
       comment: "Add index.html to URI (required for Next.js)",
@@ -95,6 +98,7 @@ export class PortfolioCloudfrontStack extends Stack {
     });
 
     const logGroup = new logs.LogGroup(this, "LogGroup", {
+      logGroupName: domainName,
       retention: logs.RetentionDays.ONE_DAY,
     });
 
