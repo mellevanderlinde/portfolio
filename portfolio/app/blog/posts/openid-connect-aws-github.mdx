@@ -11,6 +11,8 @@ This solution does not require permanently stored credentials, making it more si
 
 This post demonstrates how to allow a specific GitHub repository branch to access AWS (with AWS CDK in TypeScript) and invoke actions on an AWS account (with GitHub Actions).
 
+The code used in this post can be found on [GitHub](https://github.com/mellevanderlinde/oidc-aws-github).
+
 ## Create IAM OIDC Identity Provider
 
 To establish a trust relationship between GitHub and AWS, create an [IAM OIDC Identity Provider](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html) for GitHub.
