@@ -4,7 +4,7 @@ import { ReactElement } from "react";
 import { HorizontalLine } from "app/components/line";
 import { Badge } from "app/components/bagde";
 import { Paragraph } from "app/components/paragraph";
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Projects",

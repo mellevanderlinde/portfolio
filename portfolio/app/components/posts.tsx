@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/blog/utils";
 import { ReactElement } from "react";
 
