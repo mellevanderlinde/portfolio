@@ -14,7 +14,7 @@ import {
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 
-export class PortfolioCloudfrontStack extends Stack {
+export class PortfolioStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
@@ -116,7 +116,7 @@ export class PortfolioCloudfrontStack extends Stack {
 
     new s3_deployment.BucketDeployment(this, "BucketDeployment", {
       destinationBucket: bucket,
-      sources: [s3_deployment.Source.asset("../portfolio/out")],
+      sources: [s3_deployment.Source.asset("../next/out")],
       distribution,
       distributionPaths: ["/*"],
       logGroup,

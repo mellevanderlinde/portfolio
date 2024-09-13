@@ -1,8 +1,8 @@
 {
-  "name": "portfolio-cloudfront",
+  "name": "portfolio",
   "version": "0.1.0",
   "bin": {
-    "portfolio-cloudfront": "bin/portfolio-cloudfront.js"
+    "portfolio": "bin/portfolio.js"
   },
   "scripts": {
     "build": "tsc",

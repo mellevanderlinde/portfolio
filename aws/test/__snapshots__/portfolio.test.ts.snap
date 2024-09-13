@@ -86,7 +86,7 @@ exports[`Match with snapshot 1`] = `
             "Value": "true",
           },
           {
-            "Key": "aws-cdk:cr-owned:c4b2c8d6",
+            "Key": "aws-cdk:cr-owned:e8c252f7",
             "Value": "true",
           },
         ],
@@ -557,7 +557,7 @@ exports[`Match with snapshot 1`] = `
               },
             ],
             "ResponseHeadersPolicyId": "67f7725c-6f97-4210-82d7-5512b31e9d03",
-            "TargetOriginId": "TestPortfolioCloudfrontStackDistributionOrigin1C9F5158E",
+            "TargetOriginId": "PortfolioStackDistributionOrigin13DFF474E",
             "ViewerProtocolPolicy": "redirect-to-https",
           },
           "DefaultRootObject": "index.html",
@@ -572,7 +572,7 @@ exports[`Match with snapshot 1`] = `
                   "RegionalDomainName",
                 ],
               },
-              "Id": "TestPortfolioCloudfrontStackDistributionOrigin1C9F5158E",
+              "Id": "PortfolioStackDistributionOrigin13DFF474E",
               "OriginAccessControlId": {
                 "Fn::GetAtt": [
                   "DistributionOrigin1S3OriginAccessControlEB606076",
@@ -609,7 +609,7 @@ exports[`Match with snapshot 1`] = `
     "DistributionOrigin1S3OriginAccessControlEB606076": {
       "Properties": {
         "OriginAccessControlConfig": {
-          "Name": "TestPortfolioCloudfrontStackOrigin1S3OriginAccessControl95A78377",
+          "Name": "PortfolioStackDistributionOrigin1S3OriginAccessControl63F8F727",
           "OriginAccessControlOriginType": "s3",
           "SigningBehavior": "always",
           "SigningProtocol": "sigv4",
