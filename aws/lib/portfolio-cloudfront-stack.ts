@@ -20,7 +20,7 @@ export class PortfolioCloudfrontStack extends Stack {
 
     const domainName = "mellevanderlinde.com";
     const wwwDomainName = `www.${domainName}`;
-    const hostedZone = route53.HostedZone.fromLookup(this, "HostedZone", {
+    const zone = route53.HostedZone.fromLookup(this, "HostedZone", {
       domainName,
     });
 
@@ -38,8 +38,7 @@ export class PortfolioCloudfrontStack extends Stack {
       {
         certificateName: domainName,
         domainName,
-        validation:
-          certificatemanager.CertificateValidation.fromDns(hostedZone),
+        validation: certificatemanager.CertificateValidation.fromDns(zone),
         subjectAlternativeNames: [wwwDomainName],
       },
     );
@@ -69,6 +68,7 @@ export class PortfolioCloudfrontStack extends Stack {
       priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
       httpVersion: cloudfront.HttpVersion.HTTP3,
       domainNames: [domainName, wwwDomainName],
+      enableIpv6: true,
       certificate,
       errorResponses: [
         {
@@ -81,20 +81,32 @@ export class PortfolioCloudfrontStack extends Stack {
       geoRestriction: cloudfront.GeoRestriction.allowlist("NL", "BE", "GB"),
     });
 
-    new route53.ARecord(this, "Record", {
+    const target = route53.RecordTarget.fromAlias(
+      new route53_targets.CloudFrontTarget(distribution),
+    );
+
+    new route53.ARecord(this, "ARecord", {
       recordName: domainName,
-      target: route53.RecordTarget.fromAlias(
-        new route53_targets.CloudFrontTarget(distribution),
-      ),
-      zone: hostedZone,
+      target,
+      zone,
     });
 
-    new route53.ARecord(this, "WwwRecord", {
+    new route53.ARecord(this, "WwwARecord", {
       recordName: wwwDomainName,
-      target: route53.RecordTarget.fromAlias(
-        new route53_targets.CloudFrontTarget(distribution),
-      ),
-      zone: hostedZone,
+      target,
+      zone,
+    });
+
+    new route53.AaaaRecord(this, "AaaaRecord", {
+      recordName: domainName,
+      target,
+      zone,
+    });
+
+    new route53.AaaaRecord(this, "WwwAaaaRecord", {
+      recordName: wwwDomainName,
+      target,
+      zone,
     });
 
     const logGroup = new logs.LogGroup(this, "LogGroup", {
