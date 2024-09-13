@@ -7,8 +7,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build portfolio
-        working-directory: ./portfolio
+      - name: Build Next.js
+        working-directory: ./next
         run: |
           npm ci
           npm run lint
