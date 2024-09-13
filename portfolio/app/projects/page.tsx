@@ -68,7 +68,7 @@ export default function Page(): ReactElement {
       <HorizontalLine />
       {ProjectItem(
         "Portfolio with CloudFront and Next.js",
-        "https://github.com/mellevanderlinde/portfolio-cloudfront",
+        "https://github.com/mellevanderlinde/portfolio",
         <Paragraph
           content={
             <>

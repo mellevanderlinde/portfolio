@@ -1,4 +1,4 @@
-# Portfolio with Amazon CloudFront
+# Portfolio with CloudFront and Next.js
 
 This repository contains my portfolio, served with Amazon CloudFront and S3 on [mellevanderlinde.com](https://mellevanderlinde.com). The portfolio design is a [template by Vercel](https://vercel.com/templates/next.js/portfolio-starter-kit).
 
