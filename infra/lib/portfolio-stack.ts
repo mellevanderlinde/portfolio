@@ -116,7 +116,7 @@ export class PortfolioStack extends Stack {
 
     new s3_deployment.BucketDeployment(this, "BucketDeployment", {
       destinationBucket: bucket,
-      sources: [s3_deployment.Source.asset("../next/out")],
+      sources: [s3_deployment.Source.asset("../ui/out")],
       distribution,
       distributionPaths: ["/*"],
       logGroup,

@@ -8,12 +8,12 @@ To install the project's dependencies, build the website and deploy to AWS, run 
 
 ```
 # Build website
-cd next
+cd ui
 npm ci
 npm run build
 
 # Deploy to AWS
-cd ../aws
+cd ../infra
 npm ci
 npx cdk deploy -c accountId=012345678912
 ```
