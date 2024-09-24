@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import React, { ReactElement } from "react";
+import { ReactNode, createElement } from "react";
 import hljs from "highlight.js/lib/core";
 import typescript from "highlight.js/lib/languages/typescript";
 import yaml from "highlight.js/lib/languages/yaml";
@@ -8,7 +8,7 @@ import yaml from "highlight.js/lib/languages/yaml";
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("yaml", yaml);
 
-function CustomLink(props): ReactElement {
+function CustomLink(props): ReactNode {
   const href = props.href;
   if (href.startsWith("/")) {
     return (
@@ -23,7 +23,7 @@ function CustomLink(props): ReactElement {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function Code({ children, ...props }): ReactElement {
+function Code({ children, ...props }): ReactNode {
   const language = props.className?.replace("language-", "") || "yaml";
   const __html = hljs.highlight(children, { language }).value;
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
@@ -43,11 +43,11 @@ function slugify(str: string): string {
 function createHeading(level: number) {
   const Heading = ({ children }) => {
     const slug = slugify(children);
-    return React.createElement(
+    return createElement(
       `h${level}`,
       { id: slug },
       [
-        React.createElement("a", {
+        createElement("a", {
           href: `#${slug}`,
           key: `link-${slug}`,
           className: "anchor",
@@ -71,7 +71,7 @@ const components = {
   code: Code,
 };
 
-export function CustomMDX(props): ReactElement {
+export function CustomMDX(props): ReactNode {
   return (
     <MDXRemote
       {...props}

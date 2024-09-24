@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
-export function Badge(props): ReactElement {
+export function Badge(props): ReactNode {
   return (
     <span className="not-prose">
       <a

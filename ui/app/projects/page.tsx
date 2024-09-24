@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Header1, Header2 } from "components/header";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { HorizontalLine } from "components/line";
 import { Badge } from "components/bagde";
 import { Paragraph } from "components/paragraph";
@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 function ProjectItem(
   title: string,
   url: string,
-  content: ReactElement,
-): ReactElement {
+  content: ReactNode,
+): ReactNode {
   return (
     <div>
       <Header2 title={title} />
@@ -29,7 +29,7 @@ function ProjectItem(
   );
 }
 
-export default function Page(): ReactElement {
+export default function Page(): ReactNode {
   return (
     <section>
       <Header1 title="Projects" />

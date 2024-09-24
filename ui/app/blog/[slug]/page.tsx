@@ -2,14 +2,14 @@ import { notFound } from "next/navigation";
 import { CustomMDX } from "components/mdx";
 import { formatDate, getBlogPosts } from "app/blog/utils";
 import { Metadata } from "next";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 export function generateMetadata({ params }): Metadata {
   const post = getBlogPosts().find((post) => post.slug === params.slug);
   return { title: post?.metadata.title };
 }
 
-export default function Blog({ params }): ReactElement {
+export default function Blog({ params }): ReactNode {
   const post = getBlogPosts().find((post) => post.slug === params.slug);
 
   if (!post) {

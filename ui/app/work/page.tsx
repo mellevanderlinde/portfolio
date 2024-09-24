@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Header1 } from "components/header";
 import { HorizontalLine } from "components/line";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { Paragraph } from "components/paragraph";
 import Link from "next/link";
 
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 function WorkItem(
   company: string,
   title: string,
-  content: ReactElement,
-): ReactElement {
+  content: ReactNode,
+): ReactNode {
   return (
     <div>
       <h2 className="text-xl font-medium tracking-tighter">{company}</h2>
@@ -27,7 +27,7 @@ function WorkItem(
   );
 }
 
-export default function Page(): ReactElement {
+export default function Page(): ReactNode {
   return (
     <section>
       <Header1 title="Work" />

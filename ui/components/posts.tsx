@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "app/blog/utils";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
-export function BlogPosts(): ReactElement {
+export function BlogPosts(): ReactNode {
   const blogPosts = getBlogPosts();
 
   return (

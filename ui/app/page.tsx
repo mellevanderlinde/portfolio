@@ -1,11 +1,11 @@
 import { PreloadResources } from "../components/preload";
 import { Header1 } from "../components/header";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import Link from "next/link";
 import { Paragraph } from "../components/paragraph";
 import { BlogPosts } from "../components/posts";
 
-export default function Page(): ReactElement {
+export default function Page(): ReactNode {
   return (
     <section>
       <PreloadResources />

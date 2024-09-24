@@ -1,6 +1,6 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
-function ArrowIcon(): ReactElement {
+function ArrowIcon(): ReactNode {
   return (
     <svg
       width="12"
@@ -17,7 +17,7 @@ function ArrowIcon(): ReactElement {
   );
 }
 
-function FooterItem(name: string, url: string): ReactElement {
+function FooterItem(name: string, url: string): ReactNode {
   return (
     <li>
       <a
@@ -33,7 +33,7 @@ function FooterItem(name: string, url: string): ReactElement {
   );
 }
 
-export default function Footer() {
+export default function Footer(): ReactNode {
   return (
     <footer className="mb-16">
       <ul className="font-sm mt-8 flex flex-col space-x-0 space-y-2 text-neutral-600 md:flex-row md:space-x-4 md:space-y-0 dark:text-neutral-300">

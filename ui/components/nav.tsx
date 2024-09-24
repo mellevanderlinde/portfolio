@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
 export const navItems = {
   "/": {
@@ -16,7 +16,7 @@ export const navItems = {
   },
 };
 
-export function Navbar(): ReactElement {
+export function Navbar(): ReactNode {
   return (
     <aside className="-ml-[8px] mb-16 tracking-tight">
       <div className="lg:sticky lg:top-20">
