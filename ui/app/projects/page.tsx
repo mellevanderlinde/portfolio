@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Header1, Header2 } from "app/components/header";
+import { Header1, Header2 } from "components/header";
 import { ReactElement } from "react";
-import { HorizontalLine } from "app/components/line";
-import { Badge } from "app/components/bagde";
-import { Paragraph } from "app/components/paragraph";
+import { HorizontalLine } from "components/line";
+import { Badge } from "components/bagde";
+import { Paragraph } from "components/paragraph";
 import Link from "next/link";
 
 export const metadata: Metadata = {

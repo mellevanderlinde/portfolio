@@ -1,5 +1,5 @@
-import { Header1 } from "app/components/header";
-import { BlogPosts } from "app/components/posts";
+import { Header1 } from "components/header";
+import { BlogPosts } from "components/posts";
 import { Metadata } from "next";
 import { ReactElement } from "react";
 

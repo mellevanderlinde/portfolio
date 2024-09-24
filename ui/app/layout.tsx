@@ -1,8 +1,8 @@
-import "./global.css";
+import "../styles/global.css";
 import type { Metadata } from "next";
-import { Navbar } from "./components/nav";
+import { Navbar } from "../components/nav";
 import { ReactElement, ReactNode } from "react";
-import Footer from "./components/footer";
+import Footer from "../components/footer";
 import { baseUrl } from "./sitemap";
 
 export const metadata: Metadata = {
