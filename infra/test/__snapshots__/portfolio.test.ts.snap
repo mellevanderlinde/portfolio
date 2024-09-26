@@ -588,9 +588,20 @@ exports[`Match with snapshot 1`] = `
           "Restrictions": {
             "GeoRestriction": {
               "Locations": [
-                "NL",
+                "AT",
                 "BE",
+                "CH",
+                "DE",
+                "DK",
+                "ES",
+                "FR",
                 "GB",
+                "IE",
+                "IT",
+                "LU",
+                "NL",
+                "PL",
+                "PT",
               ],
               "RestrictionType": "whitelist",
             },

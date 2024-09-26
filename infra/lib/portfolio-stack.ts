@@ -78,7 +78,22 @@ export class PortfolioStack extends Stack {
           ttl: Duration.minutes(30),
         },
       ],
-      geoRestriction: cloudfront.GeoRestriction.allowlist("NL", "BE", "GB"),
+      geoRestriction: cloudfront.GeoRestriction.allowlist(
+        "AT",
+        "BE",
+        "CH",
+        "DE",
+        "DK",
+        "ES",
+        "FR",
+        "GB",
+        "IE",
+        "IT",
+        "LU",
+        "NL",
+        "PL",
+        "PT",
+      ),
     });
 
     const target = route53.RecordTarget.fromAlias(
