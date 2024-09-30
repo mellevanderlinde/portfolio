@@ -7,3 +7,10 @@ node_modules
 .cdk.staging
 cdk.out
 cdk.context.json
+
+# next.js
+ui/.next/
+ui/out/
+ui/next-env.d.ts
+
+.DS_Store
