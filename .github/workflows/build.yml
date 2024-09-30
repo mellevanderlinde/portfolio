@@ -7,17 +7,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Lint
+        run: |
+          npm ci
+          npm run lint
+
       - name: Build Next.js
         working-directory: ./ui
         run: |
           npm ci
-          npm run lint
           npm run build
           
       - name: Build AWS
         working-directory: ./infra
         run: |
           npm ci
-          npm run lint
           npm run build
           npm run test
