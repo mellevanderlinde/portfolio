@@ -49,7 +49,7 @@ export default function Page(): ReactNode {
                   {`
                   As an example project, I guided engineering teams to migrate their 
                   GitHub Actions to use OpenID Connect (OIDC) for `}
-                  <Link href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html">
+                  <Link href="https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/configuring-openid-connect-in-amazon-web-services">
                     AWS
                   </Link>
                   {` and `}
