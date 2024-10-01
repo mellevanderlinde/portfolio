@@ -4,7 +4,7 @@ import { ReactNode } from "react";
 import { HorizontalLine } from "components/line";
 import { Badge } from "components/bagde";
 import { Paragraph } from "components/paragraph";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 
 export const metadata: Metadata = {
   title: "Projects",

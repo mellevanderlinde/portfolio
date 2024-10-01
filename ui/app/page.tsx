@@ -1,7 +1,7 @@
 import { PreloadResources } from "../components/preload";
 import { Header1 } from "../components/header";
 import { ReactNode } from "react";
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Paragraph } from "../components/paragraph";
 import { BlogPosts } from "../components/posts";
 
