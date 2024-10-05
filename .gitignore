@@ -1,16 +1,2 @@
-*.js
-!jest.config.js
-*.d.ts
 node_modules
-
-# CDK asset staging directory
-.cdk.staging
-cdk.out
-cdk.context.json
-
-# next.js
-ui/.next/
-ui/out/
-ui/next-env.d.ts
-
 .DS_Store

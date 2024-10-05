@@ -12,13 +12,13 @@ jobs:
           npm ci
           npm run lint
 
-      - name: Build Next.js
-        working-directory: ./ui
+      - name: Build website
+        working-directory: ./website
         run: |
           npm ci
           npm run build
           
-      - name: Build AWS
+      - name: Build AWS infrastructure
         working-directory: ./infra
         run: |
           npm ci

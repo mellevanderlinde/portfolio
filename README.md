@@ -8,7 +8,7 @@ To install the project's dependencies, build the website and deploy to AWS, run 
 
 ```
 # Build website
-cd ui
+cd website
 npm ci
 npm run build
 
