@@ -1,9 +1,9 @@
-import { PreloadResources } from "../components/preload";
+import { BlogPosts } from "../components/posts";
 import { Header1 } from "../components/header";
-import { ReactNode } from "react";
 import { Link } from "next-view-transitions";
 import { Paragraph } from "../components/paragraph";
-import { BlogPosts } from "../components/posts";
+import { PreloadResources } from "../components/preload";
+import { ReactNode } from "react";
 
 export default function Page(): ReactNode {
   return (

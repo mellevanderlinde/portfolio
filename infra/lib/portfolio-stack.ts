@@ -1,16 +1,16 @@
 import {
-  Stack,
-  StackProps,
   Duration,
   RemovalPolicy,
-  aws_s3 as s3,
-  aws_logs as logs,
-  aws_s3_deployment as s3_deployment,
+  Stack,
+  StackProps,
+  aws_certificatemanager as certificatemanager,
   aws_cloudfront as cloudfront,
   aws_cloudfront_origins as cloudfront_origins,
-  aws_certificatemanager as certificatemanager,
+  aws_logs as logs,
   aws_route53 as route53,
   aws_route53_targets as route53_targets,
+  aws_s3 as s3,
+  aws_s3_deployment as s3_deployment,
 } from "aws-cdk-lib";
 import { Construct } from "constructs";
 

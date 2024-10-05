@@ -25,8 +25,7 @@ export function Navbar(): ReactNode {
           id="nav"
         >
           <div className="flex flex-row space-x-0 pr-10">
-            {Object.entries(navItems).map(([path, { name }]) => {
-              return (
+            {Object.entries(navItems).map(([path, { name }]) => (
                 <Link
                   key={path}
                   href={path}
@@ -34,8 +33,7 @@ export function Navbar(): ReactNode {
                 >
                   {name}
                 </Link>
-              );
-            })}
+              ))}
           </div>
         </nav>
       </div>
