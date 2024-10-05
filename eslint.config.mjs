@@ -30,6 +30,6 @@ export default [
     },
   },
   {
-    ignores: ["*/out/**", "*/.next/**", "*/cdk.out/**", "**/*.d.ts"],
+    ignores: ["*/out/**", "*/.next/**", "*/cdk.out/**", "**/*.d.ts", "infra/src/index.js"],
   },
 ];
