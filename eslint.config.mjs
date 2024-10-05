@@ -25,6 +25,7 @@ export default [
       "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0 }],
       "no-trailing-spaces": ["error"],
       "comma-dangle": ["error", "always-multiline"],
+      "object-curly-spacing": ["error", "always"],
       "@typescript-eslint/no-unused-vars": ["error"],
       "@typescript-eslint/no-explicit-any": ["error"],
     },
