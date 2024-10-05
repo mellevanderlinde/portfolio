@@ -135,6 +135,7 @@ exports[`Match with snapshot 1`] = `
         "DistributionPaths": [
           "/*",
         ],
+        "OutputObjectKeys": true,
         "Prune": true,
         "ServiceToken": {
           "Fn::GetAtt": [
