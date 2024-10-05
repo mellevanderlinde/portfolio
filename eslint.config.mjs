@@ -1,9 +1,14 @@
-import { Linter } from "eslint"; // eslint-disable-line @typescript-eslint/no-unused-vars
+// @ts-check
+
 import typescriptPlugin from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
+import eslint from "@eslint/js";
+import tseslint from "typescript-eslint";
 
-/** @type {Linter.Config[]} */
 export default [
+  eslint.configs.recommended,
+  ...tseslint.configs.strict,
+  ...tseslint.configs.stylistic,
   {
     languageOptions: {
       parser: typescriptParser,
@@ -23,6 +28,8 @@ export default [
       "@typescript-eslint/no-unused-vars": ["error"],
       "@typescript-eslint/no-explicit-any": ["error"],
     },
+  },
+  {
     ignores: ["*/out/**", "*/.next/**", "*/cdk.out/**", "**/*.d.ts"],
   },
 ];

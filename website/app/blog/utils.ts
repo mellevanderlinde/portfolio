@@ -1,15 +1,18 @@
 import fs from "fs";
 import path from "path";
 
-type Metadata = {
+interface Metadata {
   title: string;
   publishedAt: string;
-};
+}
 
 function parseFrontmatter(fileContent: string) {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
-  const frontMatterBlock = match![1];
+  if (!match) {
+    throw new Error("Frontmatter not found");
+  }
+  const frontMatterBlock = match[1];
   const content = fileContent.replace(frontmatterRegex, "").trim();
   const frontMatterLines = frontMatterBlock.trim().split("\n");
   const metadata: Partial<Metadata> = {};
