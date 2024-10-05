@@ -7,20 +7,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Lint
+      - name: Build
         run: |
           npm ci
           npm run lint
-
-      - name: Build website
-        working-directory: ./website
-        run: |
-          npm ci
-          npm run build
-          
-      - name: Build AWS infrastructure
-        working-directory: ./infra
-        run: |
-          npm ci
           npm run build
           npm run test
+
