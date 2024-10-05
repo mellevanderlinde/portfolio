@@ -1,8 +1,13 @@
 {
   "name": "portfolio",
   "scripts": {
+    "build": "npm run build:website && npm run build:infra",
+    "build:infra": "cd infra && npm ci && npm run build",
+    "build:website": "cd website && npm ci && npm run build",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
+    "lint:fix": "eslint . --fix",
+    "test": "cd infra && npm run test",
+    "test:update": "cd infra && npm run test:update"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^8.7.0",
