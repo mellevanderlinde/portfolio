@@ -4,8 +4,8 @@
     "build": "npm run build:website && npm run build:infra",
     "build:infra": "cd infra && npm ci && npm run build",
     "build:website": "cd website && npm ci && npm run build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "npm ci && eslint .",
+    "lint:fix": "npm ci && eslint . --fix",
     "test": "cd infra && npm run test",
     "test:update": "cd infra && npm run test:update"
   },
