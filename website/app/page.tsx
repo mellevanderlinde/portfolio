@@ -17,7 +17,7 @@ export default function Page(): ReactNode {
             and sustainability. After completing my Master's in Behavioural Data Science, 
             I joined PostNL as MLOps Engineer, where I now `}
             <Link href="/work">work</Link>
-            {` as Cloud Engineer.`}
+            {" as Cloud Engineer."}
           </>
         }
       />

@@ -44,7 +44,7 @@ export default function Page(): ReactNode {
               <Link href="https://openid.net/developers/how-connect-works">
                 OpenID Connect
               </Link>
-              {`.`}
+              {"."}
             </>
           }
         />,
@@ -56,11 +56,11 @@ export default function Page(): ReactNode {
         <Paragraph
           content={
             <>
-              {`This link shows some contributions (tiny, mostly bug fixes) to the `}
+              {"This link shows some contributions (tiny, mostly bug fixes) to the "}
               <Link href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">
                 AWS CDK
               </Link>
-              {` repository.`}
+              {" repository."}
             </>
           }
         />,
@@ -77,7 +77,7 @@ export default function Page(): ReactNode {
               <Link href="https://vercel.com/templates/next.js/portfolio-starter-kit">
                 template by Vercel
               </Link>
-              {`.`}
+              {"."}
             </>
           }
         />,
@@ -92,9 +92,9 @@ export default function Page(): ReactNode {
               {`AWS CDK project that deploys an API endpoint using API Gateway. 
               The endpoint interacts with a large language model from `}
               <Link href="https://aws.amazon.com/bedrock/">
-                {`Amazon's generative AI service`}
+                {"Amazon's generative AI service"}
               </Link>
-              {`.`}
+              {"."}
             </>
           }
         />,
@@ -106,9 +106,9 @@ export default function Page(): ReactNode {
         <Paragraph
           content={
             <>
-              {`AWS CDK project that deploys an MWAA environment for `}
+              {"AWS CDK project that deploys an MWAA environment for "}
               <Link href="https://airflow.apache.org">Apache Airflow</Link>
-              {`. The repository contains a minimal DAG that invokes a Lambda function.`}
+              {". The repository contains a minimal DAG that invokes a Lambda function."}
             </>
           }
         />,
