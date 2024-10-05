@@ -22,7 +22,7 @@ export default [
       "semi": ["error", "always"],
       "quotes": ["error", "double"],
       "no-unused-vars": "off",
-      "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+      "no-multiple-empty-lines": ["error", { max: 1, maxEOF: 0 }],
       "no-trailing-spaces": ["error"],
       "comma-dangle": ["error", "always-multiline"],
       "@typescript-eslint/no-unused-vars": ["error"],
