@@ -2,8 +2,8 @@ import fs from "fs";
 import path from "path";
 
 interface Metadata {
-  title: string
-  publishedAt: string
+  title: string;
+  publishedAt: string;
 }
 
 function parseFrontmatter(fileContent: string) {

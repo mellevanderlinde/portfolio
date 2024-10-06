@@ -1,5 +1,6 @@
 {
   "name": "portfolio",
+  "type": "module",
   "scripts": {
     "build": "npm run build:website && npm run build:infra",
     "build:infra": "cd infra && npm ci && npm run build",
@@ -10,8 +11,13 @@
     "test:update": "cd infra && npm run test:update"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.0",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.12.0",
     "@typescript-eslint/eslint-plugin": "^8.8.0",
     "eslint": "^9.12.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "typescript-eslint": "^8.8.0"
   }
 }

@@ -56,7 +56,9 @@ export default function Page(): ReactNode {
         <Paragraph
           content={
             <>
-              {"This link shows some contributions (tiny, mostly bug fixes) to the "}
+              {
+                "This link shows some contributions (tiny, mostly bug fixes) to the "
+              }
               <Link href="https://docs.aws.amazon.com/cdk/v2/guide/home.html">
                 AWS CDK
               </Link>
@@ -108,7 +110,9 @@ export default function Page(): ReactNode {
             <>
               {"AWS CDK project that deploys an MWAA environment for "}
               <Link href="https://airflow.apache.org">Apache Airflow</Link>
-              {". The repository contains a minimal DAG that invokes a Lambda function."}
+              {
+                ". The repository contains a minimal DAG that invokes a Lambda function."
+              }
             </>
           }
         />,

@@ -1,4 +1,5 @@
-module.exports = { // eslint-disable-line no-undef
+// eslint-disable-next-line no-undef
+module.exports = {
   testEnvironment: "node",
   roots: ["<rootDir>/test"],
   testMatch: ["**/*.test.ts"],
