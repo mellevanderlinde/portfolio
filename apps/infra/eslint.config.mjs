@@ -1,4 +1,4 @@
-import { eslintConfig } from "@repo/eslint-config/eslint.config.js";
+import { eslintConfig } from "@repo/eslint-config/eslint.config.mjs";
 
 export default [
   ...eslintConfig,
