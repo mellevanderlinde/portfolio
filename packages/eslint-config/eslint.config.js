@@ -16,7 +16,7 @@ const compat = new FlatCompat({
   allConfig: js.configs.all,
 });
 
-export default [
+export const eslintConfig = [
   ...compat.extends(
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -37,11 +37,7 @@ export default [
   },
   {
     ignores: [
-      "*/out/**",
-      "*/.next/**",
-      "*/cdk.out/**",
       "**/*.d.ts",
-      "infra/src/index.js",
     ],
   },
 ];

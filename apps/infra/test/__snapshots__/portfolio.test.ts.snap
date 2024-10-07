@@ -633,22 +633,23 @@ exports[`Match with snapshot 1`] = `
       "Properties": {
         "AutoPublish": true,
         "FunctionCode": ""use strict";
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function handler(event) {
-    const request = event.request;
-    const uri = request.uri;
-    // Check whether the URI is missing a file name.
-    if (uri.endsWith("/")) {
-        request.uri += "index.html";
-    }
-    // Check whether the URI is missing a file extension.
-    else if (!uri.includes(".")) {
-        request.uri += "/index.html";
-    }
-    return request;
+  const request = event.request;
+  const uri = request.uri;
+  // Check whether the URI is missing a file name.
+  if (uri.endsWith("/")) {
+    request.uri += "index.html";
+  }
+  // Check whether the URI is missing a file extension.
+  else if (!uri.includes(".")) {
+    request.uri += "/index.html";
+  }
+  return request;
 }
 // See https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/example-function-add-index.html
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsaUdBQWlHO0FBQ2pHLEtBQUssVUFBVSxPQUFPLENBQUMsS0FBVTtJQUMvQixNQUFNLE9BQU8sR0FBRyxLQUFLLENBQUMsT0FBTyxDQUFDO0lBQzlCLE1BQU0sR0FBRyxHQUFHLE9BQU8sQ0FBQyxHQUFHLENBQUM7SUFFeEIsZ0RBQWdEO0lBQ2hELElBQUksR0FBRyxDQUFDLFFBQVEsQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDO1FBQ3RCLE9BQU8sQ0FBQyxHQUFHLElBQUksWUFBWSxDQUFDO0lBQzlCLENBQUM7SUFDRCxxREFBcUQ7U0FDaEQsSUFBSSxDQUFDLEdBQUcsQ0FBQyxRQUFRLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQztRQUM1QixPQUFPLENBQUMsR0FBRyxJQUFJLGFBQWEsQ0FBQztJQUMvQixDQUFDO0lBRUQsT0FBTyxPQUFPLENBQUM7QUFDakIsQ0FBQztBQUVELHlHQUF5RyIsInNvdXJjZXNDb250ZW50IjpbIi8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBAdHlwZXNjcmlwdC1lc2xpbnQvbm8tZXhwbGljaXQtYW55LCBAdHlwZXNjcmlwdC1lc2xpbnQvbm8tdW51c2VkLXZhcnNcbmFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIoZXZlbnQ6IGFueSkge1xuICBjb25zdCByZXF1ZXN0ID0gZXZlbnQucmVxdWVzdDtcbiAgY29uc3QgdXJpID0gcmVxdWVzdC51cmk7XG5cbiAgLy8gQ2hlY2sgd2hldGhlciB0aGUgVVJJIGlzIG1pc3NpbmcgYSBmaWxlIG5hbWUuXG4gIGlmICh1cmkuZW5kc1dpdGgoXCIvXCIpKSB7XG4gICAgcmVxdWVzdC51cmkgKz0gXCJpbmRleC5odG1sXCI7XG4gIH1cbiAgLy8gQ2hlY2sgd2hldGhlciB0aGUgVVJJIGlzIG1pc3NpbmcgYSBmaWxlIGV4dGVuc2lvbi5cbiAgZWxzZSBpZiAoIXVyaS5pbmNsdWRlcyhcIi5cIikpIHtcbiAgICByZXF1ZXN0LnVyaSArPSBcIi9pbmRleC5odG1sXCI7XG4gIH1cblxuICByZXR1cm4gcmVxdWVzdDtcbn1cblxuLy8gU2VlIGh0dHBzOi8vZG9jcy5hd3MuYW1hem9uLmNvbS9BbWF6b25DbG91ZEZyb250L2xhdGVzdC9EZXZlbG9wZXJHdWlkZS9leGFtcGxlLWZ1bmN0aW9uLWFkZC1pbmRleC5odG1sXG4iXX0=",
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsaUdBQWlHO0FBQ2pHLEtBQUssVUFBVSxPQUFPLENBQUMsS0FBVTtJQUMvQixNQUFNLE9BQU8sR0FBRyxLQUFLLENBQUMsT0FBTyxDQUFDO0lBQzlCLE1BQU0sR0FBRyxHQUFHLE9BQU8sQ0FBQyxHQUFHLENBQUM7SUFFeEIsZ0RBQWdEO0lBQ2hELElBQUksR0FBRyxDQUFDLFFBQVEsQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDO1FBQ3RCLE9BQU8sQ0FBQyxHQUFHLElBQUksWUFBWSxDQUFDO0lBQzlCLENBQUM7SUFDRCxxREFBcUQ7U0FDaEQsSUFBSSxDQUFDLEdBQUcsQ0FBQyxRQUFRLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQztRQUM1QixPQUFPLENBQUMsR0FBRyxJQUFJLGFBQWEsQ0FBQztJQUMvQixDQUFDO0lBRUQsT0FBTyxPQUFPLENBQUM7QUFDakIsQ0FBQztBQUVELHlHQUF5RyIsInNvdXJjZXNDb250ZW50IjpbIi8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSBAdHlwZXNjcmlwdC1lc2xpbnQvbm8tZXhwbGljaXQtYW55LCBAdHlwZXNjcmlwdC1lc2xpbnQvbm8tdW51c2VkLXZhcnNcbmFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIoZXZlbnQ6IGFueSkge1xuICBjb25zdCByZXF1ZXN0ID0gZXZlbnQucmVxdWVzdDtcbiAgY29uc3QgdXJpID0gcmVxdWVzdC51cmk7XG5cbiAgLy8gQ2hlY2sgd2hldGhlciB0aGUgVVJJIGlzIG1pc3NpbmcgYSBmaWxlIG5hbWUuXG4gIGlmICh1cmkuZW5kc1dpdGgoXCIvXCIpKSB7XG4gICAgcmVxdWVzdC51cmkgKz0gXCJpbmRleC5odG1sXCI7XG4gIH1cbiAgLy8gQ2hlY2sgd2hldGhlciB0aGUgVVJJIGlzIG1pc3NpbmcgYSBmaWxlIGV4dGVuc2lvbi5cbiAgZWxzZSBpZiAoIXVyaS5pbmNsdWRlcyhcIi5cIikpIHtcbiAgICByZXF1ZXN0LnVyaSArPSBcIi9pbmRleC5odG1sXCI7XG4gIH1cblxuICByZXR1cm4gcmVxdWVzdDtcbn1cblxuLy8gU2VlIGh0dHBzOi8vZG9jcy5hd3MuYW1hem9uLmNvbS9BbWF6b25DbG91ZEZyb250L2xhdGVzdC9EZXZlbG9wZXJHdWlkZS9leGFtcGxlLWZ1bmN0aW9uLWFkZC1pbmRleC5odG1sXG4iXX0=
+",
         "FunctionConfig": {
           "Comment": "Add index.html to URI (required for Next.js)",
           "Runtime": "cloudfront-js-2.0",

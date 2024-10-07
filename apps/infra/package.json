@@ -1,13 +1,13 @@
 {
-  "name": "portfolio",
+  "name": "infra",
   "version": "0.1.0",
   "bin": {
     "portfolio": "bin/portfolio.js"
   },
   "scripts": {
     "build": "tsc",
-    "watch": "tsc -w",
-    "cdk": "cdk",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "jest",
     "test:update": "jest -u"
   },
@@ -21,6 +21,7 @@
     "typescript": "~5.6.2"
   },
   "dependencies": {
+    "@repo/eslint-config": "*",
     "aws-cdk-lib": "^2.122.0",
     "constructs": "^10.0.0",
     "source-map-support": "^0.5.21"
