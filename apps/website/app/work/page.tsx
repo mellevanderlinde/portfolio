@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Header1 } from "components/header";
-import { HorizontalLine } from "components/line";
+import { Header1 } from "../components/header";
+import { HorizontalLine } from "../components/line";
 import { ReactNode } from "react";
-import { Paragraph } from "components/paragraph";
+import { Paragraph } from "../components/paragraph";
 import { Link } from "next-view-transitions";
 
 export const metadata: Metadata = {

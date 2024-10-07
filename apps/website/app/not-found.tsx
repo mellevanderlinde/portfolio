@@ -1,5 +1,5 @@
-import { Paragraph } from "../components/paragraph";
-import { Header1 } from "../components/header";
+import { Paragraph } from "./components/paragraph";
+import { Header1 } from "./components/header";
 import { ReactNode } from "react";
 import { Metadata } from "next";
 

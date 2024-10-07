@@ -1,8 +1,8 @@
-import { BlogPosts } from "../components/posts";
-import { Header1 } from "../components/header";
+import { BlogPosts } from "./components/posts";
+import { Header1 } from "./components/header";
 import { Link } from "next-view-transitions";
-import { Paragraph } from "../components/paragraph";
-import { PreloadResources } from "../components/preload";
+import { Paragraph } from "./components/paragraph";
+import { PreloadResources } from "./components/preload";
 import { ReactNode } from "react";
 
 export default function Page(): ReactNode {

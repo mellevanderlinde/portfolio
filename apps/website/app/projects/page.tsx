@@ -1,9 +1,9 @@
-import { Badge } from "components/bagde";
-import { Header1, Header2 } from "components/header";
-import { HorizontalLine } from "components/line";
+import { Badge } from "../components/bagde";
+import { Header1, Header2 } from "../components/header";
+import { HorizontalLine } from "../components/line";
 import { Link } from "next-view-transitions";
 import type { Metadata } from "next";
-import { Paragraph } from "components/paragraph";
+import { Paragraph } from "../components/paragraph";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {

@@ -1,9 +1,9 @@
-import "../styles/global.css";
+import "./global.css";
 import type { Metadata } from "next";
 import { ViewTransitions } from "next-view-transitions";
-import { Navbar } from "../components/nav";
+import { Navbar } from "./components/nav";
 import { ReactNode } from "react";
-import Footer from "../components/footer";
+import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
 
 export const metadata: Metadata = {
