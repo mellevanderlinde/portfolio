@@ -8,7 +8,5 @@ To install the project's dependencies, build the website and deploy to AWS, run 
 
 ```
 npm ci
-npm run build
-cd apps/infra
-npx cdk deploy -c accountId=012345678912
+npm run deploy -- -c accountId=012345678912
 ```

@@ -3,24 +3,25 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["out/**"]
+      "outputs": [".next/**", "out/**", "src/**"]
+    },
+    "deploy": {
+      "dependsOn": ["^deploy", "build"]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "lint": {
-      "dependsOn": ["^lint"]
+    "diff": {
+      "dependsOn": ["^diff", "build"]
     },
-    "lint:fix": {
-      "dependsOn": ["^lint:fix"]
-    },
+    "lint": {},
+    "lint:fix": {},
     "test": {
-      "dependsOn": ["^test", "website#build"]
+      "dependsOn": ["^test", "build"]
     },
     "test:update": {
-      "dependsOn": ["^test:update", "website#build"]
+      "dependsOn": ["^test:update", "build"]
     }
   }
 }

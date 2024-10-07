@@ -2,7 +2,9 @@
   "name": "portfolio",
   "scripts": {
     "build": "turbo build",
+    "deploy": "turbo deploy --",
     "dev": "turbo dev",
+    "diff": "turbo diff --",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
     "test": "turbo test",

@@ -1,5 +1,5 @@
 {
-  "name": "website",
+  "name": "@repo/website",
   "private": true,
   "scripts": {
     "build": "next build",
