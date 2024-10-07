@@ -6,8 +6,6 @@
   },
   "scripts": {
     "build": "tsc",
-    "deploy": "cdk deploy",
-    "diff": "cdk diff",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest",

@@ -5,15 +5,9 @@
     "build": {
       "outputs": [".next/**", "out/**", "src/**"]
     },
-    "deploy": {
-      "dependsOn": ["^deploy", "build"]
-    },
     "dev": {
       "cache": false,
       "persistent": true
-    },
-    "diff": {
-      "dependsOn": ["^diff", "build"]
     },
     "lint": {},
     "lint:fix": {},
