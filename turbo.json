@@ -6,6 +6,10 @@
       "dependsOn": ["^build"],
       "outputs": ["out/**"]
     },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },
@@ -17,10 +21,6 @@
     },
     "test:update": {
       "dependsOn": ["^test:update", "website#build"]
-    },
-    "dev": {
-      "cache": false,
-      "persistent": true
     }
   }
 }
