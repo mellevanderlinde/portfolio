@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { CustomMDX } from "../../components/mdx";
-import { formatDate, getBlogPosts } from "app/blog/utils";
+import { CustomMDX } from "app/components/mdx";
+import { formatDate, getBlogPosts } from "app/lib/posts";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 
@@ -18,15 +18,15 @@ export default function Blog({ params }): ReactNode {
 
   return (
     <section>
-      <h1 className="title font-semibold text-2xl tracking-tighter">
+      <h1 className="title mb-3 font-medium text-2xl tracking-tight">
         {post.metadata.title}
       </h1>
-      <div className="flex justify-between items-center mt-2 mb-8 text-sm">
+      <div className="flex justify-between items-center mt-2 mb-8 text-medium">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose">
+      <article className="prose prose-quoteless prose-neutral dark:prose-invert">
         <CustomMDX source={post.content} />
       </article>
     </section>

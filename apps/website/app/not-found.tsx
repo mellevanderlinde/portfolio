@@ -1,7 +1,6 @@
-import { Paragraph } from "./components/paragraph";
-import { Header1 } from "./components/header";
 import { ReactNode } from "react";
 import { Metadata } from "next";
+import { Header1 } from "./components/header";
 
 const title = "404 - Page not found";
 
@@ -13,7 +12,7 @@ export default function NotFound(): ReactNode {
   return (
     <section>
       <Header1 title={title} />
-      <Paragraph content="The page you are looking for does not exist." />
+      <p className="mb-4">The page you are looking for does not exist.</p>
     </section>
   );
 }
