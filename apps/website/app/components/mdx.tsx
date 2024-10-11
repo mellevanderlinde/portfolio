@@ -1,12 +1,7 @@
 import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ReactNode, createElement } from "react";
-import hljs from "highlight.js/lib/core";
-import typescript from "highlight.js/lib/languages/typescript";
-import yaml from "highlight.js/lib/languages/yaml";
-
-hljs.registerLanguage("typescript", typescript);
-hljs.registerLanguage("yaml", yaml);
+import { highlight } from "sugar-high";
 
 function CustomLink(props): ReactNode {
   const href = props.href;
@@ -24,8 +19,7 @@ function CustomLink(props): ReactNode {
 }
 
 function Code({ children, ...props }): ReactNode {
-  const language = props.className?.replace("language-", "") || "yaml";
-  const __html = hljs.highlight(children, { language }).value;
+  const __html = props.className === 'language-ts' ? highlight(children) : children;
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
 }
 
