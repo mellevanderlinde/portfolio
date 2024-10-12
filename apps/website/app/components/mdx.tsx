@@ -19,7 +19,8 @@ function CustomLink(props): ReactNode {
 }
 
 function Code({ children, ...props }): ReactNode {
-  const __html = props.className === 'language-ts' ? highlight(children) : children;
+  const __html =
+    props.className === "language-ts" ? highlight(children) : children;
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
 }
 

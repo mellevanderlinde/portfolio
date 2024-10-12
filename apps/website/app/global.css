@@ -73,7 +73,7 @@ html {
 }
 
 .prose pre {
-  @apply bg-[#F7F7F7] dark:bg-[#181818] rounded-lg overflow-x-auto;
+  @apply bg-[#F7F7F7] dark:bg-[#181818] rounded-lg overflow-x-auto text-black dark:text-white;
 }
 
 .prose code {
