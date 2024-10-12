@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ReactNode } from "react";
+import { ThemeSwitch } from "./theme";
 
 export const navItems = {
   "/blog": { name: "Blog" },
@@ -26,6 +27,7 @@ export function Navbar(): ReactNode {
               {name}
             </Link>
           ))}
+          <ThemeSwitch />
         </div>
       </div>
     </nav>
