@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: "Projects",
 };
 
-export default function Projects(): ReactNode {
+export default function Page(): ReactNode {
   return (
     <section>
       <Header1 title="Projects" />
