@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ReactNode } from "react";
-import { ThemeToggle } from "./theme";
 
 export const navItems = {
   "/blog": { name: "Blog" },
@@ -27,7 +26,6 @@ export function Navbar(): ReactNode {
               {name}
             </Link>
           ))}
-          <ThemeToggle />
         </div>
       </div>
     </nav>
