@@ -6,7 +6,13 @@ interface Metadata {
   publishedAt: string;
 }
 
-function parseFrontmatter(fileContent: string) {
+interface BlogPost {
+  metadata: Metadata;
+  slug: string;
+  content: string;
+}
+
+function parseFrontmatter(fileContent: string): Omit<BlogPost, "slug"> {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
   if (!match) {
@@ -31,12 +37,12 @@ function getMDXFiles(dir: string): string[] {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 
-function readMDXFile(filePath: string) {
+function readMDXFile(filePath: string): Omit<BlogPost, "slug"> {
   const rawContent = fs.readFileSync(filePath, "utf-8");
   return parseFrontmatter(rawContent);
 }
 
-function getMDXData(dir: string) {
+function getMDXData(dir: string): BlogPost[] {
   const mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     const { metadata, content } = readMDXFile(path.join(dir, file));
@@ -49,7 +55,7 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getBlogPosts() {
+export function getBlogPosts(): BlogPost[] {
   return getMDXData(path.join(process.cwd(), "content"));
 }
 
