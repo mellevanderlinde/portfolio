@@ -603,6 +603,7 @@ exports[`Match with snapshot 1`] = `
                 "NL",
                 "PL",
                 "PT",
+                "US",
               ],
               "RestrictionType": "whitelist",
             },
@@ -665,6 +666,18 @@ async function handler(event) {
       },
       "Type": "AWS::Logs::LogGroup",
       "UpdateReplacePolicy": "Retain",
+    },
+    "TxtRecordCFF063CA": {
+      "Properties": {
+        "HostedZoneId": "DUMMY",
+        "Name": "mellevanderlinde.com.",
+        "ResourceRecords": [
+          ""google-site-verification=cdnxZVubxHlWGwUWIl8O3zQA57brfgrjMC-gzOibbEQ"",
+        ],
+        "TTL": "1800",
+        "Type": "TXT",
+      },
+      "Type": "AWS::Route53::RecordSet",
     },
     "WwwARecord21A54661": {
       "Properties": {

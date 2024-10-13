@@ -93,6 +93,7 @@ export class PortfolioStack extends Stack {
         "NL",
         "PL",
         "PT",
+        "US",
       ),
     });
 
@@ -121,6 +122,13 @@ export class PortfolioStack extends Stack {
     new route53.AaaaRecord(this, "WwwAaaaRecord", {
       recordName: wwwDomainName,
       target,
+      zone,
+    });
+
+    new route53.TxtRecord(this, "TxtRecord", {
+      values: [
+        "google-site-verification=cdnxZVubxHlWGwUWIl8O3zQA57brfgrjMC-gzOibbEQ",
+      ],
       zone,
     });
 
