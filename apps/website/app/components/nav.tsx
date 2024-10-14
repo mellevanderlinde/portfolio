@@ -2,6 +2,8 @@ import Link from "next/link";
 import { ReactNode } from "react";
 import { ThemeSwitch } from "./theme";
 
+export const name = "Melle";
+
 export const navItems = {
   "/blog": { name: "Blog" },
   "/projects": { name: "Projects" },
@@ -14,7 +16,7 @@ export function Navbar(): ReactNode {
       <div className="flex flex-col md:flex-row md:items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="text-3xl font-semibold tracking-tight">
-            Melle
+            {name}
           </Link>
         </div>
         <div className="flex flex-row gap-4 mt-6 md:mt-0 md:ml-auto items-center">

@@ -1,5 +1,8 @@
 import { ReactNode } from "react";
 import { FaGithub, FaCode, FaLinkedinIn } from "react-icons/fa6";
+import { name } from "./nav";
+
+const YEAR = new Date().getFullYear();
 
 const links = {
   github: "https://github.com/mellevanderlinde",
@@ -28,6 +31,7 @@ function Links(): ReactNode {
 export default function Footer(): ReactNode {
   return (
     <small className="block lg:mt-24 mt-16 text-[#1C1C1C] dark:text-[#D4D4D4]">
+      <time>© {YEAR}</time> {name}
       <Links />
     </small>
   );
