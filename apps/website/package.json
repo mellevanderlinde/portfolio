@@ -8,6 +8,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@next/third-parties": "^14.2.15",
     "@types/node": "^22.5.0",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",

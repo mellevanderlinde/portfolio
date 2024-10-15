@@ -1,5 +1,6 @@
 import "./global.css";
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { Navbar } from "./components/nav";
@@ -35,6 +36,7 @@ export default function RootLayout(props: { children: ReactNode }): ReactNode {
           </main>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-4BPVNPLM1Q" />
     </html>
   );
 }
