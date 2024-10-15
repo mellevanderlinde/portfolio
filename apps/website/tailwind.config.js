@@ -1,7 +1,10 @@
 // eslint-disable-next-line no-undef
 module.exports = {
-  darkMode: "class",
-  content: ["./app/**/*.{js,ts,jsx,tsx,mdx}", "./public/**/*.svg"],
+  content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./public/**/*.ico",
+    "./content/**/*.mdx",
+  ],
   theme: {
     extend: {
       fontFamily: {

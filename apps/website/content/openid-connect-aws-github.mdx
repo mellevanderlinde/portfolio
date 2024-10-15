@@ -27,7 +27,7 @@ const oidcProvider = new iam.CfnOIDCProvider(this, "GithubOidcProvider", {
 ## Create IAM Role
 
 Next, the created identity provider is used to create an IAM role. 
-The trust policy of the role defines which specific GitHub repository branch is allowed to assume the role (using the pattern **repo:OWNER/REPOSITORY:ref:refs/heads/BRANCH**).
+The trust policy of the role defines which specific GitHub repository branch is allowed to assume the role (using the pattern `repo:OWNER/REPOSITORY:ref:refs/heads/BRANCH`).
 
 ```ts
 const conditions: iam.Conditions = {
@@ -44,7 +44,7 @@ const oidcRole = new iam.Role(this, "GithubOidcRole", {
 });
 ```
 
-Alternatively, an entire GitHub repository can be allowed using a wildcard * in the **conditions**. For this, **StringLike** is required instead of **StringEquals**.
+Alternatively, an entire GitHub repository can be allowed using a wildcard `*` in the `conditions`. For this, `StringLike` is required instead of `StringEquals`.
 
 ```ts
 const conditions: iam.Conditions = {
@@ -63,7 +63,7 @@ For other patterns (e.g. allowing specific GitHub environments), see [Example su
 ## Attach Permissions to IAM Role
 
 To invoke AWS actions, the OIDC role needs to have the correct permissions. 
-In this case the **cdk diff** command will be run, requiring read only permissions.
+In this case the `cdk diff` command will be run, requiring read only permissions.
 Therefore, the OIDC role is granted permission to assume the lookup role (created when the AWS account is [CDK bootstrapped](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html)).
 
 ```ts
@@ -79,7 +79,7 @@ lookupRole.grantAssumeRole(oidcRole);
 ## Assume IAM Role from GitHub Actions Workflow
 
 Next, the IAM role is assumed from a GitHub Actions workflow. 
-This is done with the action [configure-aws-credentials](https://github.com/aws-actions/configure-aws-credentials), resulting in the following **.github/workflows/oidc.yml** file.
+This is done with the action [configure-aws-credentials](https://github.com/aws-actions/configure-aws-credentials), resulting in the following `.github/workflows/oidc.yml` file.
 Note that a dummy AWS account ID is used.
 
 ```yaml
@@ -104,7 +104,7 @@ jobs:
 
 ## Invoke AWS Actions from GitHub Actions Workflow
 
-The last step is to invoke AWS actions from the workflow. In this case, the **cdk diff** command is run by adding the following step.
+The last step is to invoke AWS actions from the workflow. In this case, the `cdk diff` command is run by adding the following step.
 
 ```yaml
 - name: Invoke AWS action
@@ -113,7 +113,7 @@ The last step is to invoke AWS actions from the workflow. In this case, the **cd
     npx cdk diff
 ```
 
-This results in the following **.github/workflows/oidc.yml** file.
+This results in the following `.github/workflows/oidc.yml` file.
 
 ```yaml
 on: push
