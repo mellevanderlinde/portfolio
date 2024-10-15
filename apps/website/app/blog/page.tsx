@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "next-view-transitions";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import { formatDate, getBlogPosts } from "../lib/posts";
@@ -31,11 +31,19 @@ export default function Page(): ReactNode {
               className="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80"
               href={`/blog/${post.slug}`}
             >
-              <div className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2">
+              <div
+                className="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2"
+                style={{ viewTransitionName: `blog-title-${post.slug}` }}
+              >
                 <p className="text-black dark:text-white tracking-tight">
                   {post.metadata.title}
                 </p>
-                <p className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm">
+                <p
+                  className="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+                  style={{
+                    viewTransitionName: `blog-date-${post.metadata.publishedAt}`,
+                  }}
+                >
                   {formatDate(post.metadata.publishedAt)}
                 </p>
               </div>
