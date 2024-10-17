@@ -22,3 +22,16 @@ test("Match with snapshot", () => {
 
   expect(template).toMatchSnapshot();
 });
+
+test("Check if website is available", async () => {
+  const result = await fetch("https://mellevanderlinde.com");
+  const text = await result.text();
+
+  expect(result.status).toBe(200);
+  expect(result.statusText).toBe("OK");
+  expect(text).toMatch("Melle van der Linde");
+  expect(text).toMatch("My Portfolio");
+  expect(text).toMatch(
+    "I have an interest in cloud engineering, machine learning, technology and sustainability.",
+  );
+});
