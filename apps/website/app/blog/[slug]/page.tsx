@@ -3,6 +3,7 @@ import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 import { Metadata } from "next";
 import { ReactNode } from "react";
+import { getReadingTime } from "@repo/reading-time";
 
 export function generateMetadata({ params }): Metadata {
   const post = getBlogPosts().find((post) => post.slug === params.slug);
@@ -31,7 +32,8 @@ export default function Blog({ params }): ReactNode {
             viewTransitionName: `blog-date-${post.metadata.publishedAt}`,
           }}
         >
-          {formatDate(post.metadata.publishedAt)}
+          {formatDate(post.metadata.publishedAt)} •{" "}
+          {getReadingTime(post.content)} minute read
         </p>
       </div>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
