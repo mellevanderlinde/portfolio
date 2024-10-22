@@ -117,7 +117,7 @@ exports[`Match with snapshot 1`] = `
       "Properties": {
         "Content": {
           "S3Bucket": "cdk-hnb659fds-assets-012345678912-us-east-1",
-          "S3Key": "a0ea9d2b8e999826c40e06645a39aca710e93abb4c9d6c2a1ee2f9295325decc.zip",
+          "S3Key": "removed-hash",
         },
         "Description": "/opt/awscli/aws",
       },

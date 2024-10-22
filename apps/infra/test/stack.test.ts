@@ -19,6 +19,10 @@ test("Match with snapshot", () => {
   Object.keys(lambdaFunction).forEach((key) => {
     lambdaFunction[key].Properties.Code.S3Key = "removed-hash";
   });
+  const layerVersion = template.findResources("AWS::Lambda::LayerVersion");
+  Object.keys(layerVersion).forEach((key) => {
+    layerVersion[key].Properties.Content.S3Key = "removed-hash";
+  });
 
   expect(template).toMatchSnapshot();
 });
