@@ -25,7 +25,7 @@ export default function Blog({ params }): ReactNode {
       <div className="flex justify-between items-center mt-2 mb-8 text-medium">
         <p className="text-sm text-neutral-600 dark:text-neutral-400">
           {formatDate(post.metadata.publishedAt)} •{" "}
-          {getReadingTime(post.content)} minute read
+          {getReadingTime(post.content)}-minute read
         </p>
       </div>
       <article className="prose prose-quoteless prose-neutral dark:prose-invert">
