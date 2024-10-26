@@ -33,6 +33,7 @@ export default [
     },
     rules: {
       "prettier/prettier": ["error"],
+      "capitalized-comments": ["error"],
     },
   },
 ];
