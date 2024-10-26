@@ -3,6 +3,6 @@ import config from "@repo/eslint-config/eslint.config.mjs";
 export default [
   ...config,
   {
-    ignores: ["**/.next/**", "**/out/**"],
+    ignores: ["**/.next/**", "**/out/**", "**/*.d.ts"],
   },
 ];
