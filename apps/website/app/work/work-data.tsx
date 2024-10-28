@@ -17,7 +17,8 @@ export const jobs: Job[] = [
       CloudFormation, API Gateway, Organizations, Lambda, DynamoDB).`,
       `As an example project, I guided engineering teams to migrate their GitHub 
       Actions to use OpenID Connect (OIDC) for AWS and JFrog integrations. This 
-      project uses an internal tool I developed to make OIDC integration easier for engineers.`,
+      project uses an internal tool I developed to make OIDC integration easier for engineers.
+      The new solution is more secure, easier to maintain and more cost-effective.`,
     ],
     start: 2023,
     end: undefined,
