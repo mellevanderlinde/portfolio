@@ -1,4 +1,4 @@
-import { Link } from "next-view-transitions";
+import Link from "next/link";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { ReactNode, createElement } from "react";
 import hljs from "highlight.js/lib/core";
