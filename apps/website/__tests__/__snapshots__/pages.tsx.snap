@@ -1,0 +1,320 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Match blog 1`] = `
+<div>
+  <section>
+    <h1
+      class="mb-8 text-2xl font-medium tracking-tight"
+    >
+      Blog
+    </h1>
+    <div>
+      <a
+        class="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80"
+        href="/blog/openid-connect-aws-github"
+      >
+        <div
+          class="w-full flex flex-col sm:flex-row justify-between items-start sm:items-center space-y-1 sm:space-y-0 sm:space-x-2"
+        >
+          <p
+            class="text-black dark:text-white tracking-tight"
+          >
+            Connect GitHub Actions with AWS using OpenID Connect
+          </p>
+          <p
+            class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+          >
+            Sep 26, 2024
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Match home 1`] = `
+<div>
+  <section>
+    <h1
+      class="mb-8 text-2xl font-medium tracking-tight"
+    >
+      My Portfolio
+    </h1>
+    <div
+      class="prose prose-neutral dark:prose-invert"
+    >
+      <p>
+        I have an interest in cloud engineering, machine learning, technology and sustainability. After completing my Master's in Behavioural Data Science, I joined PostNL as MLOps Engineer, where I now work as Cloud Engineer.
+      </p>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Match not found 1`] = `
+<div>
+  <section>
+    <h1
+      class="mb-8 text-2xl font-medium tracking-tight"
+    >
+      404 - Page not found
+    </h1>
+    <p
+      class="mb-4"
+    >
+      The page you are looking for does not exist.
+    </p>
+  </section>
+</div>
+`;
+
+exports[`Match projects 1`] = `
+<div>
+  <section>
+    <h1
+      class="mb-8 text-2xl font-medium tracking-tight"
+    >
+      Projects
+    </h1>
+    <div
+      class="space-y-6"
+    >
+      <a
+        class="block group hover:opacity-80 transition-opacity duration-200"
+        href="https://github.com/mellevanderlinde/oidc-aws-github"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="w-full flex justify-between items-baseline"
+          >
+            <span
+              class="text-black dark:text-white font-medium tracking-tight"
+            >
+              OpenID Connect for AWS and GitHub Actions
+            </span>
+            <span
+              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+            >
+              2024
+            </span>
+          </div>
+          <p
+            class="prose prose-neutral dark:prose-invert pt-3"
+          >
+            This repository demonstrates how to allow a specific GitHub repository to invoke actions on AWS from GitHub Actions using OpenID Connect.
+          </p>
+        </div>
+      </a>
+      <a
+        class="block group hover:opacity-80 transition-opacity duration-200"
+        href="https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="w-full flex justify-between items-baseline"
+          >
+            <span
+              class="text-black dark:text-white font-medium tracking-tight"
+            >
+              Contributions to AWS CDK
+            </span>
+            <span
+              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+            >
+              2024
+            </span>
+          </div>
+          <p
+            class="prose prose-neutral dark:prose-invert pt-3"
+          >
+            This link shows some contributions (tiny, mostly bug fixes) to the AWS CDK repository.
+          </p>
+        </div>
+      </a>
+      <a
+        class="block group hover:opacity-80 transition-opacity duration-200"
+        href="https://github.com/mellevanderlinde/portfolio"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="w-full flex justify-between items-baseline"
+          >
+            <span
+              class="text-black dark:text-white font-medium tracking-tight"
+            >
+              Portfolio with CloudFront and Next.js
+            </span>
+            <span
+              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+            >
+              2024
+            </span>
+          </div>
+          <p
+            class="prose prose-neutral dark:prose-invert pt-3"
+          >
+            AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. This portfolio design is a template by Vercel.
+          </p>
+        </div>
+      </a>
+      <a
+        class="block group hover:opacity-80 transition-opacity duration-200"
+        href="https://github.com/mellevanderlinde/mwaa-airflow"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="w-full flex justify-between items-baseline"
+          >
+            <span
+              class="text-black dark:text-white font-medium tracking-tight"
+            >
+              Apache Airflow on AWS
+            </span>
+            <span
+              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+            >
+              2024
+            </span>
+          </div>
+          <p
+            class="prose prose-neutral dark:prose-invert pt-3"
+          >
+            AWS CDK project that deploys an MWAA environment for Apache Airflow. The repository contains a minimal DAG that invokes a Lambda function.
+          </p>
+        </div>
+      </a>
+      <a
+        class="block group hover:opacity-80 transition-opacity duration-200"
+        href="https://github.com/mellevanderlinde/bedrock-apigateway"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="w-full flex justify-between items-baseline"
+          >
+            <span
+              class="text-black dark:text-white font-medium tracking-tight"
+            >
+              Bedrock API
+            </span>
+            <span
+              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+            >
+              2023
+            </span>
+          </div>
+          <p
+            class="prose prose-neutral dark:prose-invert pt-3"
+          >
+            AWS CDK project that deploys an API endpoint using API Gateway. The endpoint interacts with a large language model from Amazon's generative AI service.
+          </p>
+        </div>
+      </a>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Match work 1`] = `
+<div>
+  <section>
+    <h1
+      class="mb-8 text-2xl font-medium tracking-tight"
+    >
+      Work
+    </h1>
+    <div
+      class="space-y-6"
+    >
+      <div
+        class="flex flex-col"
+      >
+        <div
+          class="w-full flex justify-between items-baseline"
+        >
+          <span
+            class="text-black dark:text-white font-medium tracking-tight"
+          >
+            Cloud Engineer
+             @ 
+            PostNL
+          </span>
+          <span
+            class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+          >
+            2023
+             - 
+            Present
+          </span>
+        </div>
+        <p
+          class="prose prose-neutral dark:prose-invert pt-3"
+        >
+          In 2023 I joined the Cloud Center of Excellence (CCoE) team. My (platform) 
+      team works on the serverless cloud platform on AWS, used by all engineers. 
+      The stack includes a wide variety of services from AWS (e.g., IAM, 
+      CloudFormation, API Gateway, Organizations, Lambda, DynamoDB).
+        </p>
+        <p
+          class="prose prose-neutral dark:prose-invert pt-3"
+        >
+          As an example project, I guided engineering teams to migrate their GitHub 
+      Actions to use OpenID Connect (OIDC) for AWS and JFrog integrations. This 
+      project uses an internal tool I developed to make OIDC integration easier for engineers.
+      The new solution is more secure, easier to maintain and more cost-effective.
+        </p>
+      </div>
+      <div
+        class="flex flex-col"
+      >
+        <div
+          class="w-full flex justify-between items-baseline"
+        >
+          <span
+            class="text-black dark:text-white font-medium tracking-tight"
+          >
+            MLOps Engineer
+             @ 
+            PostNL
+          </span>
+          <span
+            class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+          >
+            2021
+             - 
+            2023
+          </span>
+        </div>
+        <p
+          class="prose prose-neutral dark:prose-invert pt-3"
+        >
+          Responsible for the deployment and monitoring of data science
+        models on AWS. The stack included containerization (Docker), 
+        infrastructure as code (AWS CDK), CI/CD (GitHub Actions and AWS 
+        CodePipeline), orchestration (Airflow), parallelization (PySpark).
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+`;
