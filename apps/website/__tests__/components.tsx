@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
-import Footer from "@repo/website/app/components/footer";
 import { Header1 } from "@repo/website/app/components/header";
 import { Navbar } from "@repo/website/app/components/nav";
+import { getBlogPosts } from "@repo/website/app/lib/posts";
+import Footer from "@repo/website/app/components/footer";
 import robots from "@repo/website/app/robots";
 import sitemap from "@repo/website/app/sitemap";
-import { getBlogPosts } from "@repo/website/app/lib/posts";
 
 test("Match footer", () => {
   const { container } = render(<Footer />);
