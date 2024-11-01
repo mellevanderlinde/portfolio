@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Header1 } from "./components/header";
+import { Header1 } from "@components/header";
 
 export default function Page(): ReactNode {
   return (

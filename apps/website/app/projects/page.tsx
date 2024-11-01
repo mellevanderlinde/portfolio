@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
 import { projects } from "./project-data";
-import { Header1 } from "@repo/website/app/components/header";
+import { Header1 } from "app/components/header";
 
 export const metadata: Metadata = {
   title: "Projects",

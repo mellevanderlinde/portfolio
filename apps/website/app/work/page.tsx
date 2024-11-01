@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Header1 } from "../components/header";
+import { Header1 } from "@components/header";
 import { ReactNode } from "react";
 import { jobs } from "./work-data";
 

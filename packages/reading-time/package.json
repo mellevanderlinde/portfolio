@@ -1,12 +1,12 @@
 {
-  "name": "@repo/reading-time",
+  "name": "reading-time",
   "scripts": {
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "test": "jest"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
+    "eslint-config": "workspace:*",
     "@types/jest": "^29.5.13",
     "jest": "^29.7.0",
     "ts-jest": "^29.2.5",

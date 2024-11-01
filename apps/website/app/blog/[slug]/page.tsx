@@ -1,9 +1,9 @@
 import { notFound } from "next/navigation";
-import { CustomMDX } from "@repo/website/app/components/mdx";
+import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/lib/posts";
 import { Metadata } from "next";
 import { ReactNode } from "react";
-import { getReadingTime } from "@repo/reading-time";
+import { getReadingTime } from "reading-time";
 
 export function generateMetadata({ params }): Metadata {
   const post = getBlogPosts().find((post) => post.slug === params.slug);

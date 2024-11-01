@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import { ReactNode } from "react";
 import { formatDate, getBlogPosts } from "../lib/posts";
-import { Header1 } from "@repo/website/app/components/header";
+import { Header1 } from "@app/components/header";
 
 export const metadata: Metadata = {
   title: "Blog",

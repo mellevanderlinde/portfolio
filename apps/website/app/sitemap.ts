@@ -1,4 +1,4 @@
-import { navItems } from "./components/nav";
+import { navItems } from "@components/nav";
 import type { MetadataRoute } from "next";
 import { getBlogPosts } from "./lib/posts";
 

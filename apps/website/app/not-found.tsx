@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Metadata } from "next";
-import { Header1 } from "./components/header";
+import { Header1 } from "@components/header";
 
 const title = "404 - Page not found";
 

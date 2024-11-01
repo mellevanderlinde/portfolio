@@ -1,4 +1,4 @@
-import { getReadingTime } from "@repo/reading-time";
+import { getReadingTime } from "./index";
 
 const sentence = "This is an example sentence. ";
 

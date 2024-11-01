@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
-import Home from "@repo/website/app/page";
-import Projects from "@repo/website/app/projects/page";
-import Work from "@repo/website/app/work/page";
-import Blog from "@repo/website/app/blog/page";
-import NotFound from "@repo/website/app/not-found";
+import Home from "@app/page";
+import Projects from "@app/projects/page";
+import Work from "@app/work/page";
+import Blog from "@app/blog/page";
+import NotFound from "@app/not-found";
 
 test("Match home", () => {
   const { container } = render(<Home />);
