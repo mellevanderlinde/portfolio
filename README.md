@@ -7,8 +7,8 @@ This repository contains my portfolio, served with Amazon CloudFront and S3 on [
 To install the project's dependencies, build the website and deploy to AWS, run the following:
 
 ```
-pnpm install
-pnpm build
+bun install
+bun run build
 cd apps/infra
 npx cdk deploy -c accountId=012345678912
 ```
