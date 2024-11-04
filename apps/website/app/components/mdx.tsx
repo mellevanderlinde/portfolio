@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
 import { ReactNode, createElement } from "react";
 import hljs from "highlight.js/lib/core";
 import typescript from "highlight.js/lib/languages/typescript";
@@ -8,14 +8,10 @@ import yaml from "highlight.js/lib/languages/yaml";
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("yaml", yaml);
 
-function CustomLink(props): ReactNode {
+function CustomLink(props: { href: string; children: ReactNode }): ReactNode {
   const href = props.href;
   if (href.startsWith("/")) {
-    return (
-      <Link href={href} {...props}>
-        {props.children}
-      </Link>
-    );
+    return <Link {...props}>{props.children}</Link>;
   }
   if (href.startsWith("#")) {
     return <a {...props} />;
@@ -71,7 +67,7 @@ const components = {
   code: Code,
 };
 
-export function CustomMDX(props): ReactNode {
+export function CustomMDX(props: MDXRemoteProps): ReactNode {
   return (
     <MDXRemote
       {...props}
