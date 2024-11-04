@@ -306,23 +306,23 @@ exports[`Match robots 1`] = `
 exports[`Match sitemap 1`] = `
 [
   {
-    "lastModified": 2024-11-03T11:00:00.000Z,
+    "lastModified": 2024-11-04T11:00:00.000Z,
     "url": "https://mellevanderlinde.com/",
   },
   {
-    "lastModified": 2024-11-03T11:00:00.000Z,
+    "lastModified": 2024-11-04T11:00:00.000Z,
     "url": "https://mellevanderlinde.com/blog",
   },
   {
-    "lastModified": 2024-11-03T11:00:00.000Z,
+    "lastModified": 2024-11-04T11:00:00.000Z,
     "url": "https://mellevanderlinde.com/projects",
   },
   {
-    "lastModified": 2024-11-03T11:00:00.000Z,
+    "lastModified": 2024-11-04T11:00:00.000Z,
     "url": "https://mellevanderlinde.com/work",
   },
   {
-    "lastModified": 2024-11-03T11:00:00.000Z,
+    "lastModified": 2024-11-04T11:00:00.000Z,
     "url": "https://mellevanderlinde.com/blog/openid-connect-aws-github",
   },
 ]
