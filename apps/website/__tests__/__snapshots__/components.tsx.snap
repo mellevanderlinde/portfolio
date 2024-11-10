@@ -134,7 +134,11 @@ exports[`Match navbar 1`] = `
 exports[`Match posts 1`] = `
 [
   {
-    "content": "A common pattern is to invoke AWS actions from a GitHub Actions workflow. 
+    "content": "<Callout emoji="💡">
+  This post is also featured on the [PostNL Engineering blog](https://medium.com/postnl-engineering/connect-github-actions-with-aws-using-openid-connect-bf1e11401b50) on Medium!
+</Callout>
+
+A common pattern is to invoke AWS actions from a GitHub Actions workflow. 
 For example, a workflow can be used for [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html) deployments, invoking a Lambda function (e.g., for integration tests) or reading data from DynamoDB. 
 
 Using [OpenID Connect (OIDC)](https://openid.net/developers/how-connect-works/) such AWS actions can be invoked by an IAM role.

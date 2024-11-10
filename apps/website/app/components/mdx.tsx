@@ -25,6 +25,15 @@ function Code({ children, ...props }): ReactNode {
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
 }
 
+function Callout(props): ReactNode {
+  return (
+    <div className="px-4 py-3 rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8 bg-white dark:bg-black text-black border border-neutral-200 dark:border-[#2e2e2e]">
+      <div className="flex items-center w-4 mr-4">{props.emoji}</div>
+      <div className="w-full callout leading-relaxed">{props.children}</div>
+    </div>
+  );
+}
+
 function slugify(str: string): string {
   return str
     .toString()
@@ -65,6 +74,7 @@ const components = {
   h6: createHeading(6),
   a: CustomLink,
   code: Code,
+  Callout,
 };
 
 export function CustomMDX(props: MDXRemoteProps): ReactNode {
