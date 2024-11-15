@@ -35,6 +35,7 @@ export default [
       "prettier/prettier": ["error"],
       "capitalized-comments": ["error"],
       "spaced-comment": ["error"],
+      "import/newline-after-import": ["error"],
     },
   },
 ];
