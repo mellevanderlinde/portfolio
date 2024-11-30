@@ -33,5 +33,9 @@ test("Match robots", () => {
 
 test("Match sitemap", () => {
   const result = sitemap();
+  // Change to static date for snapshot
+  result.forEach((item) => {
+    item.lastModified = "2024-01-01T00:00:00.000Z";
+  });
   expect(result).toMatchSnapshot();
 });
