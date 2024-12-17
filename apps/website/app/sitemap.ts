@@ -2,6 +2,8 @@ import { navItems } from "@components/nav";
 import type { MetadataRoute } from "next";
 import { getBlogPosts } from "./lib/posts";
 
+export const dynamic = "force-static";
+
 export const baseUrl = "https://mellevanderlinde.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
