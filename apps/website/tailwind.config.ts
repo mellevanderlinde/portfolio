@@ -1,5 +1,6 @@
-// eslint-disable-next-line no-undef
-module.exports = {
+import type { Config } from "tailwindcss";
+
+const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./public/**/*.ico",
@@ -21,6 +22,8 @@ module.exports = {
       },
     },
   },
-  // eslint-disable-next-line no-undef, @typescript-eslint/no-require-imports
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("@tailwindcss/typography")],
 };
+
+export default config;
