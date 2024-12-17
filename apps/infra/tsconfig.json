@@ -23,9 +23,7 @@
   },
   "exclude": [
     "node_modules",
-    "cdk.out"
-  ],
-  "include": [
-    "src/**/*.ts"
+    "cdk.out",
+    "jest.config.ts"
   ]
 }
