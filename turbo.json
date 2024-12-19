@@ -3,18 +3,20 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "outputs": [".next/**", "out/**", "src/**"]
+      "outputs": [".next/**", "out/**", "src/index.js"]
     },
     "dev": {
       "cache": false,
       "persistent": true
     },
     "lint": {},
-    "test": {
-      "dependsOn": ["^build"]
+    "test": {},
+    "test:update": {},
+    "infra#test": {
+      "dependsOn": ["infra#build"]
     },
-    "test:update": {
-      "dependsOn": ["^build"]
+    "infra#test:update": {
+      "dependsOn": ["infra#build"]
     }
   }
 }
