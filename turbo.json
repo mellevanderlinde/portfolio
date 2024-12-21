@@ -13,10 +13,10 @@
     "test": {},
     "test:update": {},
     "infra#test": {
-      "dependsOn": ["infra#build"]
+      "dependsOn": ["infra#build", "website#build"]
     },
     "infra#test:update": {
-      "dependsOn": ["infra#build"]
+      "dependsOn": ["infra#build", "website#build"]
     }
   }
 }
