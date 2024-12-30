@@ -82,6 +82,36 @@ exports[`Match projects 1`] = `
     >
       <a
         class="block group hover:opacity-80 transition-opacity duration-200"
+        href="https://github.com/mellevanderlinde/energy-meter"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="w-full flex justify-between items-baseline"
+          >
+            <span
+              class="text-black dark:text-white font-medium tracking-tight"
+            >
+              Energy Data on AWS with Raspberry Pi
+            </span>
+            <span
+              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+            >
+              2025
+            </span>
+          </div>
+          <p
+            class="prose prose-neutral dark:prose-invert pt-3"
+          >
+            Creates a service on a Raspberry Pi to store home energy usage data on DynamoDB by reading the P1 port.
+          </p>
+        </div>
+      </a>
+      <a
+        class="block group hover:opacity-80 transition-opacity duration-200"
         href="https://github.com/mellevanderlinde/oidc-aws-github"
         rel="noopener noreferrer"
         target="_blank"

@@ -7,6 +7,13 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    title: "Energy Data on AWS with Raspberry Pi",
+    description:
+      "Creates a service on a Raspberry Pi to store home energy usage data on DynamoDB by reading the P1 port.",
+    year: 2025,
+    url: "https://github.com/mellevanderlinde/energy-meter",
+  },
+  {
     title: "OpenID Connect for AWS and GitHub Actions",
     description:
       "This repository demonstrates how to allow a specific GitHub repository to invoke actions on AWS from GitHub Actions using OpenID Connect.",
