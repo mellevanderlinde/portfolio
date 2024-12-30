@@ -1,7 +1,7 @@
 {
   "name": "reading-time",
   "scripts": {
-    "build": "tsc",
+    "build": "tsc --build --clean",
     "lint": "eslint .",
     "test": "jest"
   },
