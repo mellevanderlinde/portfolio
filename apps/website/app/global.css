@@ -33,7 +33,7 @@
   }
   html {
     color-scheme: dark;
-    background-color: black;
+    background-color: #0f1113;
   }
 }
 
@@ -76,7 +76,7 @@ html {
 }
 
 .prose pre {
-  @apply bg-white dark:bg-black overflow-x-auto text-black dark:text-white border border-neutral-200 dark:border-[#2e2e2e];
+  @apply bg-white dark:bg-[#0f1113] overflow-x-auto text-black dark:text-white border border-neutral-200 dark:border-neutral-700;
 }
 
 .prose code {

@@ -27,7 +27,7 @@ function Code({ children, ...props }): ReactNode {
 
 function Callout(props): ReactNode {
   return (
-    <div className="px-4 py-3 rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8 bg-white dark:bg-black text-black border border-neutral-200 dark:border-[#2e2e2e]">
+    <div className="px-4 py-3 rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8 bg-white dark:bg-[#0f1113] text-black border border-neutral-200 dark:border-neutral-700">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
       <div className="w-full callout leading-relaxed">{props.children}</div>
     </div>
