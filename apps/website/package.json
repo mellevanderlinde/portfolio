@@ -5,8 +5,8 @@
     "build": "next build",
     "dev": "open http://localhost:3000 && next dev --turbopack",
     "lint": "eslint .",
-    "test": "jest",
-    "test:update": "jest -u"
+    "test": "vitest run",
+    "test:update": "vitest run -u"
   },
   "dependencies": {
     "@types/node": "^22.10.3",
@@ -26,10 +26,10 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
     "@testing-library/react": "^16.1.0",
-    "@types/jest": "^29.5.14",
+    "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
     "eslint-config": "workspace:*",
-    "jest": "^29.7.0",
-    "jest-environment-jsdom": "^29.7.0"
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^2.1.8"
   }
 }

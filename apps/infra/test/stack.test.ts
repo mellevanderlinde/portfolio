@@ -1,4 +1,5 @@
 import { App, assertions } from "aws-cdk-lib";
+import { expect, test } from "vitest";
 import { PortfolioStack } from "../lib/portfolio-stack";
 
 test("Match with snapshot", () => {

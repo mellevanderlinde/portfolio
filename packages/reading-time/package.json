@@ -3,13 +3,11 @@
   "scripts": {
     "build": "tsc --build --clean",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "vitest run"
   },
   "devDependencies": {
-    "@types/jest": "^29.5.14",
     "eslint-config": "workspace:*",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.2.5",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
   }
 }

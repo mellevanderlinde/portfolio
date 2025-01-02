@@ -1,3 +1,4 @@
+import { expect, it } from "vitest";
 import { getReadingTime } from "./index";
 
 const sentence = "This is an example sentence. ";

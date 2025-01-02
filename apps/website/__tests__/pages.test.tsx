@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 import { render } from "@testing-library/react";
 import Home from "@app/page";
 import Projects from "@app/projects/page";

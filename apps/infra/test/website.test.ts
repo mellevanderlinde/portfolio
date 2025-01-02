@@ -1,3 +1,5 @@
+import { expect, test, describe } from "vitest";
+
 describe("Check if website is available", () => {
   const domain = "mellevanderlinde.com";
 

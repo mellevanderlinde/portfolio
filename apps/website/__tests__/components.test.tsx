@@ -1,3 +1,4 @@
+import { test, expect } from "vitest";
 import { render } from "@testing-library/react";
 import { Header1 } from "@app/components/header";
 import { Navbar } from "@app/components/nav";
