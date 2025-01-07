@@ -13,17 +13,17 @@ test("Match with snapshot", () => {
   const bucketDeployment = template.findResources(
     "Custom::CDKBucketDeployment",
   );
-  Object.keys(bucketDeployment).forEach((key) => {
+  for (const key of Object.keys(bucketDeployment)) {
     bucketDeployment[key].Properties.SourceObjectKeys = ["removed-hash"];
-  });
+  }
   const lambdaFunction = template.findResources("AWS::Lambda::Function");
-  Object.keys(lambdaFunction).forEach((key) => {
+  for (const key of Object.keys(lambdaFunction)) {
     lambdaFunction[key].Properties.Code.S3Key = "removed-hash";
-  });
+  }
   const layerVersion = template.findResources("AWS::Lambda::LayerVersion");
-  Object.keys(layerVersion).forEach((key) => {
+  for (const key of Object.keys(layerVersion)) {
     layerVersion[key].Properties.Content.S3Key = "removed-hash";
-  });
+  }
 
   expect(template).toMatchSnapshot();
 });

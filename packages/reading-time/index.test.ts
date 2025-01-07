@@ -15,11 +15,11 @@ it("should throw an error if content is not provided", () => {
 });
 
 it("should not count new line characters as words", () => {
-  expect(getReadingTime(sentence + "\n ")).toBe(1);
+  expect(getReadingTime(`${sentence}\n `)).toBe(1);
   expect(getReadingTime(sentence + "\n ".repeat(1000))).toBe(1);
 });
 
 it("should not count empty strings as words", () => {
-  expect(getReadingTime(sentence + "  ")).toBe(1);
+  expect(getReadingTime(`${sentence}  `)).toBe(1);
   expect(getReadingTime(sentence + "  ".repeat(1000))).toBe(1);
 });

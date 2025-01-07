@@ -1,7 +1,13 @@
 #!/usr/bin/env node
 import "source-map-support/register";
-import { App, Aspects, CfnResource, IAspect, RemovalPolicy } from "aws-cdk-lib";
-import { IConstruct } from "constructs";
+import {
+  App,
+  Aspects,
+  CfnResource,
+  type IAspect,
+  RemovalPolicy,
+} from "aws-cdk-lib";
+import type { IConstruct } from "constructs";
 import { PortfolioStack } from "../lib/portfolio-stack";
 
 class RemovalPolicyDestroyAspect implements IAspect {

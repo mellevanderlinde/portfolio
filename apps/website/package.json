@@ -4,7 +4,6 @@
   "scripts": {
     "build": "next build",
     "dev": "open http://localhost:3000 && next dev --turbopack",
-    "lint": "eslint .",
     "test": "vitest run",
     "test:update": "vitest run -u"
   },
@@ -28,7 +27,6 @@
     "@testing-library/react": "^16.1.0",
     "@vitejs/plugin-react": "^4.3.4",
     "autoprefixer": "^10.4.20",
-    "eslint-config": "workspace:*",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^2.1.8"
   }

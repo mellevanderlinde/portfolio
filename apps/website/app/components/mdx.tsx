@@ -1,9 +1,9 @@
-import Link from "next/link";
-import { MDXRemote, MDXRemoteProps } from "next-mdx-remote/rsc";
-import { ReactNode, createElement } from "react";
 import hljs from "highlight.js/lib/core";
 import typescript from "highlight.js/lib/languages/typescript";
 import yaml from "highlight.js/lib/languages/yaml";
+import { MDXRemote, type MDXRemoteProps } from "next-mdx-remote/rsc";
+import Link from "next/link";
+import { type ReactNode, createElement } from "react";
 
 hljs.registerLanguage("typescript", typescript);
 hljs.registerLanguage("yaml", yaml);
@@ -22,6 +22,7 @@ function CustomLink(props: { href: string; children: ReactNode }): ReactNode {
 function Code({ children, ...props }): ReactNode {
   const language = props.className?.replace("language-", "") || "yaml";
   const __html = hljs.highlight(children, { language }).value;
+  // biome-ignore lint/security/noDangerouslySetInnerHtml: no good alternative
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
 }
 

@@ -1,5 +1,5 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 interface Metadata {
   title: string;
@@ -23,12 +23,12 @@ function parseFrontmatter(fileContent: string): Omit<BlogPost, "slug"> {
   const frontMatterLines = frontMatterBlock.trim().split("\n");
   const metadata: Partial<Metadata> = {};
 
-  frontMatterLines.forEach((line) => {
+  for (const line of frontMatterLines) {
     const [key, ...valueArr] = line.split(": ");
     let value = valueArr.join(": ").trim();
     value = value.replace(/^['"](.*)['"]$/, "$1");
     metadata[key.trim() as keyof Metadata] = value;
-  });
+  }
 
   return { metadata: metadata as Metadata, content };
 }

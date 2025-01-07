@@ -112,6 +112,36 @@ exports[`Match projects 1`] = `
       </a>
       <a
         class="block group hover:opacity-80 transition-opacity duration-200"
+        href="https://github.com/mellevanderlinde/portfolio"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <div
+          class="flex flex-col"
+        >
+          <div
+            class="w-full flex justify-between items-baseline"
+          >
+            <span
+              class="text-black dark:text-white font-medium tracking-tight"
+            >
+              Portfolio with CloudFront and Next.js
+            </span>
+            <span
+              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
+            >
+              2024
+            </span>
+          </div>
+          <p
+            class="prose prose-neutral dark:prose-invert pt-3"
+          >
+            AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. This portfolio design is a template by Vercel.
+          </p>
+        </div>
+      </a>
+      <a
+        class="block group hover:opacity-80 transition-opacity duration-200"
         href="https://github.com/mellevanderlinde/oidc-aws-github"
         rel="noopener noreferrer"
         target="_blank"
@@ -167,36 +197,6 @@ exports[`Match projects 1`] = `
             class="prose prose-neutral dark:prose-invert pt-3"
           >
             This link shows some contributions (tiny, mostly bug fixes) to the AWS CDK repository.
-          </p>
-        </div>
-      </a>
-      <a
-        class="block group hover:opacity-80 transition-opacity duration-200"
-        href="https://github.com/mellevanderlinde/portfolio"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        <div
-          class="flex flex-col"
-        >
-          <div
-            class="w-full flex justify-between items-baseline"
-          >
-            <span
-              class="text-black dark:text-white font-medium tracking-tight"
-            >
-              Portfolio with CloudFront and Next.js
-            </span>
-            <span
-              class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
-            >
-              2024
-            </span>
-          </div>
-          <p
-            class="prose prose-neutral dark:prose-invert pt-3"
-          >
-            AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. This portfolio design is a template by Vercel.
           </p>
         </div>
       </a>

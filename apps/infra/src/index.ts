@@ -1,5 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
-async function handler(event: any) {
+interface Request {
+  uri: string;
+}
+
+interface Event {
+  request: Request;
+}
+
+async function handler(event: Event): Promise<Request> {
   const request = event.request;
   const uri = request.uri;
 

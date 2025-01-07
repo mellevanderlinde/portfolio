@@ -1,10 +1,10 @@
-import { test, expect } from "vitest";
-import { render } from "@testing-library/react";
+import Blog from "@app/blog/page";
+import NotFound from "@app/not-found";
 import Home from "@app/page";
 import Projects from "@app/projects/page";
 import Work from "@app/work/page";
-import Blog from "@app/blog/page";
-import NotFound from "@app/not-found";
+import { render } from "@testing-library/react";
+import { expect, test } from "vitest";
 
 test("Match home", () => {
   const { container } = render(<Home />);

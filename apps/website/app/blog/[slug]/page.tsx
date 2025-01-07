@@ -1,8 +1,8 @@
-import { notFound } from "next/navigation";
 import { CustomMDX } from "app/components/mdx";
 import { formatDate, getBlogPosts } from "app/lib/posts";
-import { Metadata } from "next";
-import { ReactNode } from "react";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
 import { getReadingTime } from "reading-time";
 
 export async function generateMetadata({ params }): Promise<Metadata> {

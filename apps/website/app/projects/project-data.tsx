@@ -14,6 +14,13 @@ export const projects: Project[] = [
     url: "https://github.com/mellevanderlinde/energy-meter",
   },
   {
+    title: "Portfolio with CloudFront and Next.js",
+    description:
+      "AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. This portfolio design is a template by Vercel.",
+    year: 2024,
+    url: "https://github.com/mellevanderlinde/portfolio",
+  },
+  {
     title: "OpenID Connect for AWS and GitHub Actions",
     description:
       "This repository demonstrates how to allow a specific GitHub repository to invoke actions on AWS from GitHub Actions using OpenID Connect.",
@@ -26,13 +33,6 @@ export const projects: Project[] = [
       "This link shows some contributions (tiny, mostly bug fixes) to the AWS CDK repository.",
     year: 2024,
     url: "https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde",
-  },
-  {
-    title: "Portfolio with CloudFront and Next.js",
-    description:
-      "AWS CDK project that serves this Next.js portfolio with Amazon CloudFront. This portfolio design is a template by Vercel.",
-    year: 2024,
-    url: "https://github.com/mellevanderlinde/portfolio",
   },
   {
     title: "Apache Airflow on AWS",

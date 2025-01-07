@@ -1,5 +1,5 @@
-import { ReactNode } from "react";
-import { FaGithub, FaCode, FaLinkedinIn } from "react-icons/fa6";
+import type { ReactNode } from "react";
+import { FaCode, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { name } from "./nav";
 
 const YEAR = new Date().getFullYear();

@@ -1,11 +1,9 @@
 {
   "name": "reading-time",
   "scripts": {
-    "lint": "eslint .",
     "test": "vitest run"
   },
   "devDependencies": {
-    "eslint-config": "workspace:*",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
   }

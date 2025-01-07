@@ -2,7 +2,7 @@ import {
   Duration,
   RemovalPolicy,
   Stack,
-  StackProps,
+  type StackProps,
   aws_certificatemanager as certificatemanager,
   aws_cloudfront as cloudfront,
   aws_cloudfront_origins as cloudfront_origins,
@@ -12,7 +12,7 @@ import {
   aws_s3 as s3,
   aws_s3_deployment as s3_deployment,
 } from "aws-cdk-lib";
-import { Construct } from "constructs";
+import type { Construct } from "constructs";
 
 export class PortfolioStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
