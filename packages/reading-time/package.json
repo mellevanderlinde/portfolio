@@ -1,6 +1,7 @@
 {
   "name": "reading-time",
   "scripts": {
+    "build": "tsc --noEmit",
     "test": "vitest run"
   },
   "devDependencies": {
