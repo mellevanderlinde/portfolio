@@ -33,7 +33,8 @@
         "noNodejsModules": "off"
       },
       "style": { "useNamingConvention": "off", "noDefaultExport": "off" },
-      "suspicious": { "noReactSpecificProps": "off" }
+      "suspicious": { "noReactSpecificProps": "off" },
+      "performance": { "useTopLevelRegex": "off" }
     }
   },
   "javascript": {
