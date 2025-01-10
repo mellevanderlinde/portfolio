@@ -10,6 +10,7 @@
     "ignore": [
       ".next",
       ".turbo",
+      "cdk.out",
       "apps/infra/**/*.js",
       "apps/infra/**/*.d.ts",
       "apps/website/out"
@@ -25,7 +26,14 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "all": true,
+      "correctness": {
+        "noUndeclaredDependencies": "off",
+        "useImportExtensions": "off",
+        "noNodejsModules": "off"
+      },
+      "style": { "useNamingConvention": "off", "noDefaultExport": "off" },
+      "suspicious": { "noReactSpecificProps": "off" }
     }
   },
   "javascript": {

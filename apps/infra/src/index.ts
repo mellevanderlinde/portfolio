@@ -6,6 +6,8 @@ interface Event {
   request: Request;
 }
 
+// biome-ignore lint/correctness/noUnusedVariables: used by CloudFront
+// biome-ignore lint/suspicious/useAwait: required by CloudFront
 async function handler(event: Event): Promise<Request> {
   const request = event.request;
   const uri = request.uri;

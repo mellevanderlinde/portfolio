@@ -12,7 +12,7 @@ export default function Page(): ReactNode {
     <section>
       <Header1 title="Work" />
       <div className="space-y-6">
-        {jobs.map((job, index) => (
+        {jobs.map((job) => (
           <div className="flex flex-col" key={job.title}>
             <div className="w-full flex justify-between items-baseline">
               <span className="text-black dark:text-white font-medium tracking-tight">

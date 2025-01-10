@@ -3,7 +3,7 @@
   "scripts": {
     "ci": "turbo lint build test",
     "dev": "turbo dev",
-    "lint": "biome check",
+    "lint": "biome check --error-on-warnings",
     "test:update": "turbo test:update"
   },
   "devDependencies": {
