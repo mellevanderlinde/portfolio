@@ -2,6 +2,8 @@
   "name": "portfolio",
   "scripts": {
     "ci": "turbo lint build test",
+    "cdk:deploy": "turbo cdk:deploy --env-mode=loose",
+    "cdk:diff": "turbo cdk:diff --env-mode=loose",
     "dev": "turbo dev",
     "lint": "biome check --error-on-warnings",
     "test:update": "turbo test:update"
