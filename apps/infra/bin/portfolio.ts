@@ -7,6 +7,7 @@ import {
   type IAspect,
   RemovalPolicy,
 } from "aws-cdk-lib";
+import { AwsSolutionsChecks } from "cdk-nag";
 import type { IConstruct } from "constructs";
 import { PortfolioStack } from "../lib/portfolio-stack";
 
@@ -25,4 +26,6 @@ new PortfolioStack(app, "PortfolioStack", {
     region: "us-east-1", // Required, see https://docs.aws.amazon.com/acm/latest/userguide/acm-regions.html
   },
 });
+
 Aspects.of(app).add(new RemovalPolicyDestroyAspect());
+Aspects.of(app).add(new AwsSolutionsChecks());

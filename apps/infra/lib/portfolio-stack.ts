@@ -12,6 +12,7 @@ import {
   aws_s3 as s3,
   aws_s3_deployment as s3_deployment,
 } from "aws-cdk-lib";
+import { NagSuppressions } from "cdk-nag";
 import type { Construct } from "constructs";
 
 export class PortfolioStack extends Stack {
@@ -31,6 +32,13 @@ export class PortfolioStack extends Stack {
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
     });
+
+    NagSuppressions.addResourceSuppressions(bucket, [
+      {
+        id: "AwsSolutions-S1",
+        reason: "Server access logging is not required",
+      },
+    ]);
 
     const certificate = new certificatemanager.Certificate(
       this,
@@ -97,6 +105,17 @@ export class PortfolioStack extends Stack {
       ),
     });
 
+    NagSuppressions.addResourceSuppressions(distribution, [
+      {
+        id: "AwsSolutions-CFR2",
+        reason: "AWS WAF is not required",
+      },
+      {
+        id: "AwsSolutions-CFR3",
+        reason: "Access logging is not required",
+      },
+    ]);
+
     const target = route53.RecordTarget.fromAlias(
       new route53_targets.CloudFrontTarget(distribution),
     );
@@ -137,13 +156,43 @@ export class PortfolioStack extends Stack {
       retention: logs.RetentionDays.ONE_DAY,
     });
 
-    new s3_deployment.BucketDeployment(this, "BucketDeployment", {
-      destinationBucket: bucket,
-      sources: [s3_deployment.Source.asset("../website/out")],
-      distribution,
-      distributionPaths: ["/*"],
-      logGroup,
-      memoryLimit: 2048,
-    });
+    const bucketDeployment = new s3_deployment.BucketDeployment(
+      this,
+      "BucketDeployment",
+      {
+        destinationBucket: bucket,
+        sources: [s3_deployment.Source.asset("../website/out")],
+        distribution,
+        distributionPaths: ["/*"],
+        logGroup,
+        memoryLimit: 2048,
+      },
+    );
+
+    NagSuppressions.addResourceSuppressionsByPath(
+      this,
+      "/PortfolioStack/Custom::CDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiB/Resource",
+      [
+        {
+          id: "AwsSolutions-L1",
+          reason: "This Lambda is managed by CDK",
+        },
+      ],
+    );
+
+    NagSuppressions.addResourceSuppressions(
+      bucketDeployment.handlerRole,
+      [
+        {
+          id: "AwsSolutions-IAM5",
+          reason: "Full S3 access is required",
+        },
+        {
+          id: "AwsSolutions-IAM4",
+          reason: "Write access to CloudWatch is allowed",
+        },
+      ],
+      true,
+    );
   }
 }

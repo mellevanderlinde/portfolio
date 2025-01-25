@@ -72,6 +72,16 @@ exports[`Match with snapshot 1`] = `
     },
     "Bucket83908E77": {
       "DeletionPolicy": "Delete",
+      "Metadata": {
+        "cdk_nag": {
+          "rules_to_suppress": [
+            {
+              "id": "AwsSolutions-S1",
+              "reason": "Server access logging is not required",
+            },
+          ],
+        },
+      },
       "Properties": {
         "BucketName": "mellevanderlinde.com",
         "PublicAccessBlockConfiguration": {
@@ -314,6 +324,16 @@ exports[`Match with snapshot 1`] = `
         "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleDefaultPolicy5D765796",
         "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF",
       ],
+      "Metadata": {
+        "cdk_nag": {
+          "rules_to_suppress": [
+            {
+              "id": "AwsSolutions-L1",
+              "reason": "This Lambda is managed by CDK",
+            },
+          ],
+        },
+      },
       "Properties": {
         "Code": {
           "S3Bucket": "cdk-hnb659fds-assets-012345678912-us-east-1",
@@ -348,6 +368,20 @@ exports[`Match with snapshot 1`] = `
       "Type": "AWS::Lambda::Function",
     },
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF": {
+      "Metadata": {
+        "cdk_nag": {
+          "rules_to_suppress": [
+            {
+              "id": "AwsSolutions-IAM5",
+              "reason": "Full S3 access is required",
+            },
+            {
+              "id": "AwsSolutions-IAM4",
+              "reason": "Write access to CloudWatch is allowed",
+            },
+          ],
+        },
+      },
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -379,6 +413,20 @@ exports[`Match with snapshot 1`] = `
       "Type": "AWS::IAM::Role",
     },
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleDefaultPolicy5D765796": {
+      "Metadata": {
+        "cdk_nag": {
+          "rules_to_suppress": [
+            {
+              "id": "AwsSolutions-IAM5",
+              "reason": "Full S3 access is required",
+            },
+            {
+              "id": "AwsSolutions-IAM4",
+              "reason": "Write access to CloudWatch is allowed",
+            },
+          ],
+        },
+      },
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -530,6 +578,20 @@ exports[`Match with snapshot 1`] = `
       "Type": "AWS::IAM::Role",
     },
     "Distribution830FAC52": {
+      "Metadata": {
+        "cdk_nag": {
+          "rules_to_suppress": [
+            {
+              "id": "AwsSolutions-CFR2",
+              "reason": "AWS WAF is not required",
+            },
+            {
+              "id": "AwsSolutions-CFR3",
+              "reason": "Access logging is not required",
+            },
+          ],
+        },
+      },
       "Properties": {
         "DistributionConfig": {
           "Aliases": [
