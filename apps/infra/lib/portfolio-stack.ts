@@ -143,6 +143,7 @@ export class PortfolioStack extends Stack {
       distribution,
       distributionPaths: ["/*"],
       logGroup,
+      memoryLimit: 2048,
     });
   }
 }

@@ -86,7 +86,7 @@ exports[`Match with snapshot 1`] = `
             "Value": "true",
           },
           {
-            "Key": "aws-cdk:cr-owned:e8c252f7",
+            "Key": "aws-cdk:cr-owned:a50fa62f",
             "Value": "true",
           },
         ],
@@ -123,7 +123,7 @@ exports[`Match with snapshot 1`] = `
       },
       "Type": "AWS::Lambda::LayerVersion",
     },
-    "BucketDeploymentCustomResourceCB7E2133": {
+    "BucketDeploymentCustomResource2048MiB82BEA142": {
       "DeletionPolicy": "Delete",
       "Properties": {
         "DestinationBucketName": {
@@ -139,7 +139,7 @@ exports[`Match with snapshot 1`] = `
         "Prune": true,
         "ServiceToken": {
           "Fn::GetAtt": [
-            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536",
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiB8AA4A604",
             "Arn",
           ],
         },
@@ -309,10 +309,10 @@ exports[`Match with snapshot 1`] = `
       },
       "Type": "AWS::CertificateManager::Certificate",
     },
-    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C81C01536": {
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiB8AA4A604": {
       "DependsOn": [
-        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
-        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleDefaultPolicy5D765796",
+        "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF",
       ],
       "Properties": {
         "Code": {
@@ -335,9 +335,10 @@ exports[`Match with snapshot 1`] = `
             "Ref": "LogGroupF5B46931",
           },
         },
+        "MemorySize": 2048,
         "Role": {
           "Fn::GetAtt": [
-            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF",
             "Arn",
           ],
         },
@@ -346,7 +347,7 @@ exports[`Match with snapshot 1`] = `
       },
       "Type": "AWS::Lambda::Function",
     },
-    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265": {
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF": {
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -377,7 +378,7 @@ exports[`Match with snapshot 1`] = `
       },
       "Type": "AWS::IAM::Role",
     },
-    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF": {
+    "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleDefaultPolicy5D765796": {
       "Properties": {
         "PolicyDocument": {
           "Statement": [
@@ -463,10 +464,10 @@ exports[`Match with snapshot 1`] = `
           ],
           "Version": "2012-10-17",
         },
-        "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRoleDefaultPolicy88902FDF",
+        "PolicyName": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleDefaultPolicy5D765796",
         "Roles": [
           {
-            "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756CServiceRole89A01265",
+            "Ref": "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF",
           },
         ],
       },
