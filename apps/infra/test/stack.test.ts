@@ -1,4 +1,5 @@
-import { App, assertions } from "aws-cdk-lib";
+import { App } from "aws-cdk-lib";
+import { Template } from "aws-cdk-lib/assertions";
 import { expect, test } from "vitest";
 import { PortfolioStack } from "../lib/portfolio-stack";
 
@@ -7,7 +8,7 @@ test("Match with snapshot", () => {
   const stack = new PortfolioStack(app, "PortfolioStack", {
     env: { region: "us-east-1", account: "012345678912" },
   });
-  const template = assertions.Template.fromStack(stack);
+  const template = Template.fromStack(stack);
 
   // Remove hashes from snapshot
   const bucketDeployment = template.findResources(

@@ -1,17 +1,32 @@
+import { Duration, RemovalPolicy, Stack, type StackProps } from "aws-cdk-lib";
 import {
-  Duration,
-  RemovalPolicy,
-  Stack,
-  type StackProps,
-  aws_certificatemanager as certificatemanager,
-  aws_cloudfront as cloudfront,
-  aws_cloudfront_origins as cloudfront_origins,
-  aws_logs as logs,
-  aws_route53 as route53,
-  aws_route53_targets as route53_targets,
-  aws_s3 as s3,
-  aws_s3_deployment as s3_deployment,
-} from "aws-cdk-lib";
+  Certificate,
+  CertificateValidation,
+} from "aws-cdk-lib/aws-certificatemanager";
+import {
+  Function as CloudFrontFunction,
+  Distribution,
+  FunctionCode,
+  FunctionEventType,
+  FunctionRuntime,
+  GeoRestriction,
+  HttpVersion,
+  PriceClass,
+  ResponseHeadersPolicy,
+  ViewerProtocolPolicy,
+} from "aws-cdk-lib/aws-cloudfront";
+import { S3BucketOrigin } from "aws-cdk-lib/aws-cloudfront-origins";
+import { LogGroup, RetentionDays } from "aws-cdk-lib/aws-logs";
+import {
+  ARecord,
+  AaaaRecord,
+  HostedZone,
+  RecordTarget,
+  TxtRecord,
+} from "aws-cdk-lib/aws-route53";
+import { CloudFrontTarget } from "aws-cdk-lib/aws-route53-targets";
+import { BlockPublicAccess, Bucket } from "aws-cdk-lib/aws-s3";
+import { BucketDeployment, Source } from "aws-cdk-lib/aws-s3-deployment";
 import { NagSuppressions } from "cdk-nag";
 import type { Construct } from "constructs";
 
@@ -21,13 +36,13 @@ export class PortfolioStack extends Stack {
 
     const domainName = "mellevanderlinde.com";
     const wwwDomainName = `www.${domainName}`;
-    const zone = route53.HostedZone.fromLookup(this, "HostedZone", {
+    const zone = HostedZone.fromLookup(this, "HostedZone", {
       domainName,
     });
 
-    const bucket = new s3.Bucket(this, "Bucket", {
+    const bucket = new Bucket(this, "Bucket", {
       bucketName: domainName,
-      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+      blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
       enforceSSL: true,
       removalPolicy: RemovalPolicy.DESTROY,
       autoDeleteObjects: true,
@@ -40,41 +55,35 @@ export class PortfolioStack extends Stack {
       },
     ]);
 
-    const certificate = new certificatemanager.Certificate(
-      this,
-      "Certificate",
-      {
-        certificateName: domainName,
-        domainName,
-        validation: certificatemanager.CertificateValidation.fromDns(zone),
-        subjectAlternativeNames: [wwwDomainName],
-      },
-    );
+    const certificate = new Certificate(this, "Certificate", {
+      certificateName: domainName,
+      domainName,
+      validation: CertificateValidation.fromDns(zone),
+      subjectAlternativeNames: [wwwDomainName],
+    });
 
-    const function_ = new cloudfront.Function(this, "Function", {
+    const function_ = new CloudFrontFunction(this, "Function", {
       functionName: domainName.replace(".", "-"),
-      code: cloudfront.FunctionCode.fromFile({ filePath: "src/index.js" }),
-      runtime: cloudfront.FunctionRuntime.JS_2_0,
+      code: FunctionCode.fromFile({ filePath: "src/index.js" }),
+      runtime: FunctionRuntime.JS_2_0,
       comment: "Add index.html to URI (required for Next.js)",
     });
 
-    const distribution = new cloudfront.Distribution(this, "Distribution", {
+    const distribution = new Distribution(this, "Distribution", {
       defaultRootObject: "index.html",
       defaultBehavior: {
-        origin:
-          cloudfront_origins.S3BucketOrigin.withOriginAccessControl(bucket),
-        viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
+        origin: S3BucketOrigin.withOriginAccessControl(bucket),
+        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         functionAssociations: [
           {
             function: function_,
-            eventType: cloudfront.FunctionEventType.VIEWER_REQUEST,
+            eventType: FunctionEventType.VIEWER_REQUEST,
           },
         ],
-        responseHeadersPolicy:
-          cloudfront.ResponseHeadersPolicy.SECURITY_HEADERS,
+        responseHeadersPolicy: ResponseHeadersPolicy.SECURITY_HEADERS,
       },
-      priceClass: cloudfront.PriceClass.PRICE_CLASS_100,
-      httpVersion: cloudfront.HttpVersion.HTTP3,
+      priceClass: PriceClass.PRICE_CLASS_100,
+      httpVersion: HttpVersion.HTTP3,
       domainNames: [domainName, wwwDomainName],
       enableIpv6: true,
       certificate,
@@ -86,7 +95,7 @@ export class PortfolioStack extends Stack {
           ttl: Duration.minutes(30),
         },
       ],
-      geoRestriction: cloudfront.GeoRestriction.allowlist(
+      geoRestriction: GeoRestriction.allowlist(
         "AT",
         "BE",
         "CH",
@@ -116,58 +125,52 @@ export class PortfolioStack extends Stack {
       },
     ]);
 
-    const target = route53.RecordTarget.fromAlias(
-      new route53_targets.CloudFrontTarget(distribution),
-    );
+    const target = RecordTarget.fromAlias(new CloudFrontTarget(distribution));
 
-    new route53.ARecord(this, "ARecord", {
+    new ARecord(this, "ARecord", {
       recordName: domainName,
       target,
       zone,
     });
 
-    new route53.ARecord(this, "WwwARecord", {
+    new ARecord(this, "WwwARecord", {
       recordName: wwwDomainName,
       target,
       zone,
     });
 
-    new route53.AaaaRecord(this, "AaaaRecord", {
+    new AaaaRecord(this, "AaaaRecord", {
       recordName: domainName,
       target,
       zone,
     });
 
-    new route53.AaaaRecord(this, "WwwAaaaRecord", {
+    new AaaaRecord(this, "WwwAaaaRecord", {
       recordName: wwwDomainName,
       target,
       zone,
     });
 
-    new route53.TxtRecord(this, "TxtRecord", {
+    new TxtRecord(this, "TxtRecord", {
       values: [
         "google-site-verification=cdnxZVubxHlWGwUWIl8O3zQA57brfgrjMC-gzOibbEQ",
       ],
       zone,
     });
 
-    const logGroup = new logs.LogGroup(this, "LogGroup", {
+    const logGroup = new LogGroup(this, "LogGroup", {
       logGroupName: domainName,
-      retention: logs.RetentionDays.ONE_DAY,
+      retention: RetentionDays.ONE_DAY,
     });
 
-    const bucketDeployment = new s3_deployment.BucketDeployment(
-      this,
-      "BucketDeployment",
-      {
-        destinationBucket: bucket,
-        sources: [s3_deployment.Source.asset("../website/out")],
-        distribution,
-        distributionPaths: ["/*"],
-        logGroup,
-        memoryLimit: 2048,
-      },
-    );
+    const bucketDeployment = new BucketDeployment(this, "BucketDeployment", {
+      destinationBucket: bucket,
+      sources: [Source.asset("../website/out")],
+      distribution,
+      distributionPaths: ["/*"],
+      logGroup,
+      memoryLimit: 2048,
+    });
 
     NagSuppressions.addResourceSuppressionsByPath(
       this,
