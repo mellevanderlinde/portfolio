@@ -11,15 +11,15 @@
     "test:update": "vitest run -u"
   },
   "devDependencies": {
-    "@types/node": "^22.13.5",
-    "aws-cdk": "^2.1000.2",
-    "cdk-nag": "^2.35.29",
+    "@types/node": "^22.13.13",
+    "aws-cdk": "^2.1006.0",
+    "cdk-nag": "^2.35.55",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3",
-    "vitest": "^3.0.6"
+    "typescript": "^5.8.2",
+    "vitest": "^3.0.9"
   },
   "dependencies": {
-    "aws-cdk-lib": "^2.180.0",
+    "aws-cdk-lib": "^2.185.0",
     "constructs": "^10.4.2",
     "source-map-support": "^0.5.21",
     "website": "workspace:*"
