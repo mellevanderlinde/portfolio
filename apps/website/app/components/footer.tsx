@@ -1,4 +1,4 @@
-import type { ReactNode } from "react";
+import type { ComponentType, ReactNode } from "react";
 import { FaCode, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import { name } from "./nav";
 
@@ -10,7 +10,12 @@ const links = {
   source: "https://github.com/mellevanderlinde/portfolio",
 };
 
-function Link({ href, icon: Icon }): ReactNode {
+interface LinkProps {
+  href: string;
+  icon: ComponentType;
+}
+
+function Link({ href, icon: Icon }: LinkProps): ReactNode {
   return (
     <a href={href} target="_blank" rel="noopener noreferrer">
       <Icon />

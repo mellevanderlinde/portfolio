@@ -19,14 +19,20 @@ function CustomLink(props: { href: string; children: ReactNode }): ReactNode {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function Code({ children, ...props }): ReactNode {
+function Code({
+  children,
+  ...props
+}: { children: string; className?: string }): ReactNode {
   const language = props.className?.replace("language-", "") || "yaml";
   const __html = hljs.highlight(children, { language }).value;
   // biome-ignore lint/security/noDangerouslySetInnerHtml: no good alternative
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
 }
 
-function Callout(props): ReactNode {
+function Callout(props: {
+  emoji: ReactNode;
+  children: ReactNode;
+}): ReactNode {
   return (
     <div className="px-4 py-3 rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8 bg-white dark:bg-[#0f1113] text-black border border-neutral-200 dark:border-neutral-700">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
@@ -47,7 +53,7 @@ function slugify(str: string): string {
 }
 
 function createHeading(level: number) {
-  const Heading = ({ children }) => {
+  const Heading = ({ children }: { children: string }) => {
     const slug = slugify(children);
     return createElement(
       `h${level}`,

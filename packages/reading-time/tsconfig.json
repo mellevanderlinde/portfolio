@@ -3,8 +3,15 @@
     "target": "es2022",
     "module": "commonjs",
     "esModuleInterop": true,
+    "noEmit": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": true
+    "strict": true,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
   },
   "exclude": ["**/*.test.ts"]
 }

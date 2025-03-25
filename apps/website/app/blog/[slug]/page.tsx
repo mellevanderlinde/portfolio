@@ -5,13 +5,21 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { getReadingTime } from "reading-time";
 
-export async function generateMetadata({ params }): Promise<Metadata> {
+interface Params {
+  slug: string;
+}
+
+export async function generateMetadata({
+  params,
+}: { params: Promise<Params> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getBlogPosts().find((post) => post.slug === slug);
   return { title: post?.metadata.title };
 }
 
-export default async function Page({ params }): Promise<ReactNode> {
+export default async function Page({
+  params,
+}: { params: Promise<Params> }): Promise<ReactNode> {
   const { slug } = await params;
   const post = getBlogPosts().find((post) => post.slug === slug);
 
