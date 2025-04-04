@@ -5,11 +5,10 @@
     "cdk:deploy": "turbo cdk:deploy --env-mode=loose",
     "cdk:diff": "turbo cdk:diff --env-mode=loose",
     "dev": "turbo dev",
-    "lint": "biome check --error-on-warnings",
+    "lint": "eslint",
     "test:update": "turbo test:update"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
     "turbo": "^2.4.4"
   },
   "packageManager": "pnpm@10.6.5"

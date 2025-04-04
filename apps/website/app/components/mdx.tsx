@@ -25,7 +25,6 @@ function Code({
 }: { children: string; className?: string }): ReactNode {
   const language = props.className?.replace("language-", "") || "yaml";
   const __html = hljs.highlight(children, { language }).value;
-  // biome-ignore lint/security/noDangerouslySetInnerHtml: no good alternative
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />;
 }
 
