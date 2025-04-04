@@ -1,12 +1,13 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Match footer 1`] = `
+exports[`matches footer 1`] = `
 <div>
   <small
     class="block lg:mt-24 mt-16 text-[#1C1C1C] dark:text-[#D4D4D4]"
   >
     <time>
-      © 
+      ©
+       
       2025
     </time>
      
@@ -76,7 +77,7 @@ exports[`Match footer 1`] = `
 </div>
 `;
 
-exports[`Match header 1`] = `
+exports[`matches header 1`] = `
 <div>
   <h1
     class="mb-8 text-2xl font-medium tracking-tight"
@@ -86,7 +87,7 @@ exports[`Match header 1`] = `
 </div>
 `;
 
-exports[`Match navbar 1`] = `
+exports[`matches navbar 1`] = `
 <div>
   <nav
     class="lg:mb-16 mb-12 py-5"
@@ -131,7 +132,7 @@ exports[`Match navbar 1`] = `
 </div>
 `;
 
-exports[`Match posts 1`] = `
+exports[`matches posts 1`] = `
 [
   {
     "content": "<Callout emoji="💡">
@@ -296,7 +297,7 @@ This can be useful for deployments, testing purposes or other cases where AWS ac
 ]
 `;
 
-exports[`Match robots 1`] = `
+exports[`matches robots 1`] = `
 {
   "rules": [
     {
@@ -307,7 +308,7 @@ exports[`Match robots 1`] = `
 }
 `;
 
-exports[`Match sitemap 1`] = `
+exports[`matches sitemap 1`] = `
 [
   {
     "lastModified": "2024-01-01T00:00:00.000Z",

@@ -1,5 +1,5 @@
-import { Header1 } from "@components/header";
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react'
+import { Header1 } from '@components/header'
 
 export default function Page(): ReactNode {
   return (
@@ -14,5 +14,5 @@ export default function Page(): ReactNode {
         </p>
       </div>
     </section>
-  );
+  )
 }

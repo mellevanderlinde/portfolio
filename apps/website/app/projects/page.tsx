@@ -1,18 +1,18 @@
-import { Header1 } from "app/components/header";
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import { projects } from "./project-data";
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import { Header1 } from 'app/components/header'
+import { projects } from './project-data'
 
 export const metadata: Metadata = {
-  title: "Projects",
-};
+  title: 'Projects',
+}
 
 export default function Page(): ReactNode {
   return (
     <section>
       <Header1 title="Projects" />
       <div className="space-y-6">
-        {projects.map((project) => (
+        {projects.map(project => (
           <a
             key={project.title}
             href={project.url}
@@ -37,5 +37,5 @@ export default function Page(): ReactNode {
         ))}
       </div>
     </section>
-  );
+  )
 }

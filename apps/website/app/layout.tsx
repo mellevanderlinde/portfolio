@@ -1,22 +1,22 @@
-import "./global.css";
-import Footer from "@components/footer";
-import { Navbar } from "@components/nav";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
-import type { Metadata } from "next";
-import type { ReactNode } from "react";
-import { baseUrl } from "./sitemap";
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import Footer from '@components/footer'
+import { Navbar } from '@components/nav'
+import { GeistMono } from 'geist/font/mono'
+import { GeistSans } from 'geist/font/sans'
+import { baseUrl } from './sitemap'
+import './global.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Melle van der Linde",
-    template: "%s | Melle van der Linde",
+    default: 'Melle van der Linde',
+    template: '%s | Melle van der Linde',
   },
-};
+}
 
-type Cx = (...classes: string[]) => string;
-const cx: Cx = (...classes) => classes.filter(Boolean).join(" ");
+type Cx = (...classes: string[]) => string
+const cx: Cx = (...classes) => classes.filter(Boolean).join(' ')
 
 export default function RootLayout(props: { children: ReactNode }): ReactNode {
   return (
@@ -29,5 +29,5 @@ export default function RootLayout(props: { children: ReactNode }): ReactNode {
         </main>
       </body>
     </html>
-  );
+  )
 }

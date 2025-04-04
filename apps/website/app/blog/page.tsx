@@ -1,15 +1,15 @@
-import { Header1 } from "@app/components/header";
-import type { Metadata } from "next";
-import Link from "next/link";
-import type { ReactNode } from "react";
-import { formatDate, getBlogPosts } from "../lib/posts";
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
+import { Header1 } from '@app/components/header'
+import Link from 'next/link'
+import { formatDate, getBlogPosts } from '../lib/posts'
 
 export const metadata: Metadata = {
-  title: "Blog",
-};
+  title: 'Blog',
+}
 
 export default function Page(): ReactNode {
-  const blogPosts = getBlogPosts();
+  const blogPosts = getBlogPosts()
 
   return (
     <section>
@@ -18,14 +18,14 @@ export default function Page(): ReactNode {
         {blogPosts
           .sort((a, b) => {
             if (
-              new Date(a.metadata.publishedAt) >
-              new Date(b.metadata.publishedAt)
+              new Date(a.metadata.publishedAt)
+                > new Date(b.metadata.publishedAt)
             ) {
-              return -1;
+              return -1
             }
-            return 1;
+            return 1
           })
-          .map((post) => (
+          .map(post => (
             <Link
               key={post.slug}
               className="flex flex-col space-y-1 mb-4 transition-opacity duration-200 hover:opacity-80"
@@ -43,5 +43,5 @@ export default function Page(): ReactNode {
           ))}
       </div>
     </section>
-  );
+  )
 }

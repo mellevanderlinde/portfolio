@@ -1,15 +1,15 @@
 export interface Job {
-  company: string;
-  title: string;
-  description: string[];
-  start: number;
-  end: number | undefined;
+  company: string
+  title: string
+  description: string[]
+  start: number
+  end: number | undefined
 }
 
 export const jobs: Job[] = [
   {
-    company: "PostNL",
-    title: "Cloud Engineer",
+    company: 'PostNL',
+    title: 'Cloud Engineer',
     description: [
       `In 2023 I joined the Cloud Center of Excellence (CCoE) team. My (platform) 
       team works on the serverless cloud platform on AWS, used by all engineers. 
@@ -24,8 +24,8 @@ export const jobs: Job[] = [
     end: undefined,
   },
   {
-    company: "PostNL",
-    title: "MLOps Engineer",
+    company: 'PostNL',
+    title: 'MLOps Engineer',
     description: [
       `Responsible for the deployment and monitoring of data science
         models on AWS. The stack included containerization (Docker), 
@@ -35,4 +35,4 @@ export const jobs: Job[] = [
     start: 2021,
     end: 2023,
   },
-];
+]

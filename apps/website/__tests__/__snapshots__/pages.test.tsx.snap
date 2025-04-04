@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Match blog 1`] = `
+exports[`matches blog 1`] = `
 <div>
   <section>
     <h1
@@ -33,7 +33,7 @@ exports[`Match blog 1`] = `
 </div>
 `;
 
-exports[`Match home 1`] = `
+exports[`matches home 1`] = `
 <div>
   <section>
     <h1
@@ -52,7 +52,7 @@ exports[`Match home 1`] = `
 </div>
 `;
 
-exports[`Match not found 1`] = `
+exports[`matches not found 1`] = `
 <div>
   <section>
     <h1
@@ -69,7 +69,7 @@ exports[`Match not found 1`] = `
 </div>
 `;
 
-exports[`Match projects 1`] = `
+exports[`matches projects 1`] = `
 <div>
   <section>
     <h1
@@ -265,7 +265,7 @@ exports[`Match projects 1`] = `
 </div>
 `;
 
-exports[`Match work 1`] = `
+exports[`matches work 1`] = `
 <div>
   <section>
     <h1
@@ -286,14 +286,18 @@ exports[`Match work 1`] = `
             class="text-black dark:text-white font-medium tracking-tight"
           >
             Cloud Engineer
-             @ 
+             
+            @
+             
             PostNL
           </span>
           <span
             class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
           >
             2023
-             - 
+             
+            -
+             
             Present
           </span>
         </div>
@@ -324,14 +328,18 @@ exports[`Match work 1`] = `
             class="text-black dark:text-white font-medium tracking-tight"
           >
             MLOps Engineer
-             @ 
+             
+            @
+             
             PostNL
           </span>
           <span
             class="text-neutral-600 dark:text-neutral-400 tabular-nums text-sm"
           >
             2021
-             - 
+             
+            -
+             
             2023
           </span>
         </div>

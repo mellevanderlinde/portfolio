@@ -1,13 +1,15 @@
-import Link from "next/link";
-import type { ReactNode } from "react";
+import type { ReactNode } from 'react'
+import Link from 'next/link'
 
-export const name = "Melle";
+// eslint-disable-next-line react-refresh/only-export-components
+export const name = 'Melle'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const navItems = {
-  "/blog": { name: "Blog" },
-  "/projects": { name: "Projects" },
-  "/work": { name: "Work" },
-};
+  '/blog': { name: 'Blog' },
+  '/projects': { name: 'Projects' },
+  '/work': { name: 'Work' },
+}
 
 export function Navbar(): ReactNode {
   return (
@@ -31,5 +33,5 @@ export function Navbar(): ReactNode {
         </div>
       </div>
     </nav>
-  );
+  )
 }
