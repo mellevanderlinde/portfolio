@@ -1,6 +1,6 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Match with snapshot 1`] = `
+exports[`matches with snapshot 1`] = `
 {
   "Mappings": {
     "AWSCloudFrontPartitionHostedZoneIdMap": {
@@ -697,21 +697,22 @@ exports[`Match with snapshot 1`] = `
       "Properties": {
         "AutoPublish": true,
         "FunctionCode": ""use strict";
+// eslint-disable-next-line unused-imports/no-unused-vars
 async function handler(event) {
     const request = event.request;
     const uri = request.uri;
     // Check whether the URI is missing a file name.
-    if (uri.endsWith("/")) {
-        request.uri += "index.html";
+    if (uri.endsWith('/')) {
+        request.uri += 'index.html';
     }
     // Check whether the URI is missing a file extension.
-    else if (!uri.includes(".")) {
-        request.uri += "/index.html";
+    else if (!uri.includes('.')) {
+        request.uri += '/index.html';
     }
     return request;
 }
 // See https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/example-function-add-index.html
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBUUEsS0FBSyxVQUFVLE9BQU8sQ0FBQyxLQUFZO0lBQ2pDLE1BQU0sT0FBTyxHQUFHLEtBQUssQ0FBQyxPQUFPLENBQUM7SUFDOUIsTUFBTSxHQUFHLEdBQUcsT0FBTyxDQUFDLEdBQUcsQ0FBQztJQUV4QixnREFBZ0Q7SUFDaEQsSUFBSSxHQUFHLENBQUMsUUFBUSxDQUFDLEdBQUcsQ0FBQyxFQUFFLENBQUM7UUFDdEIsT0FBTyxDQUFDLEdBQUcsSUFBSSxZQUFZLENBQUM7SUFDOUIsQ0FBQztJQUNELHFEQUFxRDtTQUNoRCxJQUFJLENBQUMsR0FBRyxDQUFDLFFBQVEsQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDO1FBQzVCLE9BQU8sQ0FBQyxHQUFHLElBQUksYUFBYSxDQUFDO0lBQy9CLENBQUM7SUFFRCxPQUFPLE9BQU8sQ0FBQztBQUNqQixDQUFDO0FBRUQseUdBQXlHIiwic291cmNlc0NvbnRlbnQiOlsiaW50ZXJmYWNlIFJlcXVlc3Qge1xuICB1cmk6IHN0cmluZztcbn1cblxuaW50ZXJmYWNlIEV2ZW50IHtcbiAgcmVxdWVzdDogUmVxdWVzdDtcbn1cblxuYXN5bmMgZnVuY3Rpb24gaGFuZGxlcihldmVudDogRXZlbnQpOiBQcm9taXNlPFJlcXVlc3Q+IHtcbiAgY29uc3QgcmVxdWVzdCA9IGV2ZW50LnJlcXVlc3Q7XG4gIGNvbnN0IHVyaSA9IHJlcXVlc3QudXJpO1xuXG4gIC8vIENoZWNrIHdoZXRoZXIgdGhlIFVSSSBpcyBtaXNzaW5nIGEgZmlsZSBuYW1lLlxuICBpZiAodXJpLmVuZHNXaXRoKFwiL1wiKSkge1xuICAgIHJlcXVlc3QudXJpICs9IFwiaW5kZXguaHRtbFwiO1xuICB9XG4gIC8vIENoZWNrIHdoZXRoZXIgdGhlIFVSSSBpcyBtaXNzaW5nIGEgZmlsZSBleHRlbnNpb24uXG4gIGVsc2UgaWYgKCF1cmkuaW5jbHVkZXMoXCIuXCIpKSB7XG4gICAgcmVxdWVzdC51cmkgKz0gXCIvaW5kZXguaHRtbFwiO1xuICB9XG5cbiAgcmV0dXJuIHJlcXVlc3Q7XG59XG5cbi8vIFNlZSBodHRwczovL2RvY3MuYXdzLmFtYXpvbi5jb20vQW1hem9uQ2xvdWRGcm9udC9sYXRlc3QvRGV2ZWxvcGVyR3VpZGUvZXhhbXBsZS1mdW5jdGlvbi1hZGQtaW5kZXguaHRtbFxuIl19",
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBUUEseURBQXlEO0FBQ3pELEtBQUssVUFBVSxPQUFPLENBQUMsS0FBWTtJQUNqQyxNQUFNLE9BQU8sR0FBRyxLQUFLLENBQUMsT0FBTyxDQUFBO0lBQzdCLE1BQU0sR0FBRyxHQUFHLE9BQU8sQ0FBQyxHQUFHLENBQUE7SUFFdkIsZ0RBQWdEO0lBQ2hELElBQUksR0FBRyxDQUFDLFFBQVEsQ0FBQyxHQUFHLENBQUMsRUFBRSxDQUFDO1FBQ3RCLE9BQU8sQ0FBQyxHQUFHLElBQUksWUFBWSxDQUFBO0lBQzdCLENBQUM7SUFDRCxxREFBcUQ7U0FDaEQsSUFBSSxDQUFDLEdBQUcsQ0FBQyxRQUFRLENBQUMsR0FBRyxDQUFDLEVBQUUsQ0FBQztRQUM1QixPQUFPLENBQUMsR0FBRyxJQUFJLGFBQWEsQ0FBQTtJQUM5QixDQUFDO0lBRUQsT0FBTyxPQUFPLENBQUE7QUFDaEIsQ0FBQztBQUVELHlHQUF5RyIsInNvdXJjZXNDb250ZW50IjpbImludGVyZmFjZSBSZXF1ZXN0IHtcbiAgdXJpOiBzdHJpbmdcbn1cblxuaW50ZXJmYWNlIEV2ZW50IHtcbiAgcmVxdWVzdDogUmVxdWVzdFxufVxuXG4vLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgdW51c2VkLWltcG9ydHMvbm8tdW51c2VkLXZhcnNcbmFzeW5jIGZ1bmN0aW9uIGhhbmRsZXIoZXZlbnQ6IEV2ZW50KTogUHJvbWlzZTxSZXF1ZXN0PiB7XG4gIGNvbnN0IHJlcXVlc3QgPSBldmVudC5yZXF1ZXN0XG4gIGNvbnN0IHVyaSA9IHJlcXVlc3QudXJpXG5cbiAgLy8gQ2hlY2sgd2hldGhlciB0aGUgVVJJIGlzIG1pc3NpbmcgYSBmaWxlIG5hbWUuXG4gIGlmICh1cmkuZW5kc1dpdGgoJy8nKSkge1xuICAgIHJlcXVlc3QudXJpICs9ICdpbmRleC5odG1sJ1xuICB9XG4gIC8vIENoZWNrIHdoZXRoZXIgdGhlIFVSSSBpcyBtaXNzaW5nIGEgZmlsZSBleHRlbnNpb24uXG4gIGVsc2UgaWYgKCF1cmkuaW5jbHVkZXMoJy4nKSkge1xuICAgIHJlcXVlc3QudXJpICs9ICcvaW5kZXguaHRtbCdcbiAgfVxuXG4gIHJldHVybiByZXF1ZXN0XG59XG5cbi8vIFNlZSBodHRwczovL2RvY3MuYXdzLmFtYXpvbi5jb20vQW1hem9uQ2xvdWRGcm9udC9sYXRlc3QvRGV2ZWxvcGVyR3VpZGUvZXhhbXBsZS1mdW5jdGlvbi1hZGQtaW5kZXguaHRtbFxuIl19",
         "FunctionConfig": {
           "Comment": "Add index.html to URI (required for Next.js)",
           "Runtime": "cloudfront-js-2.0",
