@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { Header1 } from '@components/header'
 import { jobs } from './work-data'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Work',
 }

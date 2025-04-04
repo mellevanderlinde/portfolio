@@ -7,6 +7,6 @@ export default antfu(
     react: true,
   },
   {
-    ignores: ['**/cdk.out', 'apps/infra/**/*.js', 'apps/infra/**/*.d.ts'],
+    ignores: ['**/cdk.out', 'apps/infra/**/*.js', 'apps/infra/**/*.d.ts', 'apps/website/out/**'],
   },
 )

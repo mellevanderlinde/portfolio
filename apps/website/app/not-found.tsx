@@ -4,6 +4,7 @@ import { Header1 } from '@components/header'
 
 const title = '404 - Page not found'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title,
 }

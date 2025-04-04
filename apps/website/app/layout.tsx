@@ -7,6 +7,7 @@ import { GeistSans } from 'geist/font/sans'
 import { baseUrl } from './sitemap'
 import './global.css'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
