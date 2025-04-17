@@ -1,8 +1,7 @@
 import type { MetadataRoute } from 'next'
+import { url } from './sitemap'
 
 export const dynamic = 'force-static'
-
-const url = 'https://mellevanderlinde.com'
 
 export default function robots(): MetadataRoute.Robots {
   return {
