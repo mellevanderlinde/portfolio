@@ -4,7 +4,6 @@ export default antfu(
   {
     typescript: true,
     rules: { 'no-new': 'off' },
-    react: true,
   },
   {
     ignores: ['**/cdk.out', 'apps/infra/**/*.js', 'apps/infra/**/*.d.ts', 'apps/website/out/**'],
