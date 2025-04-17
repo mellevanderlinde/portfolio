@@ -84,9 +84,6 @@ importers:
       react-icons:
         specifier: ^5.4.0
         version: 5.4.0(react@19.0.0)
-      reading-time:
-        specifier: workspace:*
-        version: link:../../packages/reading-time
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17(ts-node@10.9.2(@types/node@22.10.7)(typescript@5.7.3))
@@ -176,15 +173,6 @@ importers:
       typescript:
         specifier: ^5
         version: 5.8.2
-
-  packages/reading-time:
-    devDependencies:
-      typescript:
-        specifier: ^5.8.2
-        version: 5.8.2
-      vitest:
-        specifier: ^3.0.9
-        version: 3.0.9(@types/debug@4.1.12)(@types/node@22.13.13)(jiti@2.4.2)(jsdom@20.0.3)(lightningcss@1.29.2)(yaml@2.7.0)
 
 packages:
 
