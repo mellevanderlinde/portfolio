@@ -1,10 +1,8 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const name = 'Melle'
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const navItems = {
   '/blog': { name: 'Blog' },
   '/projects': { name: 'Projects' },

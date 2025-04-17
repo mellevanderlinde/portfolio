@@ -27,7 +27,6 @@ function Code({
 }: { children: string, className?: string }): ReactNode {
   const language = props.className?.replace('language-', '') || 'yaml'
   const __html = hljs.highlight(children, { language }).value
-  // eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
   return <code dangerouslySetInnerHTML={{ __html }} {...props} />
 }
 

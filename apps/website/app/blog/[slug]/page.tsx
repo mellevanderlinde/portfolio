@@ -9,7 +9,6 @@ interface Params {
   slug: string
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export async function generateMetadata({
   params,
 }: { params: Promise<Params> }): Promise<Metadata> {
@@ -50,7 +49,6 @@ export default async function Page({
   )
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export function generateStaticParams(): { slug: string }[] {
   return getBlogPosts().map(post => ({ slug: post.slug }))
 }

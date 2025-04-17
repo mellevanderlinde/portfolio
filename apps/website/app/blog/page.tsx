@@ -4,7 +4,6 @@ import { Header1 } from '@app/components/header'
 import Link from 'next/link'
 import { formatDate, getBlogPosts } from '../lib/posts'
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Blog',
 }

@@ -3,7 +3,6 @@ import type { ReactNode } from 'react'
 import { Header1 } from 'app/components/header'
 import { projects } from './project-data'
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Projects',
 }
