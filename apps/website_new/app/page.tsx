@@ -173,10 +173,10 @@ export default function Personal(): ReactNode {
           >
             {posts.map(post => (
               <Link
-                key={post.uid}
+                key={post.id}
                 className="-mx-3 rounded-xl px-3 py-3"
                 href={post.link}
-                data-id={post.uid}
+                data-id={post.id}
               >
                 <div className="flex flex-col space-y-1">
                   <h4 className="font-normal dark:text-zinc-100">
