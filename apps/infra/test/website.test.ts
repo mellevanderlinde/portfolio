@@ -1,9 +1,9 @@
 /* eslint-disable test/consistent-test-it */
 import { describe, expect, test } from 'vitest'
 
-describe('check if website is available', () => {
-  const domain = 'mellevanderlinde.com'
+const domain = 'mellevanderlinde.com'
 
+describe('check if website is available', () => {
   test('http', async () => {
     const result = await fetch(`http://${domain}`)
     expect(result.status).toBe(200)
@@ -26,7 +26,7 @@ describe('check if website is available', () => {
 })
 
 describe('check if pages are available', () => {
-  const root = 'https://mellevanderlinde.com'
+  const root = `https://${domain}`
 
   test('homepage', async () => {
     const result = await fetch(root)
@@ -73,23 +73,18 @@ describe('check if pages are available', () => {
 
     expect(result.status).toBe(200)
     expect(result.statusText).toBe('OK')
-    expect(text).toMatch(
-      'Connect GitHub Actions with AWS using OpenID Connect',
-    )
+    expect(text).toMatch('Connect GitHub Actions with AWS using OpenID Connect')
     expect(text).toMatch('A common pattern is to invoke AWS actions from a GitHub Actions workflow.')
   })
 
-  test('blog post', async () => {
-    const result = await fetch(`${root}/blog/openid-connect-aws-github`)
+  test('albums', async () => {
+    const result = await fetch(`${root}/albums`)
     const text = await result.text()
 
     expect(result.status).toBe(200)
     expect(result.statusText).toBe('OK')
-    expect(text).toMatch(
-      'Connect GitHub Actions with AWS using OpenID Connect',
-    )
-    expect(text).toMatch(
-      'A common pattern is to invoke AWS actions from a GitHub Actions workflow.',
-    )
+    expect(text).toMatch('These are a few of my favorite albums.')
+    expect(text).toMatch('Kaytranada - 99.9%')
+    expect(text).toMatch('Toco - Outro Lugar')
   })
 })
