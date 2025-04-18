@@ -1,9 +1,10 @@
 'use client'
-import type { Transition, Variants } from 'motion/react'
+
 import type { ReactNode } from 'react'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { Magnetic } from '@/components/ui/magnetic'
 import { Spotlight } from '@/components/ui/spotlight'
+import { transition, variantsContainer, variantsSection } from '@/lib/constants'
 import { motion } from 'motion/react'
 import Link from 'next/link'
 import {
@@ -11,26 +12,7 @@ import {
   links,
   posts,
   projects,
-} from './data'
-
-const variantsContainer: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-    },
-  },
-}
-
-const variantsSection: Variants = {
-  hidden: { opacity: 0, y: 20, filter: 'blur(8px)' },
-  visible: { opacity: 1, y: 0, filter: 'blur(0px)' },
-}
-
-const transition: Transition = {
-  duration: 0.3,
-}
+} from '../lib/data'
 
 function MagneticSocialLink({
   children,

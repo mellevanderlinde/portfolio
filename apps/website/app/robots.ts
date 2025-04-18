@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { url } from './sitemap'
+import { url } from '@/lib/constants'
 
 export const dynamic = 'force-static'
 

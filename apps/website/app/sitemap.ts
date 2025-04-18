@@ -1,9 +1,8 @@
 import type { MetadataRoute } from 'next'
-import { posts } from './data'
+import { url } from '@/lib/constants'
+import { posts } from '../lib/data'
 
 export const dynamic = 'force-static'
-
-export const url = 'https://mellevanderlinde.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()

@@ -1,3 +1,4 @@
+import Albums from '@/app/albums/page'
 import BlogLayout from '@/app/blog/layout'
 import { Footer } from '@/app/footer'
 import { Header } from '@/app/header'
@@ -48,6 +49,25 @@ it('matches header', () => {
 
 it('matches blog layout', () => {
   const { container } = render(<BlogLayout children={<></>} />)
+  expect(container).toMatchSnapshot()
+})
+
+it('matches albums page', () => {
+  // Mock
+  globalThis.ResizeObserver = vi.fn().mockImplementation(() => ({
+    observe: vi.fn(),
+    disconnect: vi.fn(),
+  }))
+  vi.mock('@/lib/data', () => ({
+    posts: [],
+    albums: [{ id: 'id', name: 'Artist - Album' }],
+    projects: [],
+    jobs: [],
+    links: [],
+  }))
+
+  // Test
+  const { container } = render(<Albums />)
   expect(container).toMatchSnapshot()
 })
 
