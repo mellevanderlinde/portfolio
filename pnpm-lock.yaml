@@ -31,7 +31,7 @@ importers:
         version: 0.5.21
       website:
         specifier: workspace:*
-        version: link:../website_new
+        version: link:../website
     devDependencies:
       '@types/node':
         specifier: ^22.13.13
@@ -52,7 +52,7 @@ importers:
         specifier: ^3.0.9
         version: 3.0.9(@types/debug@4.1.12)(@types/node@22.13.13)(jiti@2.4.2)(jsdom@20.0.3)(lightningcss@1.29.2)(yaml@2.7.0)
 
-  apps/website_new:
+  apps/website:
     dependencies:
       '@mdx-js/loader':
         specifier: ^3.1.0
@@ -298,9 +298,6 @@ packages:
 
   '@emnapi/core@1.4.0':
     resolution: {integrity: sha512-H+N/FqT07NmLmt6OFFtDfwe8PNygprzBikrEMyQfgqSmT0vzE515Pz7R8izwB9q/zsH/MA64AKoul3sA6/CzVg==}
-
-  '@emnapi/runtime@1.4.0':
-    resolution: {integrity: sha512-64WYIf4UYcdLnbKn/umDlNjQDSS8AgZrI/R9+x5ilkUVFxXcA1Ebl+gQLc/6mERA4407Xof0R7wEyEuj091CVw==}
 
   '@emnapi/runtime@1.4.3':
     resolution: {integrity: sha512-pBPWdu6MLKROBX05wSNKcNb++m5Er+KQ9QkB+WVM+pW2Kx9hoSrVTnu3BdkI5eBLZoKu/J6mW/B6i6bJB2ytXQ==}
@@ -3719,11 +3716,6 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@emnapi/runtime@1.4.0':
-    dependencies:
-      tslib: 2.8.1
-    optional: true
-
   '@emnapi/runtime@1.4.3':
     dependencies:
       tslib: 2.8.1
@@ -4177,7 +4169,7 @@ snapshots:
   '@napi-rs/wasm-runtime@0.2.8':
     dependencies:
       '@emnapi/core': 1.4.0
-      '@emnapi/runtime': 1.4.0
+      '@emnapi/runtime': 1.4.3
       '@tybys/wasm-util': 0.9.0
     optional: true
 
