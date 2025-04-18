@@ -1,0 +1,1072 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches blog layout 1`] = `
+<div>
+  <div
+    class="pointer-events-none fixed left-0 top-0 z-10 h-12 w-full bg-gray-100 to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-zinc-950"
+  />
+  <div
+    class="inset-x-0 origin-left fixed top-0 z-20 h-0.5 bg-gray-300 dark:bg-zinc-600"
+    style="transform: scaleX(0);"
+  />
+  <div
+    class="absolute right-4 top-24"
+  >
+    <button
+      class="font-base flex items-center gap-1 text-center text-sm text-zinc-500 transition-colors dark:text-zinc-400"
+      type="button"
+    >
+      <p
+        aria-label="Copy"
+        class=""
+      >
+        <span
+          aria-hidden="true"
+          class="inline-block"
+          style="opacity: 1;"
+        >
+          C
+        </span>
+        <span
+          aria-hidden="true"
+          class="inline-block"
+          style="opacity: 1;"
+        >
+          o
+        </span>
+        <span
+          aria-hidden="true"
+          class="inline-block"
+          style="opacity: 1;"
+        >
+          p
+        </span>
+        <span
+          aria-hidden="true"
+          class="inline-block"
+          style="opacity: 1;"
+        >
+          y
+        </span>
+      </p>
+      <span>
+        URL
+      </span>
+    </button>
+  </div>
+  <main
+    class="prose prose-gray mt-24 pb-20 prose-h4:prose-base dark:prose-invert prose-h1:text-xl prose-h1:font-medium prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-lg prose-h2:font-medium prose-h3:text-base prose-h3:font-medium prose-h4:font-medium prose-h5:text-base prose-h5:font-medium prose-h6:text-base prose-h6:font-medium prose-strong:font-medium"
+  />
+</div>
+`;
+
+exports[`matches footer 1`] = `
+<div>
+  <footer
+    class="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800"
+  >
+    <div
+      class="flex items-center justify-between"
+    >
+      <a
+        href="https://github.com/mellevanderlinde/portfolio"
+        target="_blank"
+      >
+        <div
+          class="relative inline-block whitespace-nowrap text-xs text-zinc-500"
+        >
+          <div
+            style="opacity: 1; transform: none;"
+          >
+            <span>
+              © 2025 Melle
+            </span>
+          </div>
+        </div>
+      </a>
+      <div
+        class="text-xs text-zinc-400"
+      >
+        <button
+          aria-label="Switch to Light theme"
+          class="relative inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+          data-checked="false"
+          data-id="light"
+          type="button"
+        >
+          <div
+            class="z-10"
+          >
+            <svg
+              class="lucide lucide-sun h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="4"
+              />
+              <path
+                d="M12 2v2"
+              />
+              <path
+                d="M12 20v2"
+              />
+              <path
+                d="m4.93 4.93 1.41 1.41"
+              />
+              <path
+                d="m17.66 17.66 1.41 1.41"
+              />
+              <path
+                d="M2 12h2"
+              />
+              <path
+                d="M20 12h2"
+              />
+              <path
+                d="m6.34 17.66-1.41 1.41"
+              />
+              <path
+                d="m19.07 4.93-1.41 1.41"
+              />
+            </svg>
+          </div>
+        </button>
+        <button
+          aria-label="Switch to Dark theme"
+          class="relative inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+          data-checked="false"
+          data-id="dark"
+          type="button"
+        >
+          <div
+            class="z-10"
+          >
+            <svg
+              class="lucide lucide-moon h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+              />
+            </svg>
+          </div>
+        </button>
+        <button
+          aria-label="Switch to System theme"
+          class="relative inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+          data-checked="false"
+          data-id="system"
+          type="button"
+        >
+          <div
+            class="z-10"
+          >
+            <svg
+              class="lucide lucide-monitor h-4 w-4"
+              fill="none"
+              height="24"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect
+                height="14"
+                rx="2"
+                width="20"
+                x="2"
+                y="3"
+              />
+              <line
+                x1="8"
+                x2="16"
+                y1="21"
+                y2="21"
+              />
+              <line
+                x1="12"
+                x2="12"
+                y1="17"
+                y2="21"
+              />
+            </svg>
+          </div>
+        </button>
+      </div>
+    </div>
+  </footer>
+</div>
+`;
+
+exports[`matches header 1`] = `
+<div>
+  <header
+    class="mb-8 flex items-center justify-between"
+  >
+    <div>
+      <a
+        class="font-medium text-black dark:text-white"
+        href="/"
+      >
+        Melle van der Linde
+      </a>
+      <p
+        class="text-zinc-600 dark:text-zinc-500"
+        style="opacity: 0;"
+      >
+        <span
+          class="sr-only"
+        >
+          Cloud Engineer
+        </span>
+        <span
+          class="inline-block whitespace-pre"
+        >
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            C
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            l
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            o
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            u
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            d
+          </span>
+        </span>
+        <span
+          class="inline-block whitespace-pre"
+        >
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+             
+          </span>
+        </span>
+        <span
+          class="inline-block whitespace-pre"
+        >
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            E
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            n
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            g
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            i
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            n
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            e
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            e
+          </span>
+          <span
+            aria-hidden="true"
+            class="inline-block whitespace-pre"
+            style="opacity: 0;"
+          >
+            r
+          </span>
+        </span>
+      </p>
+    </div>
+  </header>
+</div>
+`;
+
+exports[`matches home 1`] = `
+<div>
+  <main
+    class="space-y-24"
+    style="opacity: 0;"
+  >
+    <section
+      class="mt-18"
+      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+    >
+      <h3
+        class="mb-5 text-lg font-medium"
+      >
+        About
+      </h3>
+      <div
+        class="flex-1"
+      >
+        <p
+          class="text-zinc-600 dark:text-zinc-400"
+        >
+          Interested in software engineering, cloud, machine learning, technology and sustainability. Joined PostNL as MLOps Engineer, currently working as Cloud Engineer in the CCoE (Cloud Center of Excellence), a central AWS platform team at PostNL.
+        </p>
+      </div>
+    </section>
+    <section
+      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+    >
+      <h3
+        class="mb-5 text-lg font-medium"
+      >
+        Selected Projects
+      </h3>
+      <div
+        class="grid grid-cols-1 gap-6 sm:grid-cols-2"
+      >
+        <div
+          class="space-y-2"
+        >
+          <div
+            class="px-1"
+          >
+            <a
+              class="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+              href="https://github.com/mellevanderlinde/energy-meter"
+              target="_blank"
+            >
+              Energy Data on AWS with Raspberry Pi
+              <span
+                class="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"
+              />
+            </a>
+            <p
+              class="text-base text-zinc-600 dark:text-zinc-400"
+            >
+              Store home energy data on DynamoDB with Raspberry Pi.
+            </p>
+          </div>
+        </div>
+        <div
+          class="space-y-2"
+        >
+          <div
+            class="px-1"
+          >
+            <a
+              class="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+              href="https://github.com/mellevanderlinde/portfolio"
+              target="_blank"
+            >
+              Portfolio with CloudFront and Next.js
+              <span
+                class="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"
+              />
+            </a>
+            <p
+              class="text-base text-zinc-600 dark:text-zinc-400"
+            >
+              Project serving this website. Website design is by ibelick.
+            </p>
+          </div>
+        </div>
+        <div
+          class="space-y-2"
+        >
+          <div
+            class="px-1"
+          >
+            <a
+              class="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+              href="https://github.com/mellevanderlinde/oidc-aws-github"
+              target="_blank"
+            >
+              OpenID Connect for AWS and GitHub Actions
+              <span
+                class="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"
+              />
+            </a>
+            <p
+              class="text-base text-zinc-600 dark:text-zinc-400"
+            >
+              Shows how to allow a repo to run AWS actions from GitHub Actions using OIDC.
+            </p>
+          </div>
+        </div>
+        <div
+          class="space-y-2"
+        >
+          <div
+            class="px-1"
+          >
+            <a
+              class="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+              href="https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde"
+              target="_blank"
+            >
+              Contributions to AWS CDK
+              <span
+                class="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"
+              />
+            </a>
+            <p
+              class="text-base text-zinc-600 dark:text-zinc-400"
+            >
+              Shows some contributions (tiny, mostly bug fixes) to the AWS CDK project.
+            </p>
+          </div>
+        </div>
+        <div
+          class="space-y-2"
+        >
+          <div
+            class="px-1"
+          >
+            <a
+              class="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+              href="https://github.com/mellevanderlinde/mwaa-airflow"
+              target="_blank"
+            >
+              Apache Airflow on AWS
+              <span
+                class="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"
+              />
+            </a>
+            <p
+              class="text-base text-zinc-600 dark:text-zinc-400"
+            >
+              Deploys MWAA environment for Apache Airflow.
+            </p>
+          </div>
+        </div>
+        <div
+          class="space-y-2"
+        >
+          <div
+            class="px-1"
+          >
+            <a
+              class="font-base group relative inline-block font-[450] text-zinc-900 dark:text-zinc-50"
+              href="https://github.com/mellevanderlinde/bedrock-apigateway"
+              target="_blank"
+            >
+              Bedrock API
+              <span
+                class="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"
+              />
+            </a>
+            <p
+              class="text-base text-zinc-600 dark:text-zinc-400"
+            >
+              Interact with Bedrock through an endpoint on API Gateway.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section
+      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+    >
+      <h3
+        class="mb-5 text-lg font-medium"
+      >
+        Work Experience
+      </h3>
+      <div
+        class="flex flex-col space-y-2"
+      >
+        <a
+          class="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+          href="https://postnl.nl/en"
+          rel="noopener noreferrer"
+          style="position: relative; overflow: hidden;"
+          target="_blank"
+        >
+          <div
+            class="pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] transition-opacity duration-200 opacity-0 from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+            style="width: 64px; height: 64px; left: -32px; top: -32px;"
+          />
+          <div
+            class="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950"
+          >
+            <div
+              class="relative flex w-full flex-row justify-between"
+            >
+              <div>
+                <h4
+                  class="font-normal dark:text-zinc-100"
+                >
+                  Cloud Engineer
+                </h4>
+                <p
+                  class="text-zinc-500 dark:text-zinc-400"
+                >
+                  PostNL
+                </p>
+              </div>
+              <p
+                class="text-zinc-600 dark:text-zinc-400"
+              >
+                2023
+                 
+                -
+                 
+                Present
+              </p>
+            </div>
+          </div>
+        </a>
+        <a
+          class="relative overflow-hidden rounded-2xl bg-zinc-300/30 p-[1px] dark:bg-zinc-600/30"
+          href="https://postnl.nl/en"
+          rel="noopener noreferrer"
+          style="position: relative; overflow: hidden;"
+          target="_blank"
+        >
+          <div
+            class="pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] transition-opacity duration-200 opacity-0 from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
+            style="width: 64px; height: 64px; left: -32px; top: -32px;"
+          />
+          <div
+            class="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950"
+          >
+            <div
+              class="relative flex w-full flex-row justify-between"
+            >
+              <div>
+                <h4
+                  class="font-normal dark:text-zinc-100"
+                >
+                  MLOps Engineer
+                </h4>
+                <p
+                  class="text-zinc-500 dark:text-zinc-400"
+                >
+                  PostNL
+                </p>
+              </div>
+              <p
+                class="text-zinc-600 dark:text-zinc-400"
+              >
+                2021
+                 
+                -
+                 
+                2023
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section
+      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+    >
+      <h3
+        class="mb-3 text-lg font-medium"
+      >
+        Blog
+      </h3>
+      <div
+        class="flex flex-col space-y-0"
+      >
+        <a
+          class="relative inline-flex -mx-3 rounded-xl px-3 py-3"
+          data-checked="false"
+          data-id="blog-oidc"
+          href="/blog/openid-connect-aws-github"
+        >
+          <div
+            class="z-10"
+          >
+            <div
+              class="flex flex-col space-y-1"
+            >
+              <h4
+                class="font-normal dark:text-zinc-100"
+              >
+                Connect GitHub Actions with AWS using OpenID Connect
+              </h4>
+              <p
+                class="text-zinc-500 dark:text-zinc-400"
+              >
+                How to use CDK and GitHub Actions to deploy to AWS
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <section
+      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+    >
+      <h3
+        class="mb-5 text-lg font-medium"
+      >
+        Connect
+      </h3>
+      <p
+        class="mb-5 text-zinc-600 dark:text-zinc-400"
+      >
+        Feel free to check out my projects on GitHub or contact me on LinkedIn.
+      </p>
+      <div
+        class="flex items-center justify-start space-x-3"
+      >
+        <div
+          style="transform: none;"
+        >
+          <a
+            class="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+            href="https://github.com/mellevanderlinde"
+            target="_blank"
+          >
+            GitHub
+            <svg
+              class="h-3 w-3"
+              fill="none"
+              height="15"
+              viewBox="0 0 15 15"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+        <div
+          style="transform: none;"
+        >
+          <a
+            class="group relative inline-flex shrink-0 items-center gap-[1px] rounded-full bg-zinc-100 px-2.5 py-1 text-sm text-black transition-colors duration-200 hover:bg-zinc-950 hover:text-zinc-50 dark:bg-zinc-800 dark:text-zinc-100 dark:hover:bg-zinc-700"
+            href="https://www.linkedin.com/in/mellevdlinde"
+            target="_blank"
+          >
+            LinkedIn
+            <svg
+              class="h-3 w-3"
+              fill="none"
+              height="15"
+              viewBox="0 0 15 15"
+              width="15"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                clip-rule="evenodd"
+                d="M3.64645 11.3536C3.45118 11.1583 3.45118 10.8417 3.64645 10.6465L10.2929 4L6 4C5.72386 4 5.5 3.77614 5.5 3.5C5.5 3.22386 5.72386 3 6 3L11.5 3C11.6326 3 11.7598 3.05268 11.8536 3.14645C11.9473 3.24022 12 3.36739 12 3.5L12 9.00001C12 9.27615 11.7761 9.50001 11.5 9.50001C11.2239 9.50001 11 9.27615 11 9.00001V4.70711L4.35355 11.3536C4.15829 11.5488 3.84171 11.5488 3.64645 11.3536Z"
+                fill="currentColor"
+                fill-rule="evenodd"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+`;
+
+exports[`matches robots 1`] = `
+{
+  "rules": {
+    "allow": "/",
+    "disallow": "/private/",
+    "userAgent": "*",
+  },
+  "sitemap": "https://mellevanderlinde.com/sitemap.xml",
+}
+`;
+
+exports[`matches root layout 1`] = `
+<div>
+  <script
+    nonce=""
+  >
+    ((e,i,s,u,m,a,l,h)=&gt;{let d=document.documentElement,w=["light","dark"];function p(n){(Array.isArray(e)?e:[e]).forEach(y=&gt;{let k=y==="class",S=k&&a?m.map(f=&gt;a[f]||f):m;k?(d.classList.remove(...S),d.classList.add(a&&a[n]?a[n]:n)):d.setAttribute(y,n)}),R(n)}function R(n){h&&w.includes(n)&&(d.style.colorScheme=n)}function c(){return window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"}if(u)p(u);else try{let n=localStorage.getItem(i)||s,y=l&&n==="system"?c():n;p(y)}catch(n){}})("class","theme","system",null,["light","dark"],null,true,true)
+  </script>
+  <div
+    class="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]"
+  >
+    <div
+      class="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20"
+    >
+      <header
+        class="mb-8 flex items-center justify-between"
+      >
+        <div>
+          <a
+            class="font-medium text-black dark:text-white"
+            href="/"
+          >
+            Melle van der Linde
+          </a>
+          <p
+            class="text-zinc-600 dark:text-zinc-500"
+            style="opacity: 0;"
+          >
+            <span
+              class="sr-only"
+            >
+              Cloud Engineer
+            </span>
+            <span
+              class="inline-block whitespace-pre"
+            >
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                C
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                l
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                o
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                u
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                d
+              </span>
+            </span>
+            <span
+              class="inline-block whitespace-pre"
+            >
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                 
+              </span>
+            </span>
+            <span
+              class="inline-block whitespace-pre"
+            >
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                E
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                n
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                g
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                i
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                n
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                e
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                e
+              </span>
+              <span
+                aria-hidden="true"
+                class="inline-block whitespace-pre"
+                style="opacity: 0;"
+              >
+                r
+              </span>
+            </span>
+          </p>
+        </div>
+      </header>
+      <footer
+        class="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800"
+      >
+        <div
+          class="flex items-center justify-between"
+        >
+          <a
+            href="https://github.com/mellevanderlinde/portfolio"
+            target="_blank"
+          >
+            <div
+              class="relative inline-block whitespace-nowrap text-xs text-zinc-500"
+            >
+              <div
+                style="opacity: 1; transform: none;"
+              >
+                <span>
+                  © 2025 Melle
+                </span>
+              </div>
+            </div>
+          </a>
+          <div
+            class="text-xs text-zinc-400"
+          >
+            <button
+              aria-label="Switch to Light theme"
+              class="relative inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+              data-checked="false"
+              data-id="light"
+              type="button"
+            >
+              <div
+                class="z-10"
+              >
+                <svg
+                  class="lucide lucide-sun h-4 w-4"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                  />
+                  <path
+                    d="M12 2v2"
+                  />
+                  <path
+                    d="M12 20v2"
+                  />
+                  <path
+                    d="m4.93 4.93 1.41 1.41"
+                  />
+                  <path
+                    d="m17.66 17.66 1.41 1.41"
+                  />
+                  <path
+                    d="M2 12h2"
+                  />
+                  <path
+                    d="M20 12h2"
+                  />
+                  <path
+                    d="m6.34 17.66-1.41 1.41"
+                  />
+                  <path
+                    d="m19.07 4.93-1.41 1.41"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              aria-label="Switch to Dark theme"
+              class="relative inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+              data-checked="false"
+              data-id="dark"
+              type="button"
+            >
+              <div
+                class="z-10"
+              >
+                <svg
+                  class="lucide lucide-moon h-4 w-4"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"
+                  />
+                </svg>
+              </div>
+            </button>
+            <button
+              aria-label="Switch to System theme"
+              class="relative inline-flex h-7 w-7 items-center justify-center text-zinc-500 transition-colors duration-100 focus-visible:outline-2 data-[checked=true]:text-zinc-950 dark:text-zinc-400 dark:data-[checked=true]:text-zinc-50"
+              data-checked="true"
+              data-id="system"
+              type="button"
+            >
+              <div
+                class="absolute inset-0 pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
+                style="opacity: 1;"
+              />
+              <div
+                class="z-10"
+              >
+                <svg
+                  class="lucide lucide-monitor h-4 w-4"
+                  fill="none"
+                  height="24"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect
+                    height="14"
+                    rx="2"
+                    width="20"
+                    x="2"
+                    y="3"
+                  />
+                  <line
+                    x1="8"
+                    x2="16"
+                    y1="21"
+                    y2="21"
+                  />
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="17"
+                    y2="21"
+                  />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`matches sitemap 1`] = `
+[
+  {
+    "lastModified": "2024-01-01T00:00:00.000Z",
+    "url": "https://mellevanderlinde.com",
+  },
+  {
+    "lastModified": "2024-01-01T00:00:00.000Z",
+    "url": "https://mellevanderlinde.com/blog/openid-connect-aws-github",
+  },
+]
+`;
