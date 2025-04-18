@@ -32,7 +32,7 @@ it('matches root layout', () => {
   })
 
   // Test
-  const { container } = render(<RootLayout children />)
+  const { container } = render(<RootLayout children={<></>} />)
   expect(container).toMatchSnapshot()
 })
 
@@ -47,7 +47,7 @@ it('matches header', () => {
 })
 
 it('matches blog layout', () => {
-  const { container } = render(<BlogLayout children />)
+  const { container } = render(<BlogLayout children={<></>} />)
   expect(container).toMatchSnapshot()
 })
 

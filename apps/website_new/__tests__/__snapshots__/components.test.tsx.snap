@@ -1,0 +1,75 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`matches animated background 1`] = `
+<div>
+  <div
+    class="z-10"
+  />
+</div>
+`;
+
+exports[`matches magnetic 1`] = `
+<div>
+  <div
+    style="transform: none;"
+  />
+</div>
+`;
+
+exports[`matches scroll progress 1`] = `
+<div>
+  <div
+    class="inset-x-0 top-0 h-1 origin-left"
+    style="transform: scaleX(0);"
+  />
+</div>
+`;
+
+exports[`matches spotlight 1`] = `
+<div
+  style="position: relative; overflow: hidden;"
+>
+  <div
+    class="pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-xl transition-opacity duration-200 from-zinc-50 via-zinc-100 to-zinc-200 opacity-0"
+    style="width: 200px; height: 200px; left: -100px; top: -100px;"
+  />
+</div>
+`;
+
+exports[`matches text effect 1`] = `
+<div>
+  <p
+    style="opacity: 0;"
+  >
+    <span
+      class="sr-only"
+    />
+    <span
+      aria-hidden="true"
+      class="inline-block whitespace-pre"
+      style="opacity: 0;"
+    />
+  </p>
+</div>
+`;
+
+exports[`matches text loop 1`] = `
+<div>
+  <div
+    class="relative inline-block whitespace-nowrap"
+  >
+    <div
+      style="opacity: 1; transform: none;"
+    />
+  </div>
+</div>
+`;
+
+exports[`matches text morph 1`] = `
+<div>
+  <p
+    aria-label=""
+    class=""
+  />
+</div>
+`;
