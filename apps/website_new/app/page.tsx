@@ -79,7 +79,9 @@ export default function Personal(): ReactNode {
       <motion.section
         variants={variantsSection}
         transition={transition}
+        className="mt-18"
       >
+        <h3 className="mb-5 text-lg font-medium">About</h3>
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
             Interested in software engineering, cloud, machine learning, technology and sustainability.
