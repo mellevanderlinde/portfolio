@@ -28,7 +28,7 @@ const defaultTransition: Transition = { duration: 0.3 }
 export function TextLoop({
   children,
   className,
-  interval = 3,
+  interval = 2,
   transition = defaultTransition,
   variants,
   onIndexChange,
