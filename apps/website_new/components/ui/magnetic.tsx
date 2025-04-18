@@ -81,6 +81,7 @@ export function Magnetic({
     else if (actionArea === 'global') {
       setIsHovered(true)
     }
+    return undefined
   }, [actionArea])
 
   const handleMouseEnter = () => {
