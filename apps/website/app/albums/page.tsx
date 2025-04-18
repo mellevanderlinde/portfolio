@@ -10,7 +10,7 @@ import { motion } from 'motion/react'
 function InfiniteAlbumSlider(): ReactNode {
   return (
     <InfiniteSlider speedOnHover={20} gap={24} className="mt-8">
-      {albums.sort(() => Math.random() - 0.5) // Randomly shuffle the images
+      {albums.sort(() => Math.random() - 0.5) // Randomly shuffle albums
         .map(album => (
           <img
             key={album.id}
