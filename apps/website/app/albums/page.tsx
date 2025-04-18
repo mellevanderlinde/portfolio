@@ -2,6 +2,7 @@
 
 import type { ReactNode } from 'react'
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
+import { UnderlinedLink } from '@/components/underlined-link'
 import { transition, variantsContainer, variantsSection } from '@/lib/constants'
 import { albums } from '@/lib/data'
 import { motion } from 'motion/react'
@@ -39,7 +40,7 @@ export default function Albums(): ReactNode {
           <p className="text-zinc-600 dark:text-zinc-400">
             These are a few of my favorite albums. You can also find me on
             {' '}
-            <a href="https://soundcloud.com/melledj" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            <UnderlinedLink href="https://soundcloud.com/melledj">SoundCloud</UnderlinedLink>
             .
           </p>
         </div>

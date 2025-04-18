@@ -21,14 +21,6 @@ exports[`matches infinite slider 1`] = `
 </div>
 `;
 
-exports[`matches magnetic 1`] = `
-<div>
-  <div
-    style="transform: none;"
-  />
-</div>
-`;
-
 exports[`matches scroll progress 1`] = `
 <div>
   <div

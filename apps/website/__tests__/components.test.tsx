@@ -1,6 +1,5 @@
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
 import { AnimatedBackground } from '@/components/ui/animated-background'
-import { Magnetic } from '@/components/ui/magnetic'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 import { Spotlight } from '@/components/ui/spotlight'
 import { TextEffect } from '@/components/ui/text-effect'
@@ -10,11 +9,6 @@ import { expect, it, vi } from 'vitest'
 
 it('matches animated background', () => {
   const { container } = render(<AnimatedBackground children={<></>} />)
-  expect(container).toMatchSnapshot()
-})
-
-it('matches magnetic', () => {
-  const { container } = render(<Magnetic children={<></>} />)
   expect(container).toMatchSnapshot()
 })
 

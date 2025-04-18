@@ -18,13 +18,15 @@ exports[`matches albums page 1`] = `
         >
           These are a few of my favorite albums. You can also find me on
            
-          <a
-            href="https://soundcloud.com/melledj"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            SoundCloud
-          </a>
+          <u>
+            <a
+              href="https://soundcloud.com/melledj"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              SoundCloud
+            </a>
+          </u>
           .
         </p>
       </div>
@@ -439,11 +441,41 @@ exports[`matches home 1`] = `
       <p
         class="mb-5 text-zinc-600 dark:text-zinc-400"
       >
-        Feel free to check out my projects on GitHub or contact me on LinkedIn.
+        Feel free to check out my projects on
+         
+        <u>
+          <a
+            href="https://github.com/mellevanderlinde"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            GitHub
+          </a>
+        </u>
+         
+        or contact me on
+         
+        <u>
+          <a
+            href="https://www.linkedin.com/in/mellevdlinde"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+        </u>
+        . Or see which
+         
+        <u>
+          <a
+            href="/albums"
+          >
+            albums
+          </a>
+        </u>
+         
+        I listen to.
       </p>
-      <div
-        class="flex items-center justify-start space-x-3"
-      />
     </section>
   </main>
 </div>
