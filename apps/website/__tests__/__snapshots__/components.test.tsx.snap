@@ -64,12 +64,3 @@ exports[`matches text loop 1`] = `
   </div>
 </div>
 `;
-
-exports[`matches text morph 1`] = `
-<div>
-  <p
-    aria-label=""
-    class=""
-  />
-</div>
-`;

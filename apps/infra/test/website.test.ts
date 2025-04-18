@@ -34,24 +34,49 @@ describe('check if pages are available', () => {
 
     expect(result.status).toBe(200)
     expect(result.statusText).toBe('OK')
+
+    // Header
     expect(text).toMatch('Melle van der Linde')
-    expect(text).toMatch('My Portfolio')
+    expect(text).toMatch('Cloud Engineer')
+
+    // About
+    expect(text).toMatch('About')
     expect(text).toMatch(
-      'I have an interest in cloud engineering, machine learning, technology and sustainability.',
+      'Interested in software engineering, cloud, machine learning, technology and sustainability.',
     )
+
+    // Projects
+    expect(text).toMatch('Selected Projects')
+    expect(text).toMatch('Portfolio with CloudFront and Next.js')
+    expect(text).toMatch(
+      'Portfolio with CloudFront and Next.js',
+    )
+    expect(text).toMatch('Project serving this website.')
+
+    // Work
+    expect(text).toMatch('Work Experience')
+    expect(text).toMatch('Cloud Engineer')
+    expect(text).toMatch('PostNL')
+
+    // Blog
+    expect(text).toMatch('Blog')
+    expect(text).toMatch('Connect GitHub Actions with AWS using OpenID Connect')
+
+    // Connect
+    expect(text).toMatch('Connect')
+    expect(text).toMatch('Feel free to check out my projects on GitHub or contact me on LinkedIn.')
   })
 
   test('blog', async () => {
-    const result = await fetch(`${root}/blog`)
+    const result = await fetch(`${root}/blog/openid-connect-aws-github`)
     const text = await result.text()
 
     expect(result.status).toBe(200)
     expect(result.statusText).toBe('OK')
-    expect(text).toMatch('Blog')
     expect(text).toMatch(
       'Connect GitHub Actions with AWS using OpenID Connect',
     )
-    expect(text).toMatch('Sep 26, 2024')
+    expect(text).toMatch('A common pattern is to invoke AWS actions from a GitHub Actions workflow.')
   })
 
   test('blog post', async () => {
@@ -63,36 +88,8 @@ describe('check if pages are available', () => {
     expect(text).toMatch(
       'Connect GitHub Actions with AWS using OpenID Connect',
     )
-    expect(text).toMatch('Sep 26, 2024')
     expect(text).toMatch(
       'A common pattern is to invoke AWS actions from a GitHub Actions workflow.',
-    )
-  })
-
-  test('projects', async () => {
-    const result = await fetch(`${root}/projects`)
-    const text = await result.text()
-
-    expect(result.status).toBe(200)
-    expect(result.statusText).toBe('OK')
-    expect(text).toMatch('Projects')
-    expect(text).toMatch('Portfolio with CloudFront and Next.js')
-    expect(text).toMatch(
-      'AWS CDK project that serves this Next.js portfolio with Amazon CloudFront.',
-    )
-  })
-
-  test('work', async () => {
-    const result = await fetch(`${root}/work`)
-    const text = await result.text()
-
-    expect(result.status).toBe(200)
-    expect(result.statusText).toBe('OK')
-    expect(text).toMatch('Work')
-    expect(text).toMatch('Cloud Engineer')
-    expect(text).toMatch('PostNL')
-    expect(text).toMatch(
-      'In 2023 I joined the Cloud Center of Excellence (CCoE) team.',
     )
   })
 })
