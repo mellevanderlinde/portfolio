@@ -1,42 +1,38 @@
-import Footer from '@app/components/footer'
-import { Header1 } from '@app/components/header'
-import { Navbar } from '@app/components/nav'
-import { getBlogPosts } from '@app/lib/posts'
-import robots from '@app/robots'
-import sitemap from '@app/sitemap'
+import { AnimatedBackground } from '@/components/ui/animated-background'
+import { Magnetic } from '@/components/ui/magnetic'
+import { ScrollProgress } from '@/components/ui/scroll-progress'
+import { Spotlight } from '@/components/ui/spotlight'
+import { TextEffect } from '@/components/ui/text-effect'
+import { TextLoop } from '@/components/ui/text-loop'
 import { render } from '@testing-library/react'
 import { expect, it } from 'vitest'
 
-it('matches footer', () => {
-  const { container } = render(<Footer />)
+it('matches animated background', () => {
+  const { container } = render(<AnimatedBackground children={<></>} />)
   expect(container).toMatchSnapshot()
 })
 
-it('matches header', () => {
-  const { container } = render(<Header1 title="Test" />)
+it('matches magnetic', () => {
+  const { container } = render(<Magnetic children={<></>} />)
   expect(container).toMatchSnapshot()
 })
 
-it('matches navbar', () => {
-  const { container } = render(<Navbar />)
+it ('matches scroll progress', () => {
+  const { container } = render(<ScrollProgress />)
   expect(container).toMatchSnapshot()
 })
 
-it('matches posts', () => {
-  const result = getBlogPosts()
-  expect(result).toMatchSnapshot()
+it('matches spotlight', () => {
+  const { container } = render(<Spotlight />)
+  expect(container).toMatchSnapshot()
 })
 
-it('matches robots', () => {
-  const result = robots()
-  expect(result).toMatchSnapshot()
+it('matches text effect', () => {
+  const { container } = render(<TextEffect children="" />)
+  expect(container).toMatchSnapshot()
 })
 
-it('matches sitemap', () => {
-  const result = sitemap()
-  // Change to static date for snapshot
-  for (const item of result) {
-    item.lastModified = '2024-01-01T00:00:00.000Z'
-  }
-  expect(result).toMatchSnapshot()
+it('matches text loop', () => {
+  const { container } = render(<TextLoop children={[]} />)
+  expect(container).toMatchSnapshot()
 })

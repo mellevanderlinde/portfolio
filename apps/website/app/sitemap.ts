@@ -1,29 +1,17 @@
 import type { MetadataRoute } from 'next'
-import { navItems } from '@components/nav'
-import { getBlogPosts } from './lib/posts'
+import { posts } from './data'
 
 export const dynamic = 'force-static'
 
-export const baseUrl = 'https://mellevanderlinde.com'
+export const url = 'https://mellevanderlinde.com'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const blogPosts = getBlogPosts().reduce(
-    (acc, post) => {
-      acc[`/blog/${post.slug}`] = post.metadata.title
-      return acc
-    },
-    {} as { [key: string]: string },
-  )
+  const lastModified = new Date()
+  lastModified.setUTCDate(lastModified.getUTCDate())
+  lastModified.setUTCHours(11, 0, 0, 0)
 
-  const items = { '/': 'Home', ...navItems, ...blogPosts }
-  const routes = Object.entries(items).map(([path]) => path)
-
-  const date = new Date()
-  date.setUTCDate(date.getUTCDate())
-  date.setUTCHours(11, 0, 0, 0)
-
-  return routes.map(route => ({
-    url: `${baseUrl}${route}`,
-    lastModified: date,
-  }))
+  return [
+    { url, lastModified },
+    ...posts.map(post => ({ url: `${url}${post.link}`, lastModified })),
+  ]
 }

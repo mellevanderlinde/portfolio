@@ -1,11 +1,8 @@
----
-title: 'Connect GitHub Actions with AWS using OpenID Connect'
-publishedAt: '2024-09-26'
----
+# Connect GitHub Actions with AWS using OpenID Connect
 
-<Callout emoji="💡">
-  This post is also featured on the [PostNL Engineering blog](https://medium.com/postnl-engineering/connect-github-actions-with-aws-using-openid-connect-bf1e11401b50) on Medium!
-</Callout>
+This post is also featured on the [PostNL Engineering blog](https://medium.com/postnl-engineering/connect-github-actions-with-aws-using-openid-connect-bf1e11401b50) on Medium!
+
+---
 
 A common pattern is to invoke AWS actions from a GitHub Actions workflow. 
 For example, a workflow can be used for [AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/home.html) deployments, invoking a Lambda function (e.g., for integration tests) or reading data from DynamoDB. 
@@ -18,6 +15,8 @@ This post demonstrates how to allow a specific GitHub repository branch to acces
 
 The code used in this post can be found on [GitHub](https://github.com/mellevanderlinde/oidc-aws-github).
 
+---
+
 ## Create IAM OIDC Identity Provider
 
 To establish a trust relationship between GitHub and AWS, create an [IAM OIDC Identity Provider](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_create_oidc.html) for GitHub.
@@ -28,6 +27,8 @@ const oidcProvider = new iam.CfnOIDCProvider(this, "GithubOidcProvider", {
   clientIdList: ["sts.amazonaws.com"],
 });
 ```
+
+---
 
 ## Create IAM Role
 
@@ -65,6 +66,8 @@ const conditions: iam.Conditions = {
 
 For other patterns (e.g. allowing specific GitHub environments), see [Example subject claims](https://docs.github.com/en/actions/security-for-github-actions/security-hardening-your-deployments/about-security-hardening-with-openid-connect#example-subject-claims).
 
+---
+
 ## Attach Permissions to IAM Role
 
 To invoke AWS actions, the OIDC role needs to have the correct permissions. 
@@ -80,6 +83,8 @@ const lookupRole = iam.Role.fromRoleName(
 
 lookupRole.grantAssumeRole(oidcRole);
 ```
+
+---
 
 ## Assume IAM Role from GitHub Actions Workflow
 
@@ -106,6 +111,8 @@ jobs:
           aws-region: eu-west-1
           role-to-assume: arn:aws:iam::012345678912:role/github-oidc-role
 ```
+
+---
 
 ## Invoke AWS Actions from GitHub Actions Workflow
 
@@ -145,10 +152,14 @@ jobs:
           npx cdk diff
 ```
 
+---
+
 ## Conclusion
 
 Using OpenID Connect, integrating AWS with GitHub Actions is relatively simple and secure.
 This can be useful for deployments, testing purposes or other cases where AWS actions need to be invoked.
+
+---
 
 ## Resources
 

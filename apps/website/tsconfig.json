@@ -1,15 +1,13 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "target": "es5",
+    "target": "ES2017",
     "jsx": "preserve",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl": ".",
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "paths": {
-      "@app/*": ["app/*"],
-      "@components/*": ["app/components/*"]
+      "@/*": ["./*"]
     },
     "resolveJsonModule": true,
     "allowJs": true,
@@ -31,6 +29,12 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next.config.ts"
+  ],
   "exclude": ["node_modules"]
 }

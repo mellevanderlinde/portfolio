@@ -1,33 +1,55 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import type { ReactNode } from 'react'
-import Footer from '@components/footer'
-import { Navbar } from '@components/nav'
-import { GeistMono } from 'geist/font/mono'
-import { GeistSans } from 'geist/font/sans'
-import { baseUrl } from './sitemap'
-import './global.css'
+import { ThemeProvider } from 'next-themes'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { Footer } from './footer'
+import { Header } from './header'
+import './globals.css'
 
-// eslint-disable-next-line react-refresh/only-export-components
-export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  title: {
-    default: 'Melle van der Linde',
-    template: '%s | Melle van der Linde',
-  },
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#ffffff',
 }
 
-type Cx = (...classes: string[]) => string
-const cx: Cx = (...classes) => classes.filter(Boolean).join(' ')
+export const metadata: Metadata = {
+  title: 'Melle van der Linde',
+}
 
-export default function RootLayout(props: { children: ReactNode }): ReactNode {
+const geist = Geist({
+  variable: '--font-geist',
+  subsets: ['latin'],
+})
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+})
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: ReactNode
+}>): ReactNode {
   return (
-    <html lang="en" className={cx(GeistSans.variable, GeistMono.variable)}>
-      <body className="antialiased flex flex-col items-center justify-center mx-auto mt-2 lg:mt-8 mb-20 lg:mb-40">
-        <main className="flex-auto min-w-0 mt-2 md:mt-6 flex flex-col px-6 sm:px-4 md:px-0 max-w-[640px] w-full">
-          <Navbar />
-          {props.children}
-          <Footer />
-        </main>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${geist.variable} ${geistMono.variable} bg-white tracking-tight antialiased dark:bg-zinc-950`}
+      >
+        <ThemeProvider
+          enableSystem={true}
+          attribute="class"
+          storageKey="theme"
+          defaultTheme="system"
+        >
+          <div className="flex min-h-screen w-full flex-col font-[family-name:var(--font-inter-tight)]">
+            <div className="relative mx-auto w-full max-w-screen-sm flex-1 px-4 pt-20">
+              <Header />
+              {children}
+              <Footer />
+            </div>
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   )
