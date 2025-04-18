@@ -197,6 +197,9 @@ export default function Personal(): ReactNode {
         transition={transition}
       >
         <h3 className="mb-5 text-lg font-medium">Connect</h3>
+        <p className="mb-5 text-zinc-600 dark:text-zinc-400">
+          Feel free to check out my projects on GitHub or contact me on LinkedIn.
+        </p>
         <div className="flex items-center justify-start space-x-3">
           {links.map(link => (
             <MagneticSocialLink key={link.label} link={link.link}>

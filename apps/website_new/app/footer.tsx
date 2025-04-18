@@ -74,6 +74,7 @@ export function Footer(): ReactNode {
         <a href="https://github.com/mellevanderlinde/portfolio" target="_blank">
           <TextLoop className="text-xs text-zinc-500">
             <span>© 2025 Melle</span>
+            <span>View source code</span>
             <span>Designed by ibelick</span>
           </TextLoop>
         </a>
