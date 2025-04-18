@@ -29,6 +29,7 @@ function ThemeSwitch(): ReactNode {
   const { theme, setTheme } = useTheme()
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
     setMounted(true)
   }, [])
 
@@ -71,7 +72,7 @@ export function Footer(): ReactNode {
   return (
     <footer className="mt-24 border-t border-zinc-100 px-0 py-4 dark:border-zinc-800">
       <div className="flex items-center justify-between">
-        <a href="https://github.com/mellevanderlinde/portfolio" target="_blank">
+        <a href="https://github.com/mellevanderlinde/portfolio" target="_blank" rel="noopener noreferrer">
           <TextLoop className="text-xs text-zinc-500">
             <span>© 2025 Melle</span>
             <span>View source code</span>

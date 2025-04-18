@@ -25,6 +25,7 @@ exports[`matches footer 1`] = `
     >
       <a
         href="https://github.com/mellevanderlinde/portfolio"
+        rel="noopener noreferrer"
         target="_blank"
       >
         <div
@@ -858,6 +859,7 @@ exports[`matches root layout 1`] = `
         >
           <a
             href="https://github.com/mellevanderlinde/portfolio"
+            rel="noopener noreferrer"
             target="_blank"
           >
             <div

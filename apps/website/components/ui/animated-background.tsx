@@ -46,10 +46,12 @@ export function AnimatedBackground({
 
   useEffect(() => {
     if (defaultValue !== undefined) {
+      // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
       setActiveId(defaultValue)
     }
   }, [defaultValue])
 
+  // eslint-disable-next-line react/no-children-map
   return Children.map(children, (child: any, index) => {
     const id = child.props['data-id']
 
@@ -62,6 +64,7 @@ export function AnimatedBackground({
           onClick: () => handleSetActiveId(id),
         }
 
+    // eslint-disable-next-line react/no-clone-element
     return cloneElement(
       child,
       {

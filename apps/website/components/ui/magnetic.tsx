@@ -17,12 +17,18 @@ interface MagneticProps {
   springOptions?: SpringOptions
 }
 
+const defaultSpringOptions: SpringOptions = {
+  stiffness: 26.7,
+  damping: 4.1,
+  mass: 0.2,
+}
+
 export function Magnetic({
   children,
   intensity = 0.6,
   range = 100,
   actionArea = 'self',
-  springOptions = { stiffness: 26.7, damping: 4.1, mass: 0.2 },
+  springOptions = defaultSpringOptions,
 }: MagneticProps): ReactNode {
   const [isHovered, setIsHovered] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
@@ -61,7 +67,7 @@ export function Magnetic({
     return () => {
       document.removeEventListener('mousemove', calculateDistance)
     }
-  }, [ref, isHovered, intensity, range])
+  }, [ref, isHovered, intensity, range, x, y])
 
   useEffect(() => {
     if (actionArea === 'parent' && ref.current?.parentElement) {
@@ -79,6 +85,7 @@ export function Magnetic({
       }
     }
     else if (actionArea === 'global') {
+      // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
       setIsHovered(true)
     }
     return undefined

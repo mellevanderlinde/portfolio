@@ -10,7 +10,7 @@ import {
   AnimatePresence,
   motion,
 } from 'motion/react'
-import { Children, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface TextLoopProps {
   children: ReactNode[]
@@ -23,18 +23,20 @@ interface TextLoopProps {
   mode?: AnimatePresenceProps['mode']
 }
 
+const defaultTransition: Transition = { duration: 0.3 }
+
 export function TextLoop({
   children,
   className,
   interval = 3,
-  transition = { duration: 0.3 },
+  transition = defaultTransition,
   variants,
   onIndexChange,
   trigger = true,
   mode = 'popLayout',
 }: TextLoopProps): ReactNode {
   const [currentIndex, setCurrentIndex] = useState(0)
-  const items = Children.toArray(children)
+  const items = [...children]
 
   useEffect(() => {
     if (!trigger)

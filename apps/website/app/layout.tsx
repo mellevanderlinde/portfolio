@@ -6,12 +6,14 @@ import { Footer } from './footer'
 import { Header } from './header'
 import './globals.css'
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: '#ffffff',
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Melle van der Linde',
 }

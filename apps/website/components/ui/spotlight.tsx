@@ -11,10 +11,12 @@ interface SpotlightProps {
   springOptions?: SpringOptions
 }
 
+const defaultSpringOptions: SpringOptions = { bounce: 0 }
+
 export function Spotlight({
   className,
   size = 200,
-  springOptions = { bounce: 0 },
+  springOptions = defaultSpringOptions,
 }: SpotlightProps): ReactNode {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isHovered, setIsHovered] = useState(false)
@@ -32,6 +34,7 @@ export function Spotlight({
       if (parent) {
         parent.style.position = 'relative'
         parent.style.overflow = 'hidden'
+        // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
         setParentElement(parent)
       }
     }

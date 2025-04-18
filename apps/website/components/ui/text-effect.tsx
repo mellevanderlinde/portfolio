@@ -139,6 +139,7 @@ const AnimationComponent: React.FC<{
             <motion.span className="inline-block whitespace-pre">
               {segment.split('').map((char, charIndex) => (
                 <motion.span
+                  // eslint-disable-next-line react/no-array-index-key
                   key={`char-${charIndex}`}
                   aria-hidden="true"
                   variants={variants}
@@ -277,9 +278,9 @@ export function TextEffect({
           style={style}
         >
           {per !== 'line' ? <span className="sr-only">{children}</span> : null}
-          {segments.map((segment, index) => (
+          {segments.map(segment => (
             <AnimationComponent
-              key={`${per}-${index}-${segment}`}
+              key={`${per}-${segment}`}
               segment={segment}
               variants={computedVariants.item}
               per={per}
