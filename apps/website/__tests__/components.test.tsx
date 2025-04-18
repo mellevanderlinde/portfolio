@@ -1,4 +1,3 @@
-import { Main } from '@/components/main'
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { Magnetic } from '@/components/ui/magnetic'
@@ -48,10 +47,5 @@ it('matches infinite slider', () => {
 
   // Test
   const { container } = render(<InfiniteSlider children={<></>} />)
-  expect(container).toMatchSnapshot()
-})
-
-it('matches main', () => {
-  const { container } = render(<Main children={<></>} />)
   expect(container).toMatchSnapshot()
 })

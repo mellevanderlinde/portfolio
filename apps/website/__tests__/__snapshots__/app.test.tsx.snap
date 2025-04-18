@@ -10,47 +10,43 @@ exports[`matches albums page 1`] = `
       class="mt-18"
       style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
     >
-      <main
-        class="prose prose-gray mt-24 pb-20 prose-h4:prose-base dark:prose-invert prose-h1:text-xl prose-h1:font-medium prose-h2:mt-12 prose-h2:scroll-m-20 prose-h2:text-lg prose-h2:font-medium prose-h3:text-base prose-h3:font-medium prose-h4:font-medium prose-h5:text-base prose-h5:font-medium prose-h6:text-base prose-h6:font-medium prose-strong:font-medium"
+      <div
+        class="flex-1"
+      >
+        <p
+          class="text-zinc-600 dark:text-zinc-400"
+        >
+          These are a few of my favorite albums. You can also find me on
+           
+          <a
+            href="https://soundcloud.com/melledj"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            SoundCloud
+          </a>
+          .
+        </p>
+      </div>
+      <div
+        class="overflow-hidden mt-8"
       >
         <div
-          class="flex-1"
+          class="flex w-max"
+          style="gap: 24px; flex-direction: row; transform: none;"
         >
-          <p
-            class="text-zinc-600 dark:text-zinc-400"
-          >
-            These are few of my favorite albums. You can also find me on
-             
-            <a
-              href="https://soundcloud.com/melledj"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              SoundCloud
-            </a>
-            .
-          </p>
+          <img
+            alt="Artist - Album"
+            class="aspect-square w-[120px] rounded-[4px]"
+            src="https://i.scdn.co/image/id"
+          />
+          <img
+            alt="Artist - Album"
+            class="aspect-square w-[120px] rounded-[4px]"
+            src="https://i.scdn.co/image/id"
+          />
         </div>
-        <div
-          class="overflow-hidden"
-        >
-          <div
-            class="flex w-max"
-            style="gap: 24px; flex-direction: row; transform: none;"
-          >
-            <img
-              alt="Artist - Album"
-              class="aspect-square w-[120px] rounded-[4px]"
-              src="https://i.scdn.co/image/id"
-            />
-            <img
-              alt="Artist - Album"
-              class="aspect-square w-[120px] rounded-[4px]"
-              src="https://i.scdn.co/image/id"
-            />
-          </div>
-        </div>
-      </main>
+      </div>
     </section>
   </main>
 </div>

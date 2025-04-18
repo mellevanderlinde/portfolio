@@ -1,15 +1,14 @@
 'use client'
 
 import type { ReactNode } from 'react'
-import { Main } from '@/components/main'
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
 import { transition, variantsContainer, variantsSection } from '@/lib/constants'
 import { albums } from '@/lib/data'
 import { motion } from 'motion/react'
 
-function InfiniteSliderHoverSpeed(): ReactNode {
+function InfiniteAlbumSlider(): ReactNode {
   return (
-    <InfiniteSlider speedOnHover={20} gap={24}>
+    <InfiniteSlider speedOnHover={20} gap={24} className="mt-8">
       {albums.sort(() => Math.random() - 0.5) // Randomly shuffle the images
         .map(album => (
           <img
@@ -36,17 +35,15 @@ export default function Albums(): ReactNode {
         transition={transition}
         className="mt-18"
       >
-        <Main>
-          <div className="flex-1">
-            <p className="text-zinc-600 dark:text-zinc-400">
-              These are few of my favorite albums. You can also find me on
-              {' '}
-              <a href="https://soundcloud.com/melledj" target="_blank" rel="noopener noreferrer">SoundCloud</a>
-              .
-            </p>
-          </div>
-          <InfiniteSliderHoverSpeed />
-        </Main>
+        <div className="flex-1">
+          <p className="text-zinc-600 dark:text-zinc-400">
+            These are a few of my favorite albums. You can also find me on
+            {' '}
+            <a href="https://soundcloud.com/melledj" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+            .
+          </p>
+        </div>
+        <InfiniteAlbumSlider />
       </motion.section>
     </motion.main>
   )
