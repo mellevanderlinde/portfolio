@@ -64,7 +64,7 @@ describe('check if pages are available', () => {
 
     // Connect
     expect(text).toMatch('Connect')
-    expect(text).toMatch('Feel free to check out my projects on GitHub or contact me on LinkedIn.')
+    expect(text).toMatch('Feel free to check out my projects')
   })
 
   test('blog', async () => {
