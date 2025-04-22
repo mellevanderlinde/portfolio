@@ -19,9 +19,9 @@
   "devDependencies": {
     "@types/node": "^22.14.1",
     "aws-cdk": "^2.1010.0",
-    "cdk-nag": "^2.35.73",
+    "cdk-nag": "^2.35.77",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "vitest": "^3.1.1"
+    "vitest": "^3.1.2"
   }
 }

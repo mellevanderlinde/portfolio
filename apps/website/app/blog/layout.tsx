@@ -1,9 +1,13 @@
-'use client'
-
+import type { Metadata } from 'next'
 import type { PropsWithChildren, ReactNode } from 'react'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-export default function LayoutBlogPost(props: PropsWithChildren): ReactNode {
+// eslint-disable-next-line react-refresh/only-export-components
+export const metadata: Metadata = {
+  title: 'Blog',
+}
+
+export default function BlogPostLayout(props: PropsWithChildren): ReactNode {
   return (
     <>
       <div className="pointer-events-none fixed left-0 top-0 z-10 h-12 w-full bg-gray-100 to-transparent backdrop-blur-xl [-webkit-mask-image:linear-gradient(to_bottom,black,transparent)] dark:bg-zinc-950" />

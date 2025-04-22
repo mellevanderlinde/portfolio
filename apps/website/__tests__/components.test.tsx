@@ -1,3 +1,4 @@
+import { AlbumSlider } from '@/components/album-slider'
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
@@ -41,5 +42,20 @@ it('matches infinite slider', () => {
 
   // Test
   const { container } = render(<InfiniteSlider children={<></>} />)
+  expect(container).toMatchSnapshot()
+})
+
+it('matches album slider', () => {
+  // Mock
+  vi.mock('@/lib/data', () => ({
+    posts: [],
+    albums: [{ id: 'id', name: 'Artist - Album' }],
+    projects: [],
+    jobs: [],
+    links: [],
+  }))
+
+  // Test
+  const { container } = render(<AlbumSlider />)
   expect(container).toMatchSnapshot()
 })

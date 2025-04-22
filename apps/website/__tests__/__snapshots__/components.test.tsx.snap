@@ -1,5 +1,59 @@
 // Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
+exports[`matches album slider 1`] = `
+<div>
+  <main
+    class="space-y-24"
+    style="opacity: 0;"
+  >
+    <section
+      class="mt-18"
+      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+    >
+      <div
+        class="flex-1"
+      >
+        <p
+          class="text-zinc-600 dark:text-zinc-400"
+        >
+          These are a few of my favorite albums. You can also find me on
+           
+          <u>
+            <a
+              href="https://soundcloud.com/melledj"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              SoundCloud
+            </a>
+          </u>
+          .
+        </p>
+      </div>
+      <div
+        class="overflow-hidden mt-8"
+      >
+        <div
+          class="flex w-max"
+          style="gap: 24px; flex-direction: row; transform: none;"
+        >
+          <img
+            alt="Artist - Album"
+            class="aspect-square w-[120px] rounded-[4px]"
+            src="https://i.scdn.co/image/id"
+          />
+          <img
+            alt="Artist - Album"
+            class="aspect-square w-[120px] rounded-[4px]"
+            src="https://i.scdn.co/image/id"
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+`;
+
 exports[`matches animated background 1`] = `
 <div>
   <div
