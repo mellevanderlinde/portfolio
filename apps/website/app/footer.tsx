@@ -2,6 +2,7 @@
 import type { ReactNode } from 'react'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { TextLoop } from '@/components/ui/text-loop'
+import { getYear } from '@/lib/utils'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
@@ -74,7 +75,9 @@ export function Footer(): ReactNode {
       <div className="flex items-center justify-between">
         <a href="https://github.com/mellevanderlinde/portfolio" target="_blank" rel="noopener noreferrer">
           <TextLoop className="text-xs text-zinc-500">
-            <span>© 2025 Melle</span>
+            <span>
+              {`© ${getYear()} Melle`}
+            </span>
             <span>View source code</span>
             <span>Designed by ibelick</span>
           </TextLoop>
