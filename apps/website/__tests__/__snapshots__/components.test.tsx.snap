@@ -67,7 +67,7 @@ exports[`matches code 1`] = `
   <div>
     <pre
       class="shiki shiki-themes github-light github-dark-high-contrast"
-      style="background-color:#fff;--shiki-dark-bg:#0a0c10;color:#24292e;--shiki-dark:#f0f3f6"
+      style="background-color:#fff;--shiki-dark-bg:#000000;color:#000000;--shiki-dark:#000000"
       tabindex="0"
     >
       <code>
@@ -75,27 +75,27 @@ exports[`matches code 1`] = `
           class="line"
         >
           <span
-            style="color:#D73A49;--shiki-dark:#FF9492"
+            style="color:#000000;--shiki-dark:#000000"
           >
             const
           </span>
           <span
-            style="color:#005CC5;--shiki-dark:#91CBFF"
+            style="color:#000000;--shiki-dark:#000000"
           >
              a
           </span>
           <span
-            style="color:#D73A49;--shiki-dark:#FF9492"
+            style="color:#000000;--shiki-dark:#000000"
           >
              =
           </span>
           <span
-            style="color:#005CC5;--shiki-dark:#91CBFF"
+            style="color:#000000;--shiki-dark:#000000"
           >
              1
           </span>
           <span
-            style="color:#24292E;--shiki-dark:#F0F3F6"
+            style="color:#000000;--shiki-dark:#000000"
           >
             ;
           </span>

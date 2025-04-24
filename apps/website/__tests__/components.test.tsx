@@ -65,5 +65,6 @@ it('matches code', () => {
   const { container } = render(
     <Code children={{ props: { children: 'const a = 1;', className: 'language-typescript' } }} />,
   )
+  container.innerHTML = container.innerHTML.replace(/#[a-z0-9]{6}/gi, '#000000')
   expect(container).toMatchSnapshot()
 })
