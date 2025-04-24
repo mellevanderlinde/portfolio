@@ -1,6 +1,7 @@
 import type { MDXComponents } from 'mdx/types'
 import type { ReactNode } from 'react'
 import Link from 'next/link'
+import { Code } from './components/code'
 
 function customLink(props: { href: string, children: ReactNode }): ReactNode {
   const href = props.href
@@ -15,5 +16,5 @@ function customLink(props: { href: string, children: ReactNode }): ReactNode {
 
 // eslint-disable-next-line react-hooks-extra/no-unnecessary-use-prefix
 export function useMDXComponents(components: MDXComponents): MDXComponents {
-  return { ...components, a: customLink }
+  return { ...components, a: customLink, pre: Code }
 }
