@@ -128,17 +128,6 @@ exports[`matches scroll progress 1`] = `
 </div>
 `;
 
-exports[`matches spotlight 1`] = `
-<div
-  style="position: relative; overflow: hidden;"
->
-  <div
-    class="pointer-events-none absolute rounded-full bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops),transparent_80%)] blur-xl transition-opacity duration-200 from-zinc-50 via-zinc-100 to-zinc-200 opacity-0"
-    style="width: 200px; height: 200px; left: -100px; top: -100px;"
-  />
-</div>
-`;
-
 exports[`matches text effect 1`] = `
 <div>
   <p

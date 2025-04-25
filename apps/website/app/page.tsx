@@ -2,7 +2,6 @@
 
 import type { ReactNode } from 'react'
 import { AnimatedBackground } from '@/components/ui/animated-background'
-import { Spotlight } from '@/components/ui/spotlight'
 import { UnderlinedLink } from '@/components/underlined-link'
 import { transition, variantsContainer, variantsSection } from '@/lib/constants'
 import { motion } from 'motion/react'
@@ -75,10 +74,6 @@ export default function Personal(): ReactNode {
               rel="noopener noreferrer"
               key={job.id}
             >
-              <Spotlight
-                className="from-zinc-900 via-zinc-800 to-zinc-700 blur-2xl dark:from-zinc-100 dark:via-zinc-200 dark:to-zinc-50"
-                size={64}
-              />
               <div className="relative h-full w-full rounded-[15px] bg-white p-4 dark:bg-zinc-950">
                 <div className="relative flex w-full flex-row justify-between">
                   <div>

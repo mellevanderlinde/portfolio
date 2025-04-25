@@ -3,7 +3,6 @@ import { Code } from '@/components/code'
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
-import { Spotlight } from '@/components/ui/spotlight'
 import { TextEffect } from '@/components/ui/text-effect'
 import { TextLoop } from '@/components/ui/text-loop'
 import { render } from '@testing-library/react'
@@ -16,11 +15,6 @@ it('matches animated background', () => {
 
 it('matches scroll progress', () => {
   const { container } = render(<ScrollProgress />)
-  expect(container).toMatchSnapshot()
-})
-
-it('matches spotlight', () => {
-  const { container } = render(<Spotlight />)
   expect(container).toMatchSnapshot()
 })
 
