@@ -6,7 +6,7 @@
     "cdk:deploy": "turbo cdk:deploy --env-mode=loose",
     "cdk:diff": "turbo cdk:diff --env-mode=loose",
     "dev": "turbo dev",
-    "lint": "eslint",
+    "lint": "eslint --max-warnings 0",
     "test:update": "turbo test:update"
   },
   "devDependencies": {
