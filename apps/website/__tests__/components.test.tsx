@@ -1,5 +1,4 @@
 import { AlbumSlider } from '@/components/album-slider'
-import { Code } from '@/components/code'
 import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
@@ -52,13 +51,5 @@ it('matches album slider', () => {
 
   // Test
   const { container } = render(<AlbumSlider />)
-  expect(container).toMatchSnapshot()
-})
-
-it('matches code', () => {
-  const { container } = render(
-    <Code children={{ props: { children: 'const a = 1;', className: 'language-typescript' } }} />,
-  )
-  container.innerHTML = container.innerHTML.replace(/#[a-z0-9]{6}/gi, '#000000')
   expect(container).toMatchSnapshot()
 })

@@ -1,16 +1,6 @@
 import type { ReactNode } from 'react'
-import ts from '@shikijs/langs/typescript'
-import yaml from '@shikijs/langs/yaml'
-import githubDarkHighContrast from '@shikijs/themes/github-dark-high-contrast'
-import githubLight from '@shikijs/themes/github-light'
-import { createHighlighterCoreSync, createJavaScriptRegexEngine } from 'shiki'
+import { codeToHtml } from 'shiki'
 import { z } from 'zod'
-
-const shiki = createHighlighterCoreSync({
-  themes: [githubLight, githubDarkHighContrast],
-  langs: [ts, yaml],
-  engine: createJavaScriptRegexEngine(),
-})
 
 const CodeProps = z.object({
   children: z.object({
@@ -21,9 +11,9 @@ const CodeProps = z.object({
   }),
 })
 
-export function Code(props: z.infer<typeof CodeProps>): ReactNode {
+export async function Code(props: z.infer<typeof CodeProps>): Promise<ReactNode> {
   const { children, className } = CodeProps.parse(props).children.props
-  const __html = shiki.codeToHtml(children, {
+  const __html = await codeToHtml(children, {
     lang: className.replace('language-', ''),
     themes: {
       dark: 'github-dark-high-contrast',

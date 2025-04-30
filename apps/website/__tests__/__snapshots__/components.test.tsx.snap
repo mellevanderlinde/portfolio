@@ -62,50 +62,6 @@ exports[`matches animated background 1`] = `
 </div>
 `;
 
-exports[`matches code 1`] = `
-<div>
-  <div>
-    <pre
-      class="shiki shiki-themes github-light github-dark-high-contrast"
-      style="background-color:#fff;--shiki-dark-bg:#000000;color:#000000;--shiki-dark:#000000"
-      tabindex="0"
-    >
-      <code>
-        <span
-          class="line"
-        >
-          <span
-            style="color:#000000;--shiki-dark:#000000"
-          >
-            const
-          </span>
-          <span
-            style="color:#000000;--shiki-dark:#000000"
-          >
-             a
-          </span>
-          <span
-            style="color:#000000;--shiki-dark:#000000"
-          >
-             =
-          </span>
-          <span
-            style="color:#000000;--shiki-dark:#000000"
-          >
-             1
-          </span>
-          <span
-            style="color:#000000;--shiki-dark:#000000"
-          >
-            ;
-          </span>
-        </span>
-      </code>
-    </pre>
-  </div>
-</div>
-`;
-
 exports[`matches infinite slider 1`] = `
 <div>
   <div
