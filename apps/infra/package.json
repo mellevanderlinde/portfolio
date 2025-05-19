@@ -4,7 +4,7 @@
     "portfolio": "bin/portfolio.js"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && tsc src/index.ts",
     "cdk:deploy": "cdk deploy",
     "cdk:diff": "cdk diff",
     "test": "vitest run",
