@@ -16,5 +16,5 @@ function customLink(props: { href: string, children: ReactNode }): ReactNode {
 
 // eslint-disable-next-line react-hooks-extra/no-unnecessary-use-prefix
 export function useMDXComponents(components: MDXComponents): MDXComponents {
-  return { ...components, a: customLink, pre: Code }
+  return { ...components, a: customLink, code: Code }
 }

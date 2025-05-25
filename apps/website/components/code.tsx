@@ -1,26 +1,15 @@
 import type { ReactNode } from 'react'
-import { codeToHtml } from 'shiki'
+import { highlight } from 'sugar-high'
 import { z } from 'zod'
 
 const CodeProps = z.object({
-  children: z.object({
-    props: z.object({
-      children: z.string(),
-      className: z.enum(['language-typescript', 'language-yaml']),
-    }),
-  }),
+  children: z.string(),
+  className: z.enum(['language-typescript', 'language-yaml']).optional(),
 })
 
-export async function Code(props: z.infer<typeof CodeProps>): Promise<ReactNode> {
-  const { children, className } = CodeProps.parse(props).children.props
-  const __html = await codeToHtml(children, {
-    lang: className.replace('language-', ''),
-    themes: {
-      dark: 'github-dark-high-contrast',
-      light: 'github-light',
-    },
-  })
-
+export function Code(props: z.infer<typeof CodeProps>): ReactNode {
+  const { children, className } = CodeProps.parse(props)
+  const code = className === 'language-typescript' ? highlight(children) : children
   // eslint-disable-next-line react-dom/no-dangerously-set-innerhtml
-  return <div dangerouslySetInnerHTML={{ __html }} />
+  return <code dangerouslySetInnerHTML={{ __html: code }} />
 }
