@@ -1,6 +1,7 @@
-import { App } from 'aws-cdk-lib'
+import { App, Aspects } from 'aws-cdk-lib'
 import { Template } from 'aws-cdk-lib/assertions'
 import { expect, it } from 'vitest'
+import { RemovalPolicyDestroyAspect } from '../lib/aspects'
 import { PortfolioStack } from '../lib/portfolio-stack'
 
 it('matches with snapshot', () => {
@@ -8,6 +9,7 @@ it('matches with snapshot', () => {
   const stack = new PortfolioStack(app, 'PortfolioStack', {
     env: { region: 'us-east-1', account: '012345678912' },
   })
+  Aspects.of(app).add(new RemovalPolicyDestroyAspect())
   const template = Template.fromStack(stack)
 
   // Remove hashes from snapshot

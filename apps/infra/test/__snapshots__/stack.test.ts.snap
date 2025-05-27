@@ -21,6 +21,7 @@ exports[`matches with snapshot 1`] = `
   },
   "Resources": {
     "ARecordE7B57761": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "AliasTarget": {
           "DNSName": {
@@ -44,8 +45,10 @@ exports[`matches with snapshot 1`] = `
         "Type": "A",
       },
       "Type": "AWS::Route53::RecordSet",
+      "UpdateReplacePolicy": "Delete",
     },
     "AaaaRecord61D2056E": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "AliasTarget": {
           "DNSName": {
@@ -69,6 +72,7 @@ exports[`matches with snapshot 1`] = `
         "Type": "AAAA",
       },
       "Type": "AWS::Route53::RecordSet",
+      "UpdateReplacePolicy": "Delete",
     },
     "Bucket83908E77": {
       "DeletionPolicy": "Delete",
@@ -124,6 +128,7 @@ exports[`matches with snapshot 1`] = `
       "UpdateReplacePolicy": "Delete",
     },
     "BucketDeploymentAwsCliLayerB018DCE1": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "Content": {
           "S3Bucket": "cdk-hnb659fds-assets-012345678912-us-east-1",
@@ -132,6 +137,7 @@ exports[`matches with snapshot 1`] = `
         "Description": "/opt/awscli/aws",
       },
       "Type": "AWS::Lambda::LayerVersion",
+      "UpdateReplacePolicy": "Delete",
     },
     "BucketDeploymentCustomResource2048MiB82BEA142": {
       "DeletionPolicy": "Delete",
@@ -164,6 +170,7 @@ exports[`matches with snapshot 1`] = `
       "UpdateReplacePolicy": "Delete",
     },
     "BucketPolicyE9A3008A": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "Bucket": {
           "Ref": "Bucket83908E77",
@@ -292,8 +299,10 @@ exports[`matches with snapshot 1`] = `
         },
       },
       "Type": "AWS::S3::BucketPolicy",
+      "UpdateReplacePolicy": "Delete",
     },
     "Certificate4E7ABB08": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "DomainName": "mellevanderlinde.com",
         "DomainValidationOptions": [
@@ -318,8 +327,10 @@ exports[`matches with snapshot 1`] = `
         "ValidationMethod": "DNS",
       },
       "Type": "AWS::CertificateManager::Certificate",
+      "UpdateReplacePolicy": "Delete",
     },
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiB8AA4A604": {
+      "DeletionPolicy": "Delete",
       "DependsOn": [
         "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleDefaultPolicy5D765796",
         "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF",
@@ -366,8 +377,10 @@ exports[`matches with snapshot 1`] = `
         "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",
+      "UpdateReplacePolicy": "Delete",
     },
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleB37F9ACF": {
+      "DeletionPolicy": "Delete",
       "Metadata": {
         "cdk_nag": {
           "rules_to_suppress": [
@@ -411,8 +424,10 @@ exports[`matches with snapshot 1`] = `
         ],
       },
       "Type": "AWS::IAM::Role",
+      "UpdateReplacePolicy": "Delete",
     },
     "CustomCDKBucketDeployment8693BB64968944B69AAFB0CC9EB8756C2048MiBServiceRoleDefaultPolicy5D765796": {
+      "DeletionPolicy": "Delete",
       "Metadata": {
         "cdk_nag": {
           "rules_to_suppress": [
@@ -520,8 +535,10 @@ exports[`matches with snapshot 1`] = `
         ],
       },
       "Type": "AWS::IAM::Policy",
+      "UpdateReplacePolicy": "Delete",
     },
     "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
+      "DeletionPolicy": "Delete",
       "DependsOn": [
         "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
       ],
@@ -554,8 +571,10 @@ exports[`matches with snapshot 1`] = `
         "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",
+      "UpdateReplacePolicy": "Delete",
     },
     "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "AssumeRolePolicyDocument": {
           "Statement": [
@@ -576,8 +595,10 @@ exports[`matches with snapshot 1`] = `
         ],
       },
       "Type": "AWS::IAM::Role",
+      "UpdateReplacePolicy": "Delete",
     },
     "Distribution830FAC52": {
+      "DeletionPolicy": "Delete",
       "Metadata": {
         "cdk_nag": {
           "rules_to_suppress": [
@@ -681,8 +702,10 @@ exports[`matches with snapshot 1`] = `
         },
       },
       "Type": "AWS::CloudFront::Distribution",
+      "UpdateReplacePolicy": "Delete",
     },
     "DistributionOrigin1S3OriginAccessControlEB606076": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "OriginAccessControlConfig": {
           "Name": "PortfolioStackDistributionOrigin1S3OriginAccessControl63F8F727",
@@ -692,8 +715,10 @@ exports[`matches with snapshot 1`] = `
         },
       },
       "Type": "AWS::CloudFront::OriginAccessControl",
+      "UpdateReplacePolicy": "Delete",
     },
     "Function76856677": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "AutoPublish": true,
         "FunctionCode": "var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
@@ -760,17 +785,19 @@ function handler(event) {
         "Name": "mellevanderlinde-com",
       },
       "Type": "AWS::CloudFront::Function",
+      "UpdateReplacePolicy": "Delete",
     },
     "LogGroupF5B46931": {
-      "DeletionPolicy": "Retain",
+      "DeletionPolicy": "Delete",
       "Properties": {
         "LogGroupName": "mellevanderlinde.com",
         "RetentionInDays": 1,
       },
       "Type": "AWS::Logs::LogGroup",
-      "UpdateReplacePolicy": "Retain",
+      "UpdateReplacePolicy": "Delete",
     },
     "TxtRecordCFF063CA": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "HostedZoneId": "DUMMY",
         "Name": "mellevanderlinde.com.",
@@ -781,8 +808,10 @@ function handler(event) {
         "Type": "TXT",
       },
       "Type": "AWS::Route53::RecordSet",
+      "UpdateReplacePolicy": "Delete",
     },
     "WwwARecord21A54661": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "AliasTarget": {
           "DNSName": {
@@ -806,8 +835,10 @@ function handler(event) {
         "Type": "A",
       },
       "Type": "AWS::Route53::RecordSet",
+      "UpdateReplacePolicy": "Delete",
     },
     "WwwAaaaRecord7E37C242": {
+      "DeletionPolicy": "Delete",
       "Properties": {
         "AliasTarget": {
           "DNSName": {
@@ -831,6 +862,7 @@ function handler(event) {
         "Type": "AAAA",
       },
       "Type": "AWS::Route53::RecordSet",
+      "UpdateReplacePolicy": "Delete",
     },
   },
   "Rules": {
