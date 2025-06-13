@@ -1,6 +1,7 @@
 import { AlbumSlider } from '@/components/album-slider'
-import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
+import { MagneticLink } from '@/components/magnetic-link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
+import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 import { TextEffect } from '@/components/ui/text-effect'
 import { TextLoop } from '@/components/ui/text-loop'
@@ -24,6 +25,11 @@ it('matches text effect', () => {
 
 it('matches text loop', () => {
   const { container } = render(<TextLoop children={[]} />)
+  expect(container).toMatchSnapshot()
+})
+
+it('matches magnetic link', () => {
+  const { container } = render(<MagneticLink children={<></>} link="/example" />)
   expect(container).toMatchSnapshot()
 })
 

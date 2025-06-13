@@ -376,21 +376,15 @@ exports[`matches home 1`] = `
     style="opacity: 0;"
   >
     <section
-      class="mt-18"
       style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
     >
-      <h3
-        class="mb-5 text-lg font-medium"
-      >
-        About
-      </h3>
       <div
         class="flex-1"
       >
         <p
           class="text-zinc-600 dark:text-zinc-400"
         >
-          Interested in software engineering, cloud, machine learning, technology and sustainability. Joined PostNL as MLOps Engineer, currently working as Cloud Engineer in the CCoE (Cloud Center of Excellence), a central AWS platform team at PostNL.
+          I work as AWS Cloud Engineer at PostNL in the CCoE (Cloud Center of Excellence) team. I'm interested in software engineering, cloud, machine learning, technology and sustainability.
         </p>
       </div>
     </section>
@@ -400,22 +394,10 @@ exports[`matches home 1`] = `
       <h3
         class="mb-5 text-lg font-medium"
       >
-        Selected Projects
+        Projects
       </h3>
       <div
         class="grid grid-cols-1 gap-6 sm:grid-cols-2"
-      />
-    </section>
-    <section
-      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
-    >
-      <h3
-        class="mb-5 text-lg font-medium"
-      >
-        Work Experience
-      </h3>
-      <div
-        class="flex flex-col space-y-2"
       />
     </section>
     <section
@@ -436,35 +418,24 @@ exports[`matches home 1`] = `
       <h3
         class="mb-5 text-lg font-medium"
       >
+        Work
+      </h3>
+      <div
+        class="flex flex-col space-y-2"
+      />
+    </section>
+    <section
+      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+    >
+      <h3
+        class="mb-5 text-lg font-medium"
+      >
         Connect
       </h3>
       <p
         class="mb-5 text-zinc-600 dark:text-zinc-400"
       >
-        Feel free to check out my projects on
-         
-        <u>
-          <a
-            href="https://github.com/mellevanderlinde"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            GitHub
-          </a>
-        </u>
-         
-        or contact me on
-         
-        <u>
-          <a
-            href="https://www.linkedin.com/in/mellevdlinde"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            LinkedIn
-          </a>
-        </u>
-        . Or see which
+        Feel free to contact me on LinkedIn. Or see which
          
         <u>
           <a
@@ -476,6 +447,9 @@ exports[`matches home 1`] = `
          
         I listen to.
       </p>
+      <div
+        class="flex items-center justify-start space-x-3"
+      />
     </section>
   </main>
 </div>

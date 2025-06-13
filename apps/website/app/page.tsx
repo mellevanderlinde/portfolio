@@ -1,6 +1,7 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { MagneticLink } from '@/components/magnetic-link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { UnderlinedLink } from '@/components/underlined-link'
 import { transition, variantsContainer, variantsSection } from '@/lib/constants'
@@ -8,6 +9,7 @@ import { motion } from 'motion/react'
 import Link from 'next/link'
 import {
   jobs,
+  links,
   posts,
   projects,
 } from '../lib/data'
@@ -23,7 +25,6 @@ export default function Personal(): ReactNode {
       <motion.section
         variants={variantsSection}
         transition={transition}
-        className="mt-18"
       >
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
@@ -139,20 +140,19 @@ export default function Personal(): ReactNode {
       >
         <h3 className="mb-5 text-lg font-medium">Connect</h3>
         <p className="mb-5 text-zinc-600 dark:text-zinc-400">
-          Feel free to check out my projects on
-          {' '}
-          <UnderlinedLink href="https://github.com/mellevanderlinde">GitHub</UnderlinedLink>
-          {' '}
-          or contact me on
-          {' '}
-          <UnderlinedLink href="https://www.linkedin.com/in/mellevdlinde">LinkedIn</UnderlinedLink>
-          .
-          Or see which
+          Feel free to contact me on LinkedIn. Or see which
           {' '}
           <UnderlinedLink href="/albums">albums</UnderlinedLink>
           {' '}
           I listen to.
         </p>
+        <div className="flex items-center justify-start space-x-3">
+          {links.map(link => (
+            <MagneticLink key={link.name} link={link.link}>
+              {link.name}
+            </MagneticLink>
+          ))}
+        </div>
       </motion.section>
     </motion.main>
   )

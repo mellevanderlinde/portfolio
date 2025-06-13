@@ -21,6 +21,11 @@ interface Post {
   id: string
 }
 
+interface Link {
+  name: string
+  link: string
+}
+
 interface Album {
   id: string
   name: string
@@ -96,6 +101,17 @@ export const posts: Post[] = [
     description: 'How to use CDK and GitHub Actions to deploy to AWS',
     link: '/blog/openid-connect-aws-github',
     id: 'blog-oidc',
+  },
+]
+
+export const links: Link[] = [
+  {
+    name: 'GitHub',
+    link: 'https://github.com/mellevanderlinde',
+  },
+  {
+    name: 'LinkedIn',
+    link: 'https://www.linkedin.com/in/mellevdlinde',
   },
 ]
 
