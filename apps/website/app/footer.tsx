@@ -79,7 +79,6 @@ export function Footer(): ReactNode {
               {`© ${getYear()} Melle`}
             </span>
             <span>View source code</span>
-            <span>Designed by ibelick</span>
           </TextLoop>
         </a>
         <div className="text-xs text-zinc-400">

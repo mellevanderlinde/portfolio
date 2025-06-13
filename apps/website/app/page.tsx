@@ -25,11 +25,10 @@ export default function Personal(): ReactNode {
         transition={transition}
         className="mt-18"
       >
-        <h3 className="mb-5 text-lg font-medium">About</h3>
         <div className="flex-1">
           <p className="text-zinc-600 dark:text-zinc-400">
-            Interested in software engineering, cloud, machine learning, technology and sustainability.
-            Joined PostNL as MLOps Engineer, currently working as Cloud Engineer in the CCoE (Cloud Center of Excellence), a central AWS platform team at PostNL.
+            I work as AWS Cloud Engineer at PostNL in the CCoE (Cloud Center of Excellence) team.
+            I'm interested in software engineering, cloud, machine learning, technology and sustainability.
           </p>
         </div>
       </motion.section>
@@ -38,7 +37,7 @@ export default function Personal(): ReactNode {
         variants={variantsSection}
         transition={transition}
       >
-        <h3 className="mb-5 text-lg font-medium">Selected Projects</h3>
+        <h3 className="mb-5 text-lg font-medium">Projects</h3>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           {projects.map(project => (
             <div key={project.name} className="space-y-2">
@@ -49,7 +48,7 @@ export default function Personal(): ReactNode {
                   target="_blank"
                 >
                   {project.name}
-                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 transition-all duration-200 group-hover:max-w-full"></span>
+                  <span className="absolute bottom-0.5 left-0 block h-[1px] w-full max-w-0 bg-zinc-900 dark:bg-zinc-50 transition-all duration-200 group-hover:max-w-full"></span>
                 </a>
                 <p className="text-base text-zinc-600 dark:text-zinc-400">
                   {project.description}
@@ -64,7 +63,7 @@ export default function Personal(): ReactNode {
         variants={variantsSection}
         transition={transition}
       >
-        <h3 className="mb-5 text-lg font-medium">Work Experience</h3>
+        <h3 className="mb-5 text-lg font-medium">Work</h3>
         <div className="flex flex-col space-y-2">
           {jobs.map(job => (
             <a
