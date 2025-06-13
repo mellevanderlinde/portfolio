@@ -39,14 +39,13 @@ describe('check if pages are available', () => {
     expect(text).toMatch('Melle van der Linde')
     expect(text).toMatch('Cloud Engineer')
 
-    // About
-    expect(text).toMatch('About')
+    // Introduction
     expect(text).toMatch(
-      'Interested in software engineering, cloud, machine learning, technology and sustainability.',
+      'I work as AWS Cloud Engineer at PostNL in the CCoE (Cloud Center of Excellence) team',
     )
 
     // Projects
-    expect(text).toMatch('Selected Projects')
+    expect(text).toMatch('Projects')
     expect(text).toMatch('Portfolio with CloudFront and Next.js')
     expect(text).toMatch(
       'Portfolio with CloudFront and Next.js',
@@ -54,7 +53,7 @@ describe('check if pages are available', () => {
     expect(text).toMatch('Project serving this website.')
 
     // Work
-    expect(text).toMatch('Work Experience')
+    expect(text).toMatch('Work')
     expect(text).toMatch('Cloud Engineer')
     expect(text).toMatch('PostNL')
 
@@ -64,7 +63,7 @@ describe('check if pages are available', () => {
 
     // Connect
     expect(text).toMatch('Connect')
-    expect(text).toMatch('Feel free to check out my projects')
+    expect(text).toMatch('Feel free to contact me on LinkedIn')
   })
 
   test('blog', async () => {

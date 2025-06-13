@@ -62,6 +62,7 @@ export function Magnetic({
     return () => {
       document.removeEventListener('mousemove', calculateDistance)
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref, isHovered, intensity, range])
 
   useEffect(() => {
@@ -80,8 +81,10 @@ export function Magnetic({
       }
     }
     else if (actionArea === 'global') {
+      // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
       setIsHovered(true)
     }
+    return undefined
   }, [actionArea])
 
   const handleMouseEnter = () => {
