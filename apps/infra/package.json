@@ -5,8 +5,6 @@
   },
   "scripts": {
     "build": "tsc && tsc src/index.ts",
-    "cdk:deploy": "cdk deploy",
-    "cdk:diff": "cdk diff",
     "test": "vitest run",
     "test:update": "vitest run -u"
   },

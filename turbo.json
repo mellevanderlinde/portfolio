@@ -5,12 +5,6 @@
     "build": {
       "outputs": [".next/**", "out/**", "src/index.js"]
     },
-    "cdk:deploy": {
-      "dependsOn": ["infra#build", "website#build"]
-    },
-    "cdk:diff": {
-      "dependsOn": ["infra#build", "website#build"]
-    },
     "dev": {
       "cache": false,
       "persistent": true

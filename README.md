@@ -8,5 +8,7 @@ To install the project's dependencies, build the website and deploy to AWS, run 
 
 ```
 pnpm install
-pnpm run cdk:deploy -- -c accountId=012345678912
+pnpm run ci
+cd apps/infra
+cdk deploy -c accountId=012345678912
 ```
