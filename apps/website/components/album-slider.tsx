@@ -1,11 +1,11 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { motion } from 'motion/react'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { UnderlinedLink } from '@/components/underlined-link'
 import { transition, variantsContainer, variantsSection } from '@/lib/constants'
 import { albums } from '@/lib/data'
-import { motion } from 'motion/react'
 
 function InfiniteAlbumSlider(): ReactNode {
   return (

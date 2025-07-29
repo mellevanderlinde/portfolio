@@ -1,12 +1,12 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { motion } from 'motion/react'
+import Link from 'next/link'
 import { MagneticLink } from '@/components/magnetic-link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { UnderlinedLink } from '@/components/underlined-link'
 import { transition, variantsContainer, variantsSection } from '@/lib/constants'
-import { motion } from 'motion/react'
-import Link from 'next/link'
 import {
   jobs,
   links,

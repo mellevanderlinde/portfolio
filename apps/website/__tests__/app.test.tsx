@@ -1,3 +1,5 @@
+import { render } from '@testing-library/react'
+import { expect, it, vi } from 'vitest'
 import Albums from '@/app/albums/page'
 import BlogLayout from '@/app/blog/layout'
 import { Footer } from '@/app/footer'
@@ -6,8 +8,6 @@ import RootLayout from '@/app/layout'
 import Home from '@/app/page'
 import robots from '@/app/robots'
 import sitemap from '@/app/sitemap'
-import { render } from '@testing-library/react'
-import { expect, it, vi } from 'vitest'
 
 it('matches home', () => {
   const { container } = render(<Home />)

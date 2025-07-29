@@ -1,3 +1,5 @@
+import { render } from '@testing-library/react'
+import { expect, it, vi } from 'vitest'
 import { AlbumSlider } from '@/components/album-slider'
 import { MagneticLink } from '@/components/magnetic-link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
@@ -5,8 +7,6 @@ import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 import { TextEffect } from '@/components/ui/text-effect'
 import { TextLoop } from '@/components/ui/text-loop'
-import { render } from '@testing-library/react'
-import { expect, it, vi } from 'vitest'
 
 it('matches animated background', () => {
   const { container } = render(<AnimatedBackground children={<></>} />)

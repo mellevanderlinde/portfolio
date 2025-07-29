@@ -6,12 +6,12 @@ import type {
   Variants,
 } from 'motion/react'
 import type { ReactNode } from 'react'
-import { cn } from '@/lib/utils'
 import {
   AnimatePresence,
   motion,
 } from 'motion/react'
 import { memo } from 'react'
+import { cn } from '@/lib/utils'
 
 type PresetType = 'blur' | 'fade-in-blur' | 'scale' | 'fade' | 'slide'
 

@@ -2,8 +2,8 @@
 
 import type { SpringOptions } from 'motion/react'
 import type { ReactNode, RefObject } from 'react'
-import { cn } from '@/lib/utils'
 import { motion, useScroll, useSpring } from 'motion/react'
+import { cn } from '@/lib/utils'
 
 interface ScrollProgressProps {
   className?: string

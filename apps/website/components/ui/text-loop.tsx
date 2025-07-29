@@ -5,12 +5,12 @@ import type {
   Variants,
 } from 'motion/react'
 import type { ReactNode } from 'react'
-import { cn } from '@/lib/utils'
 import {
   AnimatePresence,
   motion,
 } from 'motion/react'
 import { useEffect, useState } from 'react'
+import { cn } from '@/lib/utils'
 
 interface TextLoopProps {
   children: ReactNode[]

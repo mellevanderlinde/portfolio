@@ -1,11 +1,11 @@
 'use client'
 import type { ReactNode } from 'react'
-import { AnimatedBackground } from '@/components/ui/animated-background'
-import { TextLoop } from '@/components/ui/text-loop'
-import { getYear } from '@/lib/utils'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
+import { AnimatedBackground } from '@/components/ui/animated-background'
+import { TextLoop } from '@/components/ui/text-loop'
+import { getYear } from '@/lib/utils'
 
 const themes = [
   {

@@ -1,7 +1,7 @@
 'use client'
 import type { ReactNode } from 'react'
-import { TextEffect } from '@/components/ui/text-effect'
 import Link from 'next/link'
+import { TextEffect } from '@/components/ui/text-effect'
 
 export function Header(): ReactNode {
   return (
