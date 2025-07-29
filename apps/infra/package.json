@@ -15,7 +15,7 @@
     "website": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^22.14.1",
+    "@types/node": "^24.1.0",
     "aws-cdk": "^2.1022.0",
     "cdk-nag": "^2.36.47",
     "ts-node": "^10.9.2",
