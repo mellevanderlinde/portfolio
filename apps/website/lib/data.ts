@@ -164,4 +164,8 @@ export const albums: Album[] = [
     id: 'ab67616d0000b27320e994fc0903d4a586991a2e',
     name: 'Sam Gellaitry - VF VOL II',
   },
+  {
+    id: 'ab67616d000082c18d4db6f2356f933e0321633f',
+    name: 'Yussef Dayes - Black Classical Music',
+  },
 ]
