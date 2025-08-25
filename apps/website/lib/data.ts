@@ -1,7 +1,10 @@
+type HttpsLink = `https://${string}`
+type BlogLink = `/blog/${string}`
+
 interface Project {
   name: string
   description: string
-  link: string
+  link: HttpsLink
   id: string
 }
 
@@ -10,20 +13,20 @@ interface Job {
   title: string
   start: string
   end: string
-  link: string
+  link: HttpsLink
   id: string
 }
 
 interface Post {
   title: string
   description: string
-  link: string
+  link: BlogLink
   id: string
 }
 
 interface Link {
   name: string
-  link: string
+  link: HttpsLink
 }
 
 interface Album {
@@ -33,11 +36,10 @@ interface Album {
 
 export const projects: Project[] = [
   {
-    name: 'Energy Data on AWS with Raspberry Pi',
-    description:
-      'Store home energy data on DynamoDB with Raspberry Pi.',
-    link: 'https://github.com/mellevanderlinde/energy-meter',
-    id: 'energy-meter',
+    name: 'AWS Account Configurations',
+    description: 'Setup for automated drift detection, budgets, garbage collection and more.',
+    link: 'https://github.com/mellevanderlinde/aws-config',
+    id: 'aws-config',
   },
   {
     name: 'Portfolio with CloudFront and Next.js',
@@ -45,6 +47,13 @@ export const projects: Project[] = [
       'Project serving this website. Website design is by ibelick.',
     link: 'https://github.com/mellevanderlinde/portfolio',
     id: 'portfolio',
+  },
+  {
+    name: 'Energy Data on AWS with Raspberry Pi',
+    description:
+      'Store home energy data on DynamoDB with Raspberry Pi.',
+    link: 'https://github.com/mellevanderlinde/energy-meter',
+    id: 'energy-meter',
   },
   {
     name: 'OpenID Connect for AWS and GitHub Actions',
