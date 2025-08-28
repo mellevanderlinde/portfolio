@@ -36,10 +36,10 @@ interface Album {
 
 export const projects: Project[] = [
   {
-    name: 'AWS Account Configurations',
+    name: 'AWS Account Setup',
     description: 'Setup for automated drift detection, budgets, garbage collection and more.',
-    link: 'https://github.com/mellevanderlinde/aws-config',
-    id: 'aws-config',
+    link: 'https://github.com/mellevanderlinde/aws-setup',
+    id: 'aws-setup',
   },
   {
     name: 'Portfolio with CloudFront and Next.js',
