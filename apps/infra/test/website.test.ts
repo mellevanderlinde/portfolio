@@ -46,11 +46,9 @@ describe('check if pages are available', () => {
 
     // Projects
     expect(text).toMatch('Projects')
-    expect(text).toMatch('Portfolio with CloudFront and Next.js')
-    expect(text).toMatch(
-      'Portfolio with CloudFront and Next.js',
-    )
+    expect(text).toMatch('Portfolio')
     expect(text).toMatch('Project serving this website.')
+    expect(text).toMatch('Contributions to AWS CDK')
 
     // Work
     expect(text).toMatch('Work')
