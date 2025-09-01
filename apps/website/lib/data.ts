@@ -49,39 +49,18 @@ export const projects: Project[] = [
     id: 'portfolio',
   },
   {
-    name: 'Energy Data on AWS with Raspberry Pi',
+    name: 'OIDC for AWS and GitHub Actions',
     description:
-      'Store home energy data on DynamoDB with Raspberry Pi.',
-    link: 'https://github.com/mellevanderlinde/energy-meter',
-    id: 'energy-meter',
-  },
-  {
-    name: 'OpenID Connect for AWS and GitHub Actions',
-    description:
-      'Shows how to allow a repo to run AWS actions from GitHub Actions using OIDC.',
+      'Trusts a repo to invoke AWS actions from GitHub Actions using OpenID Connect.',
     link: 'https://github.com/mellevanderlinde/oidc-aws-github',
     id: 'oidc-aws-github',
   },
   {
     name: 'Contributions to AWS CDK',
     description:
-      'Shows some contributions (tiny, mostly bug fixes) to the AWS CDK project.',
+      'Shows some contributions (mostly bug fixes) to the AWS CDK project.',
     link: 'https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde',
     id: 'aws-cdk-contributions',
-  },
-  {
-    name: 'Apache Airflow on AWS',
-    description:
-      'Deploys MWAA environment for Apache Airflow.',
-    link: 'https://github.com/mellevanderlinde/mwaa-airflow',
-    id: 'mwaa-airflow',
-  },
-  {
-    name: 'Bedrock API',
-    description:
-      'Interact with Bedrock through an endpoint on API Gateway.',
-    link: 'https://github.com/mellevanderlinde/bedrock-apigateway',
-    id: 'bedrock-apigateway',
   },
 ]
 
