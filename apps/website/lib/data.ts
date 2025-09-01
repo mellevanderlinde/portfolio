@@ -42,7 +42,7 @@ export const projects: Project[] = [
     id: 'aws-setup',
   },
   {
-    name: 'Portfolio with CloudFront and Next.js',
+    name: 'Portfolio',
     description:
       'Project serving this website. Website design is by ibelick.',
     link: 'https://github.com/mellevanderlinde/portfolio',
