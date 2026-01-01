@@ -1,10 +1,7 @@
 import type { StackProps } from 'aws-cdk-lib'
 import type { Construct } from 'constructs'
 import { Duration, RemovalPolicy, Stack } from 'aws-cdk-lib'
-import {
-  Certificate,
-  CertificateValidation,
-} from 'aws-cdk-lib/aws-certificatemanager'
+import { Certificate, CertificateValidation } from 'aws-cdk-lib/aws-certificatemanager'
 import {
   Function as CloudFrontFunction,
   Distribution,
@@ -19,13 +16,7 @@ import {
 } from 'aws-cdk-lib/aws-cloudfront'
 import { S3BucketOrigin } from 'aws-cdk-lib/aws-cloudfront-origins'
 import { LogGroup, RetentionDays } from 'aws-cdk-lib/aws-logs'
-import {
-  AaaaRecord,
-  ARecord,
-  HostedZone,
-  RecordTarget,
-  TxtRecord,
-} from 'aws-cdk-lib/aws-route53'
+import { AaaaRecord, ARecord, HostedZone, RecordTarget, TxtRecord } from 'aws-cdk-lib/aws-route53'
 import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets'
 import { BlockPublicAccess, Bucket } from 'aws-cdk-lib/aws-s3'
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment'

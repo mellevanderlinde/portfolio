@@ -1,7 +1,4 @@
-import {
-  App,
-  Aspects,
-} from 'aws-cdk-lib'
+import { App, Aspects } from 'aws-cdk-lib'
 import { AwsSolutionsChecks } from 'cdk-nag'
 import { RemovalPolicyDestroyAspect } from '../lib/aspects'
 import { PortfolioStack } from '../lib/portfolio-stack'
