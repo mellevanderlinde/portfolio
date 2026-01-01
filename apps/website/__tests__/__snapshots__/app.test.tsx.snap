@@ -89,7 +89,7 @@ exports[`matches footer 1`] = `
             style="opacity: 1; transform: none;"
           >
             <span>
-              © 2025 Melle
+              © 2026 Melle
             </span>
           </div>
         </div>
@@ -629,7 +629,7 @@ exports[`matches root layout 1`] = `
                 style="opacity: 1; transform: none;"
               >
                 <span>
-                  © 2025 Melle
+                  © 2026 Melle
                 </span>
               </div>
             </div>

@@ -1,38 +1,4 @@
-type HttpsLink = `https://${string}`
-type BlogLink = `/blog/${string}`
-
-interface Project {
-  name: string
-  description: string
-  link: HttpsLink
-  id: string
-}
-
-interface Job {
-  company: string
-  title: string
-  start: string
-  end: string
-  link: HttpsLink
-  id: string
-}
-
-interface Post {
-  title: string
-  description: string
-  link: BlogLink
-  id: string
-}
-
-interface Link {
-  name: string
-  link: HttpsLink
-}
-
-interface Album {
-  id: string
-  name: string
-}
+import type { Album, Job, Link, Post, Project } from './interfaces'
 
 export const projects: Project[] = [
   {
