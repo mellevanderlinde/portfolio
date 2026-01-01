@@ -156,4 +156,8 @@ export const albums: Album[] = [
     id: 'ab67616d000082c18d4db6f2356f933e0321633f',
     name: 'Yussef Dayes - Black Classical Music',
   },
+  {
+    id: 'ab67616d0000b2732c25dad9f8fd54652f7ba5df',
+    name: 'Daft Punk - Discovery',
+  },
 ]
