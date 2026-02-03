@@ -4,8 +4,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "test": "vitest run",
-    "test:update": "vitest run -u"
+    "test": "vitest run"
   },
   "dependencies": {
     "@next/mdx": "^15.4.4",

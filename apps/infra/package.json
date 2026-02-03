@@ -5,8 +5,7 @@
   },
   "scripts": {
     "build": "tsc && tsc src/index.ts",
-    "test": "vitest run",
-    "test:update": "vitest run -u"
+    "test": "vitest run"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.207.0",

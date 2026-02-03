@@ -2,14 +2,12 @@
   "name": "portfolio",
   "packageManager": "pnpm@10.13.1",
   "scripts": {
-    "ci": "turbo lint build test",
-    "dev": "turbo dev",
-    "lint": "eslint --max-warnings 0",
-    "test:update": "turbo test:update"
+    "ci": "nx run-many -t lint build test",
+    "dev": "nx run website:dev"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.0.0",
     "eslint": "^9.32.0",
-    "turbo": "^2.5.5"
+    "nx": "^22.4.4"
   }
 }
