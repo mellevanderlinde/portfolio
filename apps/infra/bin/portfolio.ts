@@ -2,7 +2,6 @@ import { App, Aspects } from 'aws-cdk-lib'
 import { AwsSolutionsChecks } from 'cdk-nag'
 import { RemovalPolicyDestroyAspect } from '../lib/aspects'
 import { PortfolioStack } from '../lib/portfolio-stack'
-import 'source-map-support/register'
 
 const app = new App()
 

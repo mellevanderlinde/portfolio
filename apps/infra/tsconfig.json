@@ -4,9 +4,6 @@
     "lib": ["es2020", "dom"],
     "experimentalDecorators": true,
     "module": "commonjs",
-    "paths": {
-      "rollup/parseAst": ["../../node_modules/.pnpm/rollup@4.40.0/node_modules/rollup/dist/parseAst"]
-    },
     "strict": true,
     "strictNullChecks": true,
     "strictPropertyInitialization": true,
@@ -20,7 +17,8 @@
     "declaration": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "noEmit": true
+    "noEmit": true,
+    "skipLibCheck": true
   },
   "exclude": ["node_modules", "cdk.out"]
 }
