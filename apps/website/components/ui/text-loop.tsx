@@ -1,15 +1,12 @@
 'use client'
-import type {
+import {
+  AnimatePresence,
   AnimatePresenceProps,
+  motion,
   Transition,
   Variants,
 } from 'motion/react'
-import type { ReactNode } from 'react'
-import {
-  AnimatePresence,
-  motion,
-} from 'motion/react'
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 interface TextLoopProps {
@@ -39,8 +36,9 @@ export function TextLoop({
   const items = [...children]
 
   useEffect(() => {
-    if (!trigger)
+    if (!trigger) {
       return
+    }
 
     const intervalMs = interval * 1000
     const timer = setInterval(() => {

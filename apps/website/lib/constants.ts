@@ -1,4 +1,4 @@
-import type { Transition, Variants } from 'motion/react'
+import { Transition, Variants } from 'motion/react'
 
 export const url = 'https://mellevanderlinde.com'
 

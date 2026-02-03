@@ -1,7 +1,7 @@
 'use client'
 
-import type { ReactNode } from 'react'
 import { motion } from 'motion/react'
+import { ReactNode } from 'react'
 import { InfiniteSlider } from '@/components/ui/infinite-slider'
 import { UnderlinedLink } from '@/components/underlined-link'
 import { transition, variantsContainer, variantsSection } from '@/lib/constants'

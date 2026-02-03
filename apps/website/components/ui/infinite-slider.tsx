@@ -1,8 +1,7 @@
 'use client'
 
-import type { ReactNode } from 'react'
 import { animate, motion, useMotionValue } from 'motion/react'
-import { useEffect, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 import useMeasure from 'react-use-measure'
 import { cn } from '@/lib/utils'
 

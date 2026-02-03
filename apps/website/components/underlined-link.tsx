@@ -1,4 +1,4 @@
-import type { AnchorHTMLAttributes, ReactNode } from 'react'
+import { AnchorHTMLAttributes, ReactNode } from 'react'
 
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode

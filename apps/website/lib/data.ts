@@ -1,4 +1,4 @@
-import type { Album, Job, Link, Post, Project } from './interfaces'
+import { Album, Job, Link, Post, Project } from './interfaces'
 
 export const projects: Project[] = [
   {

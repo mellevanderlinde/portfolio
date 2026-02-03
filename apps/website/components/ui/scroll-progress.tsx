@@ -1,8 +1,7 @@
 'use client'
 
-import type { SpringOptions } from 'motion/react'
-import type { ReactNode, RefObject } from 'react'
-import { motion, useScroll, useSpring } from 'motion/react'
+import { motion, SpringOptions, useScroll, useSpring } from 'motion/react'
+import { ReactNode, RefObject } from 'react'
 import { cn } from '@/lib/utils'
 
 interface ScrollProgressProps {

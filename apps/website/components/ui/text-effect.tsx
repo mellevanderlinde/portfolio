@@ -1,16 +1,13 @@
 'use client'
-import type {
+import {
+  AnimatePresence,
+  motion,
   TargetAndTransition,
   Transition,
   Variant,
   Variants,
 } from 'motion/react'
-import type { ReactNode } from 'react'
-import {
-  AnimatePresence,
-  motion,
-} from 'motion/react'
-import { memo } from 'react'
+import { memo, ReactNode } from 'react'
 import { cn } from '@/lib/utils'
 
 type PresetType = 'blur' | 'fade-in-blur' | 'scale' | 'fade' | 'slide'
@@ -167,8 +164,9 @@ const AnimationComponent: React.FC<{
 AnimationComponent.displayName = 'AnimationComponent'
 
 function splitText(text: string, per: 'line' | 'word' | 'char'): string[] {
-  if (per === 'line')
+  if (per === 'line') {
     return text.split('\n')
+  }
   return text.split(/(\s+)/)
 }
 
@@ -179,8 +177,9 @@ function hasTransition(variant: Variant): variant is TargetAndTransition & { tra
 }
 
 function createVariantsWithTransition(baseVariants: Variants, transition?: Transition & { exit?: Transition }): Variants {
-  if (!transition)
+  if (!transition) {
     return baseVariants
+  }
 
   const { exit: _, ...mainTransition } = transition
 

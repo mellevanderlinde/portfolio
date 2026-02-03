@@ -1,13 +1,10 @@
 'use client'
-import type { Transition } from 'motion/react'
-import type {
-  ReactElement,
-  ReactNode,
-} from 'react'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, motion, Transition } from 'motion/react'
 import {
   Children,
   cloneElement,
+  ReactElement,
+  ReactNode,
   useEffect,
   useId,
   useState,

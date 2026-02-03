@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { highlight } from 'sugar-high'
 import { z } from 'zod'
 

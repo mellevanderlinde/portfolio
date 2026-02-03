@@ -1,6 +1,4 @@
-import type { StackProps } from 'aws-cdk-lib'
-import type { Construct } from 'constructs'
-import { Duration, RemovalPolicy, Stack } from 'aws-cdk-lib'
+import { Duration, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib'
 import { Certificate, CertificateValidation } from 'aws-cdk-lib/aws-certificatemanager'
 import {
   Function as CloudFrontFunction,
@@ -21,6 +19,7 @@ import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets'
 import { BlockPublicAccess, Bucket } from 'aws-cdk-lib/aws-s3'
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment'
 import { NagSuppressions } from 'cdk-nag'
+import { Construct } from 'constructs'
 
 export class PortfolioStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {

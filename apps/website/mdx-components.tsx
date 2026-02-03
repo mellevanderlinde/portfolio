@@ -1,6 +1,6 @@
-import type { MDXComponents } from 'mdx/types'
-import type { ReactNode } from 'react'
+import { MDXComponents } from 'mdx/types'
 import Link from 'next/link'
+import { ReactNode } from 'react'
 import { Code } from './components/code'
 
 function customLink(props: { href: string, children: ReactNode }): ReactNode {
