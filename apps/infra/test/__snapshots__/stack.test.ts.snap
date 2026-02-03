@@ -165,6 +165,7 @@ exports[`matches with snapshot 1`] = `
         "SourceObjectKeys": [
           "removed-hash",
         ],
+        "WaitForDistributionInvalidation": true,
       },
       "Type": "Custom::CDKBucketDeployment",
       "UpdateReplacePolicy": "Delete",
@@ -373,7 +374,7 @@ exports[`matches with snapshot 1`] = `
             "Arn",
           ],
         },
-        "Runtime": "python3.11",
+        "Runtime": "python3.13",
         "Timeout": 900,
       },
       "Type": "AWS::Lambda::Function",

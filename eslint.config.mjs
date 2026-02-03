@@ -8,6 +8,7 @@ export default antfu({
     'curly': 'error',
     'import/first': ['error', 'absolute-first'],
     'ts/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
+    'pnpm/yaml-enforce-settings': 'off',
   },
   ignores: ['**/cdk.out', '**/out', '**/*.js'],
 })

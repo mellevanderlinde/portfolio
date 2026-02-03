@@ -14,7 +14,6 @@ function customLink(props: { href: string, children: ReactNode }): ReactNode {
   return <a target="_blank" rel="noopener noreferrer" {...props} />
 }
 
-// eslint-disable-next-line react-hooks-extra/no-unnecessary-use-prefix
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return { ...components, a: customLink, code: Code }
 }

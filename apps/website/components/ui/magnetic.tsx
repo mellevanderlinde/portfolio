@@ -1,12 +1,12 @@
 'use client'
 
 import { motion, SpringOptions, useMotionValue, useSpring } from 'motion/react'
-import React, { useEffect, useRef, useState } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 
 const SPRING_CONFIG = { stiffness: 26.7, damping: 4.1, mass: 0.2 }
 
 export interface MagneticProps {
-  children: React.ReactNode
+  children: ReactNode
   intensity?: number
   range?: number
   actionArea?: 'self' | 'parent' | 'global'
