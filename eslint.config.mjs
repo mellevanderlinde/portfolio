@@ -10,5 +10,5 @@ export default antfu({
     'ts/consistent-type-imports': ['error', { prefer: 'no-type-imports' }],
     'pnpm/yaml-enforce-settings': 'off',
   },
-  ignores: ['**/cdk.out', '**/out', '**/*.js'],
+  ignores: ['**/cdk.out', '**/out'],
 })

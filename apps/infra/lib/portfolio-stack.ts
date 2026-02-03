@@ -55,7 +55,7 @@ export class PortfolioStack extends Stack {
 
     const function_ = new CloudFrontFunction(this, 'Function', {
       functionName: domainName.replace('.', '-'),
-      code: FunctionCode.fromFile({ filePath: 'src/index.js' }),
+      code: FunctionCode.fromFile({ filePath: 'dist/src/index.js' }),
       runtime: FunctionRuntime.JS_2_0,
       comment: 'Add index.html to URI (required for Next.js)',
     })

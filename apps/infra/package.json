@@ -4,8 +4,8 @@
     "portfolio": "bin/portfolio.js"
   },
   "scripts": {
-    "build": "tsc && tsc src/index.ts",
-    "test": "vitest run"
+    "build": "tsc",
+    "test": "vitest run --exclude dist"
   },
   "dependencies": {
     "aws-cdk-lib": "^2.237.0",

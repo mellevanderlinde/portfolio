@@ -17,8 +17,8 @@
     "declaration": true,
     "inlineSourceMap": true,
     "inlineSources": true,
-    "noEmit": true,
+    "outDir": "dist",
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "cdk.out"]
+  "exclude": ["node_modules", "cdk.out", "dist"]
 }
