@@ -16,17 +16,23 @@ export const projects: Project[] = [
   },
   {
     description:
-      'Trusts a repo to invoke AWS actions from GitHub Actions using OpenID Connect.',
-    id: 'oidc-aws-github',
-    link: 'https://github.com/mellevanderlinde/oidc-aws-github',
-    name: 'OIDC for AWS and GitHub Actions',
-  },
-  {
-    description:
-      'Shows some contributions (mostly bug fixes) to the AWS CDK project.',
+      'Shows some contributions to the AWS CDK project.',
     id: 'aws-cdk-contributions',
     link: 'https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde',
     name: 'Contributions to AWS CDK',
+  },
+  {
+    description: 'ESLint config I use for my projects.',
+    id: 'eslint-config',
+    link: 'https://github.com/mellevanderlinde/eslint-config',
+    name: 'ESLint Config',
+  },
+  {
+    description:
+      'Connect to AWS from GitHub Actions using OpenID Connect.',
+    id: 'oidc-aws-github',
+    link: 'https://github.com/mellevanderlinde/oidc-aws-github',
+    name: 'OIDC for AWS and GitHub Actions',
   },
 ]
 
