@@ -127,7 +127,19 @@ export const albums: Album[] = [
     name: 'Daft Punk - Discovery',
   },
   {
+    id: 'ab67616d0000b2738ac778cc7d88779f74d33311',
+    name: 'Daft Punk - Homework',
+  },
+  {
     id: 'ab67616d0000b2731216e4f7e84af70ef18146ed',
     name: 'Air - Moon Safari',
+  },
+  {
+    id: 'ab67616d0000b273988970b40aca1d4cfb3edc3d',
+    name: 'Air - Premiers Symptômes',
+  },
+  {
+    id: 'ab67616d0000b27345e164e2e09a77ae799832d3',
+    name: 'Koop - Waltz For Koop',
   },
 ]
