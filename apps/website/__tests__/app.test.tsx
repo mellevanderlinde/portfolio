@@ -11,17 +11,18 @@ import sitemap from '@/app/sitemap'
 
 it('matches home', () => {
   const { container } = render(<Home />)
+
   expect(container).toMatchSnapshot()
 })
 
 it('matches root layout', () => {
   // Mock
   vi.mock('next/font/google', () => ({
-    Geist: () => ({
+    Geist: (): { className: string, variable: string } => ({
       className: 'geist',
       variable: 'geist',
     }),
-    Geist_Mono: () => ({
+    Geist_Mono: (): { className: string, variable: string } => ({
       className: 'geist-mono',
       variable: 'geist-mono',
     }),
@@ -34,45 +35,51 @@ it('matches root layout', () => {
 
   // Test
   const { container } = render(<RootLayout children={<></>} />)
+
   expect(container).toMatchSnapshot()
 })
 
 it('matches footer', () => {
   const { container } = render(<Footer />)
+
   expect(container).toMatchSnapshot()
 })
 
 it('matches header', () => {
   const { container } = render(<Header />)
+
   expect(container).toMatchSnapshot()
 })
 
 it('matches blog layout', () => {
   const { container } = render(<BlogLayout children={<></>} />)
+
   expect(container).toMatchSnapshot()
 })
 
 it('matches albums page', () => {
   // Mock
   globalThis.ResizeObserver = vi.fn().mockImplementation(() => ({
-    observe: vi.fn(),
     disconnect: vi.fn(),
+    observe: vi.fn(),
   }))
   vi.mock('@/lib/data', () => ({
-    posts: [],
     albums: [{ id: 'id', name: 'Artist - Album' }],
-    projects: [],
     jobs: [],
     links: [],
+    posts: [],
+    projects: [],
   }))
 
   // Test
   const { container } = render(<Albums />)
+
   expect(container).toMatchSnapshot()
 })
 
 it('matches robots', () => {
   const result = robots()
+
   expect(result).toMatchSnapshot()
 })
 
@@ -82,5 +89,6 @@ it('matches sitemap', () => {
   for (const item of result) {
     item.lastModified = '2024-01-01T00:00:00.000Z'
   }
+
   expect(result).toMatchSnapshot()
 })

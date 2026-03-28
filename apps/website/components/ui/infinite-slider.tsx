@@ -1,7 +1,8 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { animate, motion, useMotionValue } from 'motion/react'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import useMeasure from 'react-use-measure'
 import { cn } from '@/lib/utils'
 
@@ -17,15 +18,15 @@ interface InfiniteSliderProps {
 
 export function InfiniteSlider({
   children,
+  className,
+  direction = 'horizontal',
   gap = 16,
+  reverse = false,
   speed = 100,
   speedOnHover,
-  direction = 'horizontal',
-  reverse = false,
-  className,
 }: InfiniteSliderProps): ReactNode {
   const [currentSpeed, setCurrentSpeed] = useState(speed)
-  const [ref, { width, height }] = useMeasure()
+  const [ref, { height, width }] = useMeasure()
   const translation = useMotionValue(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [key, setKey] = useState(0)
@@ -45,8 +46,8 @@ export function InfiniteSlider({
       const transitionDuration = remainingDistance / currentSpeed
 
       controls = animate(translation, [translation.get(), to], {
-        ease: 'linear',
         duration: transitionDuration,
+        ease: 'linear',
         onComplete: () => {
           setIsTransitioning(false)
           setKey(prevKey => prevKey + 1)
@@ -55,14 +56,14 @@ export function InfiniteSlider({
     }
     else {
       controls = animate(translation, [from, to], {
-        ease: 'linear',
         duration,
-        repeat: Infinity,
-        repeatType: 'loop',
-        repeatDelay: 0,
+        ease: 'linear',
         onRepeat: () => {
           translation.set(from)
         },
+        repeat: Infinity,
+        repeatDelay: 0,
+        repeatType: 'loop',
       })
     }
 
@@ -81,13 +82,13 @@ export function InfiniteSlider({
 
   const hoverProps = speedOnHover
     ? {
-        onHoverStart: () => {
-          setIsTransitioning(true)
-          setCurrentSpeed(speedOnHover)
-        },
-        onHoverEnd: () => {
+        onHoverEnd: (): void => {
           setIsTransitioning(true)
           setCurrentSpeed(speed)
+        },
+        onHoverStart: (): void => {
+          setIsTransitioning(true)
+          setCurrentSpeed(speedOnHover)
         },
       }
     : {}
@@ -100,8 +101,8 @@ export function InfiniteSlider({
           ...(direction === 'horizontal'
             ? { x: translation }
             : { y: translation }),
-          gap: `${gap}px`,
           flexDirection: direction === 'horizontal' ? 'row' : 'column',
+          gap: `${gap}px`,
         }}
         ref={ref}
         {...hoverProps}

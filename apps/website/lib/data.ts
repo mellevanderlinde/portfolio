@@ -1,71 +1,71 @@
-import { Album, Job, Link, Post, Project } from './interfaces'
+import type { Album, Job, Link, Post, Project } from './interfaces'
 
 export const projects: Project[] = [
   {
-    name: 'AWS Account Setup',
     description: 'Setup for automated drift detection, budgets, garbage collection and more.',
-    link: 'https://github.com/mellevanderlinde/aws-setup',
     id: 'aws-setup',
+    link: 'https://github.com/mellevanderlinde/aws-setup',
+    name: 'AWS Account Setup',
   },
   {
-    name: 'Portfolio',
     description:
       'Project serving this website. Website design is by ibelick.',
-    link: 'https://github.com/mellevanderlinde/portfolio',
     id: 'portfolio',
+    link: 'https://github.com/mellevanderlinde/portfolio',
+    name: 'Portfolio',
   },
   {
-    name: 'OIDC for AWS and GitHub Actions',
     description:
       'Trusts a repo to invoke AWS actions from GitHub Actions using OpenID Connect.',
-    link: 'https://github.com/mellevanderlinde/oidc-aws-github',
     id: 'oidc-aws-github',
+    link: 'https://github.com/mellevanderlinde/oidc-aws-github',
+    name: 'OIDC for AWS and GitHub Actions',
   },
   {
-    name: 'Contributions to AWS CDK',
     description:
       'Shows some contributions (mostly bug fixes) to the AWS CDK project.',
-    link: 'https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde',
     id: 'aws-cdk-contributions',
+    link: 'https://github.com/aws/aws-cdk/commits/main/?author=mellevanderlinde',
+    name: 'Contributions to AWS CDK',
   },
 ]
 
 export const jobs: Job[] = [
   {
     company: 'PostNL',
-    title: 'Cloud Engineer',
-    start: '2023',
     end: 'Present',
-    link: 'https://postnl.nl/en',
     id: 'cloud-engineer',
+    link: 'https://postnl.nl/en',
+    start: '2023',
+    title: 'Cloud Engineer',
   },
   {
     company: 'PostNL',
-    title: 'MLOps Engineer',
-    start: '2021',
     end: '2023',
-    link: 'https://postnl.nl/en',
     id: 'mlops-engineer',
+    link: 'https://postnl.nl/en',
+    start: '2021',
+    title: 'MLOps Engineer',
   },
 ]
 
 export const posts: Post[] = [
   {
-    title: 'Connect GitHub Actions with AWS using OpenID Connect',
     description: 'How to use CDK and GitHub Actions to deploy to AWS',
-    link: '/blog/openid-connect-aws-github',
     id: 'blog-oidc',
+    link: '/blog/openid-connect-aws-github',
+    title: 'Connect GitHub Actions with AWS using OpenID Connect',
   },
 ]
 
 export const links: Link[] = [
   {
-    name: 'GitHub',
     link: 'https://github.com/mellevanderlinde',
+    name: 'GitHub',
   },
   {
-    name: 'LinkedIn',
     link: 'https://www.linkedin.com/in/mellevdlinde',
+    name: 'LinkedIn',
   },
 ]
 

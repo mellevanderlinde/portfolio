@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import { Magnetic } from '@/components/ui/magnetic'
 
 export function MagneticLink({
@@ -6,7 +7,7 @@ export function MagneticLink({
 }: {
   children: React.ReactNode
   link: string
-}) {
+}): ReactNode {
   return (
     <Magnetic springOptions={{ bounce: 0 }} intensity={0.3}>
       <a

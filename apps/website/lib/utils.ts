@@ -1,4 +1,5 @@
-import { ClassValue, clsx } from 'clsx'
+import type { ClassValue } from 'clsx'
+import { clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]): string {
@@ -6,5 +7,7 @@ export function cn(...inputs: ClassValue[]): string {
 }
 
 export function getYear(): string {
-  return new Date().getFullYear().toString()
+  return new Date()
+    .getFullYear()
+    .toString()
 }

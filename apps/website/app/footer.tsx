@@ -1,35 +1,35 @@
 'use client'
+import type { ReactNode } from 'react'
 import { MonitorIcon, MoonIcon, SunIcon } from 'lucide-react'
 import { useTheme } from 'next-themes'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { TextLoop } from '@/components/ui/text-loop'
 import { getYear } from '@/lib/utils'
 
 const themes = [
   {
-    label: 'Light',
-    id: 'light',
     icon: <SunIcon className="h-4 w-4" />,
+    id: 'light',
+    label: 'Light',
   },
   {
-    label: 'Dark',
-    id: 'dark',
     icon: <MoonIcon className="h-4 w-4" />,
+    id: 'dark',
+    label: 'Dark',
   },
   {
-    label: 'System',
-    id: 'system',
     icon: <MonitorIcon className="h-4 w-4" />,
+    id: 'system',
+    label: 'System',
   },
 ]
 
 function ThemeSwitch(): ReactNode {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { setTheme, theme } = useTheme()
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
     setMounted(true)
   }, [])
 
@@ -42,9 +42,9 @@ function ThemeSwitch(): ReactNode {
       className="pointer-events-none rounded-lg bg-zinc-100 dark:bg-zinc-800"
       defaultValue={theme}
       transition={{
-        type: 'spring',
         bounce: 0,
         duration: 0.2,
+        type: 'spring',
       }}
       enableHover={false}
       onValueChange={(id) => {

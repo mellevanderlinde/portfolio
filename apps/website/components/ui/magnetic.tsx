@@ -1,9 +1,11 @@
 'use client'
 
-import { motion, SpringOptions, useMotionValue, useSpring } from 'motion/react'
-import { ReactNode, useEffect, useRef, useState } from 'react'
+import type { SpringOptions } from 'motion/react'
+import type { ReactNode } from 'react'
+import { motion, useMotionValue, useSpring } from 'motion/react'
+import React, { useEffect, useRef, useState } from 'react'
 
-const SPRING_CONFIG = { stiffness: 26.7, damping: 4.1, mass: 0.2 }
+const SPRING_CONFIG = { damping: 4.1, mass: 0.2, stiffness: 26.7 }
 
 export interface MagneticProps {
   children: ReactNode
@@ -14,12 +16,12 @@ export interface MagneticProps {
 }
 
 export function Magnetic({
+  actionArea = 'self',
   children,
   intensity = 0.6,
   range = 100,
-  actionArea = 'self',
   springOptions = SPRING_CONFIG,
-}: MagneticProps) {
+}: MagneticProps): ReactNode {
   const [isHovered, setIsHovered] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -30,7 +32,7 @@ export function Magnetic({
   const springY = useSpring(y, springOptions)
 
   useEffect(() => {
-    const calculateDistance = (e: MouseEvent) => {
+    const calculateDistance = (e: MouseEvent): void => {
       if (ref.current) {
         const rect = ref.current.getBoundingClientRect()
         const centerX = rect.left + rect.width / 2
@@ -54,41 +56,39 @@ export function Magnetic({
 
     document.addEventListener('mousemove', calculateDistance)
 
-    return () => {
+    return (): void => {
       document.removeEventListener('mousemove', calculateDistance)
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [ref, isHovered, intensity, range])
 
   useEffect(() => {
     if (actionArea === 'parent' && ref.current?.parentElement) {
       const parent = ref.current.parentElement
 
-      const handleParentEnter = () => setIsHovered(true)
-      const handleParentLeave = () => setIsHovered(false)
+      const handleParentEnter = (): void => setIsHovered(true)
+      const handleParentLeave = (): void => setIsHovered(false)
 
       parent.addEventListener('mouseenter', handleParentEnter)
       parent.addEventListener('mouseleave', handleParentLeave)
 
-      return () => {
+      return (): void => {
         parent.removeEventListener('mouseenter', handleParentEnter)
         parent.removeEventListener('mouseleave', handleParentLeave)
       }
     }
     else if (actionArea === 'global') {
-      // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
       setIsHovered(true)
     }
     return undefined
   }, [actionArea])
 
-  const handleMouseEnter = () => {
+  const handleMouseEnter = (): void => {
     if (actionArea === 'self') {
       setIsHovered(true)
     }
   }
 
-  const handleMouseLeave = () => {
+  const handleMouseLeave = (): void => {
     if (actionArea === 'self') {
       setIsHovered(false)
       x.set(0)

@@ -1,12 +1,11 @@
 'use client'
+import type { AnimatePresenceProps, Transition, Variants } from 'motion/react'
+import type { ReactNode } from 'react'
 import {
   AnimatePresence,
-  AnimatePresenceProps,
   motion,
-  Transition,
-  Variants,
 } from 'motion/react'
-import { ReactNode, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { cn } from '@/lib/utils'
 
 interface TextLoopProps {
@@ -26,11 +25,11 @@ export function TextLoop({
   children,
   className,
   interval = 2,
-  transition = defaultTransition,
-  variants,
-  onIndexChange,
-  trigger = true,
   mode = 'popLayout',
+  onIndexChange,
+  transition = defaultTransition,
+  trigger = true,
+  variants,
 }: TextLoopProps): ReactNode {
   const [currentIndex, setCurrentIndex] = useState(0)
   const items = [...children]
@@ -48,13 +47,13 @@ export function TextLoop({
         return next
       })
     }, intervalMs)
-    return () => clearInterval(timer)
+    return (): void => clearInterval(timer)
   }, [items.length, interval, onIndexChange, trigger])
 
   const motionVariants: Variants = {
-    initial: { y: 20, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    exit: { y: -20, opacity: 0 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+    initial: { opacity: 0, y: 20 },
   }
 
   return (

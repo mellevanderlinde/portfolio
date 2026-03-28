@@ -1,8 +1,7 @@
-import { Metadata } from 'next'
-import { PropsWithChildren, ReactNode } from 'react'
+import type { Metadata } from 'next'
+import type { PropsWithChildren, ReactNode } from 'react'
 import { ScrollProgress } from '@/components/ui/scroll-progress'
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Blog',
 }

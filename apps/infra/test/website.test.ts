@@ -6,21 +6,25 @@ const domain = 'mellevanderlinde.com'
 describe('check if website is available', () => {
   test('http', async () => {
     const result = await fetch(`http://${domain}`)
+
     expect(result.status).toBe(200)
   })
 
   test('https', async () => {
     const result = await fetch(`https://${domain}`)
+
     expect(result.status).toBe(200)
   })
 
   test('http www', async () => {
     const result = await fetch(`http://www.${domain}`)
+
     expect(result.status).toBe(200)
   })
 
   test('https www', async () => {
     const result = await fetch(`https://www.${domain}`)
+
     expect(result.status).toBe(200)
   })
 })

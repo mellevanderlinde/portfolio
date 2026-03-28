@@ -1,8 +1,8 @@
 'use client'
 
+import type { ReactNode } from 'react'
 import { motion } from 'motion/react'
 import Link from 'next/link'
-import { ReactNode } from 'react'
 import { MagneticLink } from '@/components/magnetic-link'
 import { AnimatedBackground } from '@/components/ui/animated-background'
 import { UnderlinedLink } from '@/components/underlined-link'
@@ -70,9 +70,9 @@ export default function Personal(): ReactNode {
             enableHover
             className="h-full w-full rounded-lg bg-zinc-100 dark:bg-zinc-900/80"
             transition={{
-              type: 'spring',
               bounce: 0,
               duration: 0.2,
+              type: 'spring',
             }}
           >
             {posts.map(post => (

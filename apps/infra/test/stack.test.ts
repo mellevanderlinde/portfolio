@@ -7,7 +7,7 @@ import { PortfolioStack } from '../lib/portfolio-stack'
 it('matches with snapshot', () => {
   const app = new App()
   const stack = new PortfolioStack(app, 'PortfolioStack', {
-    env: { region: 'us-east-1', account: '012345678912' },
+    env: { account: '012345678912', region: 'us-east-1' },
   })
   Aspects.of(app).add(new RemovalPolicyDestroyAspect())
   const template = Template.fromStack(stack)

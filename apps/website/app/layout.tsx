@@ -1,31 +1,29 @@
-import { Metadata, Viewport } from 'next'
+import type { Metadata, Viewport } from 'next'
+import type { PropsWithChildren, ReactNode } from 'react'
 import { ThemeProvider } from 'next-themes'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { PropsWithChildren, ReactNode } from 'react'
 import { Footer } from './footer'
 import { Header } from './header'
 import './globals.css'
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const viewport: Viewport = {
-  width: 'device-width',
   initialScale: 1,
   themeColor: '#ffffff',
+  width: 'device-width',
 }
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const metadata: Metadata = {
   title: 'Melle van der Linde',
 }
 
 const geist = Geist({
-  variable: '--font-geist',
   subsets: ['latin'],
+  variable: '--font-geist',
 })
 
 const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
   subsets: ['latin'],
+  variable: '--font-geist-mono',
 })
 
 export default function RootLayout(props: PropsWithChildren): ReactNode {

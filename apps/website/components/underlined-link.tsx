@@ -1,11 +1,11 @@
-import { AnchorHTMLAttributes, ReactNode } from 'react'
+import type { AnchorHTMLAttributes, ReactNode } from 'react'
 
 type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode
   href: string
 }
 
-export function UnderlinedLink({ children, ...props }: LinkProps) {
+export function UnderlinedLink({ children, ...props }: LinkProps): ReactNode {
   if (props.href.startsWith('http')) {
     props.target = '_blank'
     props.rel = 'noopener noreferrer'

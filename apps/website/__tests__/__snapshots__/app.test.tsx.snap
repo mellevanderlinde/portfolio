@@ -8,7 +8,7 @@ exports[`matches albums page 1`] = `
   >
     <section
       class="mt-18"
-      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+      style="filter: blur(8px); opacity: 0; transform: translateY(20px);"
     >
       <div
         class="flex-1"
@@ -35,7 +35,7 @@ exports[`matches albums page 1`] = `
       >
         <div
           class="flex w-max"
-          style="gap: 24px; flex-direction: row; transform: none;"
+          style="flex-direction: row; gap: 24px; transform: none;"
         >
           <img
             alt="Artist - Album"
@@ -376,7 +376,7 @@ exports[`matches home 1`] = `
     style="opacity: 0;"
   >
     <section
-      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+      style="filter: blur(8px); opacity: 0; transform: translateY(20px);"
     >
       <div
         class="flex-1"
@@ -389,7 +389,7 @@ exports[`matches home 1`] = `
       </div>
     </section>
     <section
-      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+      style="filter: blur(8px); opacity: 0; transform: translateY(20px);"
     >
       <h3
         class="mb-5 text-lg font-medium"
@@ -401,7 +401,7 @@ exports[`matches home 1`] = `
       />
     </section>
     <section
-      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+      style="filter: blur(8px); opacity: 0; transform: translateY(20px);"
     >
       <h3
         class="mb-3 text-lg font-medium"
@@ -413,7 +413,7 @@ exports[`matches home 1`] = `
       />
     </section>
     <section
-      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+      style="filter: blur(8px); opacity: 0; transform: translateY(20px);"
     >
       <h3
         class="mb-5 text-lg font-medium"
@@ -425,7 +425,7 @@ exports[`matches home 1`] = `
       />
     </section>
     <section
-      style="opacity: 0; filter: blur(8px); transform: translateY(20px);"
+      style="filter: blur(8px); opacity: 0; transform: translateY(20px);"
     >
       <h3
         class="mb-5 text-lg font-medium"

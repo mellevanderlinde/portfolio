@@ -1,7 +1,8 @@
 'use client'
 
-import { motion, SpringOptions, useScroll, useSpring } from 'motion/react'
-import { ReactNode, RefObject } from 'react'
+import type { SpringOptions } from 'motion/react'
+import type { ReactNode, RefObject } from 'react'
+import { motion, useScroll, useSpring } from 'motion/react'
 import { cn } from '@/lib/utils'
 
 interface ScrollProgressProps {
@@ -11,15 +12,15 @@ interface ScrollProgressProps {
 }
 
 const defaultSpringOptions: SpringOptions = {
-  stiffness: 200,
   damping: 50,
   restDelta: 0.001,
+  stiffness: 200,
 }
 
 export function ScrollProgress({
   className,
-  springOptions,
   containerRef,
+  springOptions,
 }: ScrollProgressProps): ReactNode {
   const { scrollYProgress } = useScroll({
     container: containerRef,

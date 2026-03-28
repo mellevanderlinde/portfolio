@@ -1,4 +1,4 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from 'next'
 import { url } from '@/lib/constants'
 import { posts } from '../lib/data'
 
@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   lastModified.setUTCHours(11, 0, 0, 0)
 
   return [
-    { url, lastModified },
-    ...posts.map(post => ({ url: `${url}${post.link}`, lastModified })),
+    { lastModified, url },
+    ...posts.map(post => ({ lastModified, url: `${url}${post.link}` })),
   ]
 }

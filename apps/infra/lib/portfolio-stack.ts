@@ -1,4 +1,6 @@
-import { Duration, RemovalPolicy, Stack, StackProps } from 'aws-cdk-lib'
+import type { StackProps } from 'aws-cdk-lib'
+import type { Construct } from 'constructs'
+import { Duration, RemovalPolicy, Stack } from 'aws-cdk-lib'
 import { Certificate, CertificateValidation } from 'aws-cdk-lib/aws-certificatemanager'
 import {
   Function as CloudFrontFunction,
@@ -19,7 +21,6 @@ import { CloudFrontTarget } from 'aws-cdk-lib/aws-route53-targets'
 import { BlockPublicAccess, Bucket } from 'aws-cdk-lib/aws-s3'
 import { BucketDeployment, Source } from 'aws-cdk-lib/aws-s3-deployment'
 import { NagSuppressions } from 'cdk-nag'
-import { Construct } from 'constructs'
 
 export class PortfolioStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
@@ -32,11 +33,11 @@ export class PortfolioStack extends Stack {
     })
 
     const bucket = new Bucket(this, 'Bucket', {
-      bucketName: domainName,
+      autoDeleteObjects: true,
       blockPublicAccess: BlockPublicAccess.BLOCK_ALL,
+      bucketName: domainName,
       enforceSSL: true,
       removalPolicy: RemovalPolicy.DESTROY,
-      autoDeleteObjects: true,
     })
 
     NagSuppressions.addResourceSuppressions(bucket, [
@@ -49,35 +50,33 @@ export class PortfolioStack extends Stack {
     const certificate = new Certificate(this, 'Certificate', {
       certificateName: domainName,
       domainName,
-      validation: CertificateValidation.fromDns(zone),
       subjectAlternativeNames: [wwwDomainName],
+      validation: CertificateValidation.fromDns(zone),
     })
 
     const function_ = new CloudFrontFunction(this, 'Function', {
-      functionName: domainName.replace('.', '-'),
       code: FunctionCode.fromFile({ filePath: 'dist/src/index.js' }),
-      runtime: FunctionRuntime.JS_2_0,
       comment: 'Add index.html to URI (required for Next.js)',
+      functionName: domainName.replace('.', '-'),
+      runtime: FunctionRuntime.JS_2_0,
     })
 
     const distribution = new Distribution(this, 'Distribution', {
-      defaultRootObject: 'index.html',
+      certificate,
       defaultBehavior: {
-        origin: S3BucketOrigin.withOriginAccessControl(bucket),
-        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
         functionAssociations: [
           {
-            function: function_,
             eventType: FunctionEventType.VIEWER_REQUEST,
+            function: function_,
           },
         ],
+        origin: S3BucketOrigin.withOriginAccessControl(bucket),
         responseHeadersPolicy: ResponseHeadersPolicy.SECURITY_HEADERS,
+        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
       },
-      priceClass: PriceClass.PRICE_CLASS_100,
-      httpVersion: HttpVersion.HTTP3,
+      defaultRootObject: 'index.html',
       domainNames: [domainName, wwwDomainName],
       enableIpv6: true,
-      certificate,
       errorResponses: [
         {
           httpStatus: 403,
@@ -103,6 +102,8 @@ export class PortfolioStack extends Stack {
         'PT',
         'US',
       ),
+      httpVersion: HttpVersion.HTTP3,
+      priceClass: PriceClass.PRICE_CLASS_100,
     })
 
     NagSuppressions.addResourceSuppressions(distribution, [
@@ -156,11 +157,11 @@ export class PortfolioStack extends Stack {
 
     const bucketDeployment = new BucketDeployment(this, 'BucketDeployment', {
       destinationBucket: bucket,
-      sources: [Source.asset('../website/out')],
       distribution,
       distributionPaths: ['/*'],
       logGroup,
       memoryLimit: 2048,
+      sources: [Source.asset('../website/out')],
     })
 
     NagSuppressions.addResourceSuppressionsByPath(

@@ -1,10 +1,10 @@
 'use client'
-import { AnimatePresence, motion, Transition } from 'motion/react'
+import type { Transition } from 'motion/react'
+import type { ReactElement, ReactNode } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
 import {
   Children,
   cloneElement,
-  ReactElement,
-  ReactNode,
   useEffect,
   useId,
   useState,
@@ -24,16 +24,16 @@ interface AnimatedBackgroundProps {
 
 export function AnimatedBackground({
   children,
-  defaultValue,
-  onValueChange,
   className,
-  transition,
+  defaultValue,
   enableHover = false,
+  onValueChange,
+  transition,
 }: AnimatedBackgroundProps): ReactNode {
   const [activeId, setActiveId] = useState<string | null>(null)
   const uniqueId = useId()
 
-  const handleSetActiveId = (id: string | null) => {
+  const handleSetActiveId = (id: string | null): void => {
     setActiveId(id)
 
     if (onValueChange) {
@@ -43,31 +43,28 @@ export function AnimatedBackground({
 
   useEffect(() => {
     if (defaultValue !== undefined) {
-      // eslint-disable-next-line react-hooks-extra/no-direct-set-state-in-use-effect
       setActiveId(defaultValue)
     }
   }, [defaultValue])
 
-  // eslint-disable-next-line react/no-children-map
   return Children.map(children, (child: any, index) => {
     const id = child.props['data-id']
 
     const interactionProps = enableHover
       ? {
-          onMouseEnter: () => handleSetActiveId(id),
-          onMouseLeave: () => handleSetActiveId(null),
+          onMouseEnter: (): void => handleSetActiveId(id),
+          onMouseLeave: (): void => handleSetActiveId(null),
         }
       : {
-          onClick: () => handleSetActiveId(id),
+          onClick: (): void => handleSetActiveId(id),
         }
 
-    // eslint-disable-next-line react/no-clone-element
     return cloneElement(
       child,
       {
-        'key': index,
         'className': cn('relative inline-flex', child.props.className),
         'data-checked': activeId === id ? 'true' : 'false',
+        'key': index,
         ...interactionProps,
       },
       <>
