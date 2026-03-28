@@ -1,28 +1,27 @@
-/* eslint-disable test/consistent-test-it */
-import { describe, expect, test } from 'vitest'
+import { describe, expect, it } from 'vitest'
 
 const domain = 'mellevanderlinde.com'
 
 describe('check if website is available', () => {
-  test('http', async () => {
+  it('http', async () => {
     const result = await fetch(`http://${domain}`)
 
     expect(result.status).toBe(200)
   })
 
-  test('https', async () => {
+  it('https', async () => {
     const result = await fetch(`https://${domain}`)
 
     expect(result.status).toBe(200)
   })
 
-  test('http www', async () => {
+  it('http www', async () => {
     const result = await fetch(`http://www.${domain}`)
 
     expect(result.status).toBe(200)
   })
 
-  test('https www', async () => {
+  it('https www', async () => {
     const result = await fetch(`https://www.${domain}`)
 
     expect(result.status).toBe(200)
@@ -32,7 +31,7 @@ describe('check if website is available', () => {
 describe('check if pages are available', () => {
   const root = `https://${domain}`
 
-  test('homepage', async () => {
+  it('homepage', async () => {
     const result = await fetch(root)
     const text = await result.text()
 
@@ -68,7 +67,7 @@ describe('check if pages are available', () => {
     expect(text).toMatch('Feel free to contact me on LinkedIn')
   })
 
-  test('blog', async () => {
+  it('blog', async () => {
     const result = await fetch(`${root}/blog/openid-connect-aws-github`)
     const text = await result.text()
 
@@ -78,7 +77,7 @@ describe('check if pages are available', () => {
     expect(text).toMatch('A common pattern is to invoke AWS actions from a GitHub Actions workflow.')
   })
 
-  test('albums', async () => {
+  it('albums', async () => {
     const result = await fetch(`${root}/albums`)
     const text = await result.text()
 
