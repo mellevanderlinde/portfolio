@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@ml/eslint-config':
-        specifier: github:mellevanderlinde/eslint-config#v1.2.0
-        version: https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/f9e5ce7309d4495d2c161df93448042cee6e6f2d(@typescript-eslint/rule-tester@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@typescript-eslint/typescript-estree@8.57.2(typescript@5.9.3))(@typescript-eslint/utils@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@vue/compiler-sfc@3.5.31)(jiti@2.4.2)(typescript@5.9.3)(vitest@4.0.18(@types/node@25.2.0)(jiti@2.4.2)(jsdom@20.0.3)(lightningcss@1.30.1)(yaml@2.8.2))
+        specifier: github:mellevanderlinde/eslint-config#v1.4.0
+        version: https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/0d13f0bd97de40591e0e098ea3191f2f252c25ac(@typescript-eslint/rule-tester@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@typescript-eslint/typescript-estree@8.57.2(typescript@5.9.3))(@typescript-eslint/utils@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@vue/compiler-sfc@3.5.31)(jiti@2.4.2)(typescript@5.9.3)(vitest@4.0.18(@types/node@25.2.0)(jiti@2.4.2)(jsdom@20.0.3)(lightningcss@1.30.1)(yaml@2.8.2))
       eslint:
         specifier: ^10.1.0
         version: 10.1.0(jiti@2.4.2)
@@ -966,8 +966,8 @@ packages:
       '@types/react': '>=16'
       react: '>=16'
 
-  '@ml/eslint-config@https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/f9e5ce7309d4495d2c161df93448042cee6e6f2d':
-    resolution: {tarball: https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/f9e5ce7309d4495d2c161df93448042cee6e6f2d}
+  '@ml/eslint-config@https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/0d13f0bd97de40591e0e098ea3191f2f252c25ac':
+    resolution: {tarball: https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/0d13f0bd97de40591e0e098ea3191f2f252c25ac}
     version: 0.0.0
 
   '@napi-rs/wasm-runtime@0.2.4':
@@ -2395,10 +2395,6 @@ packages:
     peerDependencies:
       '@vue/compiler-sfc': ^3.3.0
       eslint: '>=9.0.0'
-
-  eslint-scope@8.4.0:
-    resolution: {integrity: sha512-sNXOfKCn74rt8RICKMvJS7XKV/Xk9kA7DyJr8mJik3S7Cwgy3qlkkmyS2uQB3jiJg6VNdZd/pDBJu0nvG2NlTg==}
-    engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
   eslint-scope@9.1.2:
     resolution: {integrity: sha512-xS90H51cKw0jltxmvmHy2Iai1LIqrfbw57b79w/J7MfvDfkIkFZ+kj6zC3BjtUwh150HsSSdxXZcsuv72miDFQ==}
@@ -4817,7 +4813,7 @@ snapshots:
       react: 19.1.1
     optional: true
 
-  '@ml/eslint-config@https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/f9e5ce7309d4495d2c161df93448042cee6e6f2d(@typescript-eslint/rule-tester@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@typescript-eslint/typescript-estree@8.57.2(typescript@5.9.3))(@typescript-eslint/utils@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@vue/compiler-sfc@3.5.31)(jiti@2.4.2)(typescript@5.9.3)(vitest@4.0.18(@types/node@25.2.0)(jiti@2.4.2)(jsdom@20.0.3)(lightningcss@1.30.1)(yaml@2.8.2))':
+  '@ml/eslint-config@https://codeload.github.com/mellevanderlinde/eslint-config/tar.gz/0d13f0bd97de40591e0e098ea3191f2f252c25ac(@typescript-eslint/rule-tester@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@typescript-eslint/typescript-estree@8.57.2(typescript@5.9.3))(@typescript-eslint/utils@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@vue/compiler-sfc@3.5.31)(jiti@2.4.2)(typescript@5.9.3)(vitest@4.0.18(@types/node@25.2.0)(jiti@2.4.2)(jsdom@20.0.3)(lightningcss@1.30.1)(yaml@2.8.2))':
     dependencies:
       '@antfu/eslint-config': 7.7.3(@typescript-eslint/rule-tester@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@typescript-eslint/typescript-estree@8.57.2(typescript@5.9.3))(@typescript-eslint/utils@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(@vue/compiler-sfc@3.5.31)(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3)(vitest@4.0.18(@types/node@25.2.0)(jiti@2.4.2)(jsdom@20.0.3)(lightningcss@1.30.1)(yaml@2.8.2))
       eslint: 10.1.0(jiti@2.4.2)
@@ -5365,7 +5361,7 @@ snapshots:
       '@typescript-eslint/visitor-keys': 8.57.2
       debug: 4.4.3
       minimatch: 10.2.4
-      semver: 7.7.3
+      semver: 7.7.4
       tinyglobby: 0.2.15
       ts-api-utils: 2.5.0(typescript@5.9.3)
       typescript: 5.9.3
@@ -5547,10 +5543,6 @@ snapshots:
       acorn: 8.16.0
       acorn-walk: 8.3.4
     optional: true
-
-  acorn-jsx@5.3.2(acorn@8.15.0):
-    dependencies:
-      acorn: 8.15.0
 
   acorn-jsx@5.3.2(acorn@8.16.0):
     dependencies:
@@ -6019,7 +6011,7 @@ snapshots:
   eslint-compat-utils@0.5.1(eslint@10.1.0(jiti@2.4.2)):
     dependencies:
       eslint: 10.1.0(jiti@2.4.2)
-      semver: 7.7.3
+      semver: 7.7.4
 
   eslint-config-flat-gitignore@2.3.0(eslint@10.1.0(jiti@2.4.2)):
     dependencies:
@@ -6058,7 +6050,7 @@ snapshots:
       empathic: 2.0.0
       eslint: 10.1.0(jiti@2.4.2)
       module-replacements: 2.11.0
-      semver: 7.7.3
+      semver: 7.7.4
 
   eslint-plugin-es-x@7.8.0(eslint@10.1.0(jiti@2.4.2)):
     dependencies:
@@ -6116,7 +6108,7 @@ snapshots:
       globals: 15.15.0
       globrex: 0.1.2
       ignore: 5.3.2
-      semver: 7.7.3
+      semver: 7.7.4
       ts-declaration-location: 1.0.7(typescript@5.9.3)
     transitivePeerDependencies:
       - typescript
@@ -6182,7 +6174,7 @@ snapshots:
       pluralize: 8.0.0
       regexp-tree: 0.1.27
       regjsparser: 0.13.0
-      semver: 7.7.3
+      semver: 7.7.4
       strip-indent: 4.1.1
 
   eslint-plugin-unused-imports@4.4.1(@typescript-eslint/eslint-plugin@8.57.2(@typescript-eslint/parser@8.57.2(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(eslint@10.1.0(jiti@2.4.2))(typescript@5.9.3))(eslint@10.1.0(jiti@2.4.2)):
@@ -6198,7 +6190,7 @@ snapshots:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 7.1.1
-      semver: 7.7.3
+      semver: 7.7.4
       vue-eslint-parser: 10.4.0(eslint@10.1.0(jiti@2.4.2))
       xml-name-validator: 4.0.0
     optionalDependencies:
@@ -6223,11 +6215,6 @@ snapshots:
     dependencies:
       '@vue/compiler-sfc': 3.5.31
       eslint: 10.1.0(jiti@2.4.2)
-
-  eslint-scope@8.4.0:
-    dependencies:
-      esrecurse: 4.3.0
-      estraverse: 5.3.0
 
   eslint-scope@9.1.2:
     dependencies:
@@ -6281,8 +6268,8 @@ snapshots:
 
   espree@10.4.0:
     dependencies:
-      acorn: 8.15.0
-      acorn-jsx: 5.3.2(acorn@8.15.0)
+      acorn: 8.16.0
+      acorn-jsx: 5.3.2(acorn@8.16.0)
       eslint-visitor-keys: 4.2.1
 
   espree@11.2.0:
@@ -6695,9 +6682,9 @@ snapshots:
 
   jsonc-eslint-parser@3.1.0:
     dependencies:
-      acorn: 8.15.0
+      acorn: 8.16.0
       eslint-visitor-keys: 5.0.1
-      semver: 7.7.3
+      semver: 7.7.4
 
   jsonc-parser@3.2.0: {}
 
@@ -8305,11 +8292,11 @@ snapshots:
     dependencies:
       debug: 4.4.3
       eslint: 10.1.0(jiti@2.4.2)
-      eslint-scope: 8.4.0
-      eslint-visitor-keys: 4.2.1
-      espree: 10.4.0
+      eslint-scope: 9.1.2
+      eslint-visitor-keys: 5.0.1
+      espree: 11.2.0
       esquery: 1.7.0
-      semver: 7.7.3
+      semver: 7.7.4
     transitivePeerDependencies:
       - supports-color
 

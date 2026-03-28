@@ -28,9 +28,7 @@ export class PortfolioStack extends Stack {
 
     const domainName = 'mellevanderlinde.com'
     const wwwDomainName = `www.${domainName}`
-    const zone = HostedZone.fromLookup(this, 'HostedZone', {
-      domainName,
-    })
+    const zone = HostedZone.fromLookup(this, 'HostedZone', { domainName })
 
     const bucket = new Bucket(this, 'Bucket', {
       autoDeleteObjects: true,
