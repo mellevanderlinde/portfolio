@@ -12,12 +12,18 @@ function InfiniteAlbumSlider(): ReactNode {
     <InfiniteSlider speedOnHover={20} gap={24} className="mt-8">
       {albums.sort(() => Math.random() - 0.5) // Randomly shuffle albums
         .map(album => (
-          <img
-            key={album.id}
-            src={`https://i.scdn.co/image/${album.id}`}
-            alt={album.name}
-            className="aspect-square w-[120px] rounded-[4px]"
-          />
+          <a
+            key={album.coverId}
+            href={`https://open.spotify.com/album/${album.albumId}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={`https://i.scdn.co/image/${album.coverId}`}
+              alt={album.name}
+              className="aspect-square w-[120px] rounded-[4px]"
+            />
+          </a>
         ))}
     </InfiniteSlider>
   )

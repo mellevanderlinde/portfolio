@@ -1,3 +1,4 @@
+import type { Album } from '@/lib/interfaces'
 import { render } from '@testing-library/react'
 import { expect, it, vi } from 'vitest'
 import { AlbumSlider } from '@/components/album-slider'
@@ -54,7 +55,7 @@ it('matches infinite slider', () => {
 it('matches album slider', () => {
   // Mock
   vi.mock('@/lib/data', () => ({
-    albums: [{ id: 'id', name: 'Artist - Album' }],
+    albums: [{ albumId: 'album-id', coverId: 'cover-id', name: 'Artist - Album' }] satisfies Album[],
     jobs: [],
     links: [],
     posts: [],

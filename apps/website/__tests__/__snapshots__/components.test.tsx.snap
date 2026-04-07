@@ -37,16 +37,28 @@ exports[`matches album slider 1`] = `
           class="flex w-max"
           style="flex-direction: row; gap: 24px; transform: none;"
         >
-          <img
-            alt="Artist - Album"
-            class="aspect-square w-[120px] rounded-[4px]"
-            src="https://i.scdn.co/image/id"
-          />
-          <img
-            alt="Artist - Album"
-            class="aspect-square w-[120px] rounded-[4px]"
-            src="https://i.scdn.co/image/id"
-          />
+          <a
+            href="https://open.spotify.com/album/album-id"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Artist - Album"
+              class="aspect-square w-[120px] rounded-[4px]"
+              src="https://i.scdn.co/image/cover-id"
+            />
+          </a>
+          <a
+            href="https://open.spotify.com/album/album-id"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="Artist - Album"
+              class="aspect-square w-[120px] rounded-[4px]"
+              src="https://i.scdn.co/image/cover-id"
+            />
+          </a>
         </div>
       </div>
     </section>

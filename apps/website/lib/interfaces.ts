@@ -30,6 +30,7 @@ export interface Link {
 }
 
 export interface Album {
-  id: string
   name: string
+  albumId: string
+  coverId: string
 }
