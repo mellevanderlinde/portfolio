@@ -1,10 +1,7 @@
 'use client'
 import type { TargetAndTransition, Transition, Variant, Variants } from 'motion/react'
 import type { ReactNode } from 'react'
-import {
-  AnimatePresence,
-  motion,
-} from 'motion/react'
+import { AnimatePresence, motion } from 'motion/react'
 import { memo } from 'react'
 import { cn } from '@/lib/utils'
 
@@ -50,14 +47,6 @@ const defaultContainerVariants: Variants = {
     transition: {
       staggerChildren: 0.05,
     },
-  },
-}
-
-const defaultItemVariants: Variants = {
-  exit: { opacity: 0 },
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
   },
 }
 
@@ -169,9 +158,7 @@ function splitText(text: string, per: 'line' | 'word' | 'char'): string[] {
 }
 
 function hasTransition(variant: Variant): variant is TargetAndTransition & { transition?: Transition } {
-  return (
-    typeof variant === 'object' && variant !== null && 'transition' in variant
-  )
+  return typeof variant === 'object' && 'transition' in variant
 }
 
 function createVariantsWithTransition(baseVariants: Variants, transition?: Transition & { exit?: Transition }): Variants {
@@ -226,12 +213,8 @@ export function TextEffect({
   const segments = splitText(children, per)
   const MotionTag = motion[as as keyof typeof motion] as typeof motion.div
 
-  const baseVariants = preset
-    ? presetVariants[preset]
-    : { container: defaultContainerVariants, item: defaultItemVariants }
-
+  const baseVariants = presetVariants[preset]
   const stagger = defaultStaggerTimes[per] / speedReveal
-
   const baseDuration = 0.3 / speedSegment
 
   const customStagger = hasTransition(variants?.container?.visible ?? {})
@@ -274,7 +257,7 @@ export function TextEffect({
           onAnimationStart={onAnimationStart}
           style={style}
         >
-          {per !== 'line' ? <span className="sr-only">{children}</span> : null}
+          {per === 'line' ? null : <span className="sr-only">{children}</span>}
           {segments.map(segment => (
             <AnimationComponent
               key={`${per}-${segment}`}

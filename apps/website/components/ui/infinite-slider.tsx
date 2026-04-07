@@ -67,7 +67,7 @@ export function InfiniteSlider({
       })
     }
 
-    return controls?.stop
+    return controls.stop
   }, [
     key,
     translation,
